@@ -10,4 +10,4 @@ function DaysBetweenTwoDates(date) {
 }
 
 document.getElementById("p").textContent +=
-  DaysBetweenTwoDates("2021-06-12", Date.now()) + " days";
+  DaysBetweenTwoDates("2021-06-12") + " days";
