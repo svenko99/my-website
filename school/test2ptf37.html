@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	white-space: pre-wrap;
+  	color: white;
+  	background-color: black;
+	font-size: 27px;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e244aa40-7167-488d-9352-a37ee1f4bf30" class="page sans"><header><h1 class="page-title"></h1></header><div class="page-body"><ul id="3ee8db3a-c36d-45dc-baa2-a9df6d0f7b55" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>1 Opiši življenjski cikel izdelkov in ga prikaži z grafom. (Nariši graf)</strong></mark></summary><ul id="f729edd8-7ade-4287-b65d-60d1d6675c5d" class="bulleted-list"><li style="list-style-type:disc"><strong>uvajanje </strong>-<mark class="highlight-red"> </mark>uvajanje izdelka na trg – pojava izdeleka na trgu; dobička na tej stopnji ni zaradi visokih stroškov uvajanja izdelka</li></ul><ul id="69ff6f24-923e-4550-99e7-f87b3139f1d2" class="bulleted-list"><li style="list-style-type:disc"><strong>rast</strong> - <strong>r</strong>ast prodaje – obdobje hitrega prodajana izdelka in precejšen porast dobička</li></ul><ul id="f7bcb244-cf8a-49f6-ab4a-3f38f5a09cbe" class="bulleted-list"><li style="list-style-type:disc"><strong>zrelost </strong>- zrelost izdelka – obdobje počasnejše rasti prodaje, ker je večina možnih kupcev izdelek že kupila; dobiček se umiri oziroma upada zaradi povečanja izdatkov za trženje</li></ul><ul id="7d8f38da-a8a5-43e3-ba7f-8cb508cceb6f" class="bulleted-list"><li style="list-style-type:disc"><strong>updanje</strong> - odmiranje izdelka – je obdobje, ko prodaja močno pade in z njo tudi dobiček.</li></ul></details></li></ul><ul id="7c17eef4-a426-4447-b36f-d8051c72282e" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>2 Katere odločitve sprejemajo podjetja v okviru politike izdelkov in ponudbe?</strong></mark></summary><ul id="74116b60-d273-4fd0-bf1f-3dd3cd69c6ee" class="bulleted-list"><li style="list-style-type:disc">o številu in vrsti izdelkov, ki jih bodo proizvajala</li></ul><ul id="118cb95a-c56b-4e60-b03d-17cc02da5e7f" class="bulleted-list"><li style="list-style-type:disc">o obliki in pozicioniranju izdelkov na trgu</li></ul><ul id="b5f37a7d-b211-45a5-aca1-5286d151e914" class="bulleted-list"><li style="list-style-type:disc">o blagovnih znamkah, ki jih bodo uporabljala</li></ul><ul id="dbedb64d-56e0-40de-90cf-837bd500350a" class="bulleted-list"><li style="list-style-type:disc">o dodatnih storitvah, ki jih bodo ponujala (servis)</li></ul><ul id="e27e8769-9403-4119-a17d-be54945e4042" class="bulleted-list"><li style="list-style-type:disc">o zunanjem videzu izdelka (oblikovanje)</li></ul></details></li></ul><ul id="4bc58ef1-e7ec-4217-ad6e-2eff8e1f7b42" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>4 Katere vrste politike izdelkov imamo zaradi življenjskega ciklusa izdelka?</strong></mark></summary><ul id="9baf4744-2e86-4514-85e7-d76fb819f7c1" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">V</mark></strong>ariacija</li></ul><ul id="2bf731e7-40e6-4d5c-b9d7-74458088f4c5" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">E</mark></strong>liminacija ali selekcija</li></ul><ul id="791f8217-11df-4baf-b7f0-f711dd51dafa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>D</strong></mark>odatne storitve k izdelku</li></ul><ul id="a7724fc9-6587-4488-ad4b-6b567f309968" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>D</strong></mark>odatne storitve</li></ul><ul id="ff8fe6cc-65b2-4a0e-be37-b14b315f4c2f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>I</strong></mark>novacija izdelkov</li></ul></details></li></ul><ul id="6f06c95c-45c3-489d-b515-fba0bd6cc12a" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>5 Kakšne so značilnosti inovacije izdelkov</strong></mark></summary><ul id="af6a78b5-9fca-4749-884c-9c52cd754842" class="bulleted-list"><li style="list-style-type:disc">Inovacija izdelkov pomeni uvajanje novih izdelkov v proizvodni program podjetja. Obstajata dve vrsti inovacij izdelkov: <ul id="7d0758b5-88de-4d4e-b4a1-b3a381a8a84b" class="bulleted-list"><li style="list-style-type:circle">Raznovrstnost/diverzifikacija izdelkov pa pomeni, da podjetje v svoj proizvodni program sprejme izdelke, ki jih do še ni bilo, in s tem poveča širino programa. Na primer, proizvajalec glavnikov začne izdelovati tudi krtače.</li></ul><ul id="1326f4b9-cd10-4d1e-ac0c-d6fe3dacd72f" class="bulleted-list"><li style="list-style-type:circle">Razlikovanje/diferenciacija izdelkov pomeni, da podjetje poveča globino programa tako, da posamezen izdelek ponudi v več različicah, na primer v različnih materialih, barvah, oblikah in namenih.</li></ul></li></ul></details></li></ul><ul id="46983bbe-9302-4dbe-8c51-4ad2051c8b2f" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>6 Kakšne so značilnosti variacije in eliminacije izdelkov v okviru politike izdelkov?</strong></mark></summary><ul id="532e3187-aac5-4ab7-b8fb-0dada270a290" class="bulleted-list"><li style="list-style-type:disc">Variacije izdelkov so spremembe lastnosti izdelka, da bi bil bolj atraktiven za potrošnike. To se lahko nanaša na funkcije, material, barvo, obliko, embalažo in opis izdelka</li></ul><ul id="617ce9f6-9a0f-4aeb-86ce-508edaceda41" class="bulleted-list"><li style="list-style-type:disc">Eliminacija izdelkov pa pomeni odstranjevanje izdelka ali različice izdelka iz ponudbe, ker ne dosega želenega tržnega deleža. Cilj je lahko tudi zmanjšanje stroškov podjetja.</li></ul></details></li></ul><ul id="5601de92-7b7e-4eaa-a5b8-d43cac242d0b" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>7 Kaj je namen blagovne oziroma storitvene znamke?</strong></mark></summary><p id="dff1bd21-fb31-4c62-be4a-d7a1e9331513" class="">Z blagovno oziroma storitveno znamko zavarujemo oznako, ki je na trgu namenjena razlikovanju blaga in storitev iste ali podobne vrste.</p><p id="86276332-c11e-42b6-ac5f-4a52b7716bd7" class="">Blagovna znamka omogoča:</p><ul id="3cdd40c4-8914-4f52-9691-fa25479d025a" class="bulleted-list"><li style="list-style-type:disc">kupcem pomoč pri nakupu,</li></ul><ul id="a3302315-32df-403a-b517-4a56ee8d578c" class="bulleted-list"><li style="list-style-type:disc">proizvajalcem pa zaščito posebnih značilnosti, pridobivanje zvestobe strank in zaščito pred konkurenco.</li></ul></details></li></ul><ul id="0ba716d2-53db-4d3a-aabe-fffd8ae4e195" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>8 Kaj je pomembno pridobiti v zvezi z blagovnimi znamkami?</strong></mark></summary><ul id="c50ca8c7-49b6-4924-baa8-235330586c13" class="bulleted-list"><li style="list-style-type:disc">Nacionalno varstvo pri Uradu RS za intelektualno lastnino.</li></ul><ul id="b5f0f6a1-3544-4c3a-b29e-84a59e6f5218" class="bulleted-list"><li style="list-style-type:disc">Varstvo v tujini pri Svetovni organizaciji za intelektualno lastnino v Ženevi.</li></ul></details></li></ul><ul id="5372a568-f2a1-4a21-92c1-4bf9158ca7cb" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>9 Kateri dejavniki vplivajo na določitev prodajnih cen s strani podjetnika?</strong></mark></summary><ul id="a73b3a5b-1f07-4847-a0ea-1ad1856c01c5" class="bulleted-list"><li style="list-style-type:disc">stroški</li></ul><ul id="6f26e168-9179-4cfe-8c5c-8299c4f2e5b0" class="bulleted-list"><li style="list-style-type:disc">oblika in sestava trga</li></ul><ul id="cdec45ad-bd73-4c43-b03a-b7f51fd2a5d4" class="bulleted-list"><li style="list-style-type:disc">razmerje med ponudbo in povpraševanjem</li></ul><ul id="2d40ce31-7305-4b9f-93d4-2cd728850bee" class="bulleted-list"><li style="list-style-type:disc">preference ponudnikov in povpraševalcev</li></ul><ul id="771d53dc-3c1b-470d-b299-4e82c99b85ca" class="bulleted-list"><li style="list-style-type:disc">informiranost ponudnikov in povpraševalcev</li></ul><ul id="e74479c6-d3fa-40a2-9aac-0a2c0a59c3e0" class="bulleted-list"><li style="list-style-type:disc">cenovna elastičnost povpraševanja</li></ul></details></li></ul><ul id="cd64ef88-57d7-4838-9b3d-2ca308008eac" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>10 Katere cenovne politike so možne?</strong></mark></summary><ul id="f438787c-49f7-4284-964c-e40428f71bf7" class="bulleted-list"><li style="list-style-type:disc">stroškovna, konkurenčna in glede na povpraševanje usmerjena cenovna politika </li></ul><ul id="7fa17045-4013-4abd-ae6f-e29a44f981d8" class="bulleted-list"><li style="list-style-type:disc">s preferenco kupcev usmerjena cenovna politika</li></ul><ul id="9502281a-b3dd-4463-86b6-d7c2a0a02ace" class="bulleted-list"><li style="list-style-type:disc">cenovna politika s posebnimi ukrepi:<ul id="18e0f75d-765d-40a0-82d6-e31494166359" class="bulleted-list"><li style="list-style-type:circle">diferencicija cen (različnost cen)</li></ul><ul id="ffca67c9-492f-4306-b62f-5ea6fafb0253" class="bulleted-list"><li style="list-style-type:circle">kalkulativna izravnava</li></ul></li></ul></details></li></ul><ul id="a5599c03-3d71-447c-848e-2acaa38a170d" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>11 Kakšne so značilnosti diferenciacije cen (različnost cen) kot posebnega ukrepa cenovne politike?</strong></mark></summary><p id="4cc581b9-b83f-4bdc-8060-bc9e93d07ae4" class="">Da bi podjetja izkoristila različno kupno moč povpraševalcev, pogosto prodajajo enake izdelke po različnih cenah. Pr tem uporabljajo naslednje oblike diferenciacije cen:</p><ul id="de40313f-8e83-4397-9ad6-6813065d3830" class="bulleted-list"><li style="list-style-type:disc">regionalno (prostorsko) raznolikost cen - (različne cene za mesta in podeželje)</li></ul><ul id="25b774e3-3e0d-480f-a10c-bbb517c16a18" class="bulleted-list"><li style="list-style-type:disc">časovno raznolikost cen - (predsezonske in sezonske cene v turizmu, cene pred prazniki)</li></ul><ul id="14d1d808-cdfd-4c7e-add3-b43e1d1d255e" class="bulleted-list"><li style="list-style-type:disc">raznolikost cen po porabnikih - (različne cene za podjetja in za zasebnike, npr. material za salon, elektrike ipd.)</li></ul></details></li></ul><ul id="377b0b73-92b0-4ba7-8237-9d9f7ed4c244" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>12 Kaj spada k odločitvam o plačilnih pogojih? O čem mora podjetnik premisliti glede plačilnih pogojev?</strong></mark></summary><p id="91f33e5d-0431-4e8f-967e-870de38a8fff" class="">K odločitvam o plačilnih pogojih spadajo:<div class="indented"><ul id="f6286db6-7a99-44dc-b8d1-256634d24f8d" class="bulleted-list"><li style="list-style-type:disc">rabatna politika</li></ul><ul id="26225673-7d45-4117-b5a8-2106ab5ca153" class="bulleted-list"><li style="list-style-type:disc">politika skontov</li></ul><ul id="7ff0759c-4d87-4737-99e4-8aed96329035" class="bulleted-list"><li style="list-style-type:disc">kreditna politika.</li></ul></div></p><p id="4c233bf3-c265-4314-b44d-7e274acef523" class="">podjetnik mora premisliti:<div class="indented"><ul id="08bcff39-3c2a-4680-b294-1ec4a89e2d29" class="bulleted-list"><li style="list-style-type:disc">katere cenovne popuste naj odobri, če odjemalec kupi večjo količino naenkrat (količinski rabat) ali kupuje vse leto (zvestobni rabat)</li></ul><ul id="a4744c46-0a2d-484a-99b0-99d677c8d3ac" class="bulleted-list"><li style="list-style-type:disc">če plača takoj (skonto)</li></ul><ul id="b3c103e4-571a-49d8-94fa-b936da050b68" class="bulleted-list"><li style="list-style-type:disc">ali naj mu odobri poznejši plačilni rok (kreditna politika).</li></ul></div></p></details></li></ul><ul id="0a5d6d0b-3de4-40f8-accf-fabfa4258998" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>13 Pojasni naslednje besedne zveze:</strong></mark></summary><ul id="b1605acd-f8d7-4ea9-a6e0-709ce7d6570d" class="bulleted-list"><li style="list-style-type:disc"><strong>Prodajna vrednost</strong> -  je nabavna vrednost, povečana za razliko v ceni.</li></ul><ul id="a7a79cb7-117d-4453-8ccf-b8a6501371d5" class="bulleted-list"><li style="list-style-type:disc"><strong>Razlika v ceni</strong> -  je zaslužek, s katerim trgovina oziroma podjetje pokriva stroške poslovanja.</li></ul><ul id="8e80703b-249b-47e7-8ea7-665aa49854f5" class="bulleted-list"><li style="list-style-type:disc"><strong>Prodajna cena z DDV</strong> - je cena za neko blaga, ki jo plača kupec.</li></ul></details></li></ul><ul id="bf8779c5-d4ad-4075-bf54-9f134a40b449" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>14 Kaj pomeni pojem distribucija?</strong></mark></summary><ul id="925cc0fd-7948-4ad0-a7f7-979cbcd50bff" class="bulleted-list"><li style="list-style-type:disc">Distribucija je dejavnost, ki zajema prodajo in dostavo izdelkov ter storitev od proizvajalca do kupca. Je pomemben del poslovanja.</li></ul></details></li></ul><ul id="0b01fbb6-dc6c-40fb-baaf-fccc4b19eff4" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>15 Iz katerih 2 delov je SESTAVLJENA distribucijska politika?</strong></mark></summary><ul id="96fb113f-7ec4-4d09-805c-35de783a49f5" class="bulleted-list"><li style="list-style-type:disc"><strong>organizacije prodaje</strong><mark class="highlight-red"> </mark>(prodajne poti) - gospodarsko in pravno organiziranje dostave izdelkov do kupcev</li></ul><ul id="b6b76a28-e2ef-4183-9ba5-9dcaf5913ea9" class="bulleted-list"><li style="list-style-type:disc"><strong>prevozne poti</strong> (tržna logistika) -  dejansko gibanje izdelkov</li></ul></details></li></ul><ul id="76527ec1-86bc-4f88-ad3f-b57bb8756d34" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>16 Kaj moramo določiti v okviru organizacije prodaje?</strong></mark></summary><ul id="fc086743-af8f-4a78-8b93-2f5de3285ab3" class="bulleted-list"><li style="list-style-type:disc">Določiti moramo:<ul id="4c965fc6-769b-4a5e-b2f1-79b188a38ec9" class="bulleted-list"><li style="list-style-type:circle"><strong>prodajnih poti</strong> (neposredna – direktna ali posredna – indirektna prodaja),</li></ul><ul id="e34e5019-45de-4a4e-8d51-7bc381a803c7" class="bulleted-list"><li style="list-style-type:circle"><strong>prodajnih sistemov </strong>(centralizirana ali decentralizirana prodaja),</li></ul><ul id="0ca3a1bf-6fcf-44d0-a20f-c57e36b5a320" class="bulleted-list"><li style="list-style-type:circle"><strong>prodajnih oblik</strong> (trgovski potniki in druge prodajne organizacije, npr. samostojni trgovski zastopniki).</li></ul></li></ul></details></li></ul><ul id="64d1733a-50d2-457a-bdf4-642ea2745439" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>17 Kakšne so značilnosti neposredne (direktne) prodaje?</strong></mark></summary><ul id="ade5ab59-eb6d-4171-b009-d84f9b8cb677" class="bulleted-list"><li style="list-style-type:disc">Direktna prodaja je način prodaje, ko proizvajalec svoje izdelke prodaja neposredno tistemu, ki jih bo uporabil (pri investicijskih dobrinah drugemu podjetju, pri potrošnih dobrinah pa potrošnikom).</li></ul><ul id="0cacd54c-e36f-4cfb-9a39-c8f0dfb11e1c" class="bulleted-list"><li style="list-style-type:disc">Direktna prodaja je lahko <strong>centralizirana</strong> (tj. brez podružnic) ali <strong>decentralizirana</strong> (tj. prek lastnih podružnic).</li></ul><ul id="eec06a40-84e0-4a25-8ee6-0c3284e662e7" class="bulleted-list"><li style="list-style-type:disc">Pri prodaji <strong>na daljavo</strong> gre za ponudbo kupcem: · po telefonu, · s pismom, · faksom ali · prek svetovnega spleta.</li></ul><ul id="4bb69cc9-ce36-439b-bc89-37914662c1f2" class="bulleted-list"><li style="list-style-type:disc">Odjemalcem pošiljamo kataloge in podobno. Prodaja poteka tudi prek trgovskih potnikov, ki so zaposleni v podjetju in katerih delo nadzira prodajna služba.</li></ul></details></li></ul><ul id="1892c59a-93d0-482a-9c37-fb12f4a1f9ad" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>18 Kakšne so značilnosti posredne (indirektne) prodaje?</strong></mark></summary><ul id="3a737429-a126-4f66-9136-4223b817450e" class="bulleted-list"><li style="list-style-type:disc">Indirektna prodaja je način prodaje, ko med proizvajalca in kupca vstopajo samostojne trgovske organizacije. Te so lahko:<ul id="35ac2bc5-3c9d-4417-9566-d120ac07ce24" class="bulleted-list"><li style="list-style-type:circle">trgovski zastopniki, ki prodajajo v imenu in za račun zastopane firme,</li></ul><ul id="eef8cea1-05c4-462f-a916-717fd13ce718" class="bulleted-list"><li style="list-style-type:circle">komisionarji, ki prodajajo v svojem imenu, vendar za račun zastopane firme,</li></ul><ul id="511be86a-960f-421a-9ab3-86b0143b1d61" class="bulleted-list"><li style="list-style-type:circle">samostojni trgovci, ki prodajajo v svojem imenu in za svoj račun.</li></ul></li></ul><ul id="1a186099-f670-45ab-8fc0-6a2bad2b3edd" class="bulleted-list"><li style="list-style-type:disc">Trgovska podjetja delimo na trgovce na drobno in trgovce na debelo. Trgovci na drobno prodajo končnim porabnikom. Trgovci na debelo prodajajo drugim podjetjem.</li></ul></details></li></ul><ul id="04e71a4e-ce99-4ed9-8cdc-24d9acb9b932" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>19 Kateri 2 metodi ima podjetje na razpolago, da bi pridobilo potrebno število trgovskih posrednikov in kakšne značilnosti imata?</strong></mark></summary><ol type="1" id="6e6dcf21-00e6-4149-be29-967764557d51" class="numbered-list" start="1"><li><strong>Metoda vleke (pull)</strong>: Trgovinske posrednike pritegnemo z intenzivnim oglaševanjem, ki je usmerjena na končnega porabnika, da mora te izdelke kupiti, npr. izdelki z blagovno znamko (proizvajalec usmeri promocijo direktno na potrošnika)</li></ol><ol type="1" id="a3407e98-80fe-4a9e-8590-242e5a1bec1d" class="numbered-list" start="2"><li><strong>Metoda potiska (push)</strong>: Trgovske posrednike pridobimo s spodbudo:  ugodni prodajni pogoji, kratki dobavni roki, ekskluzivna dobava, zagotovilo, da na določenem območju ne bo drugega ponudnika (izdelek proizvajalec najprej reklamira grosistu, ta pa naprej)</li></ol></details></li></ul><ul id="6d2e3de4-1d24-44a9-9729-b884e68f0363" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>20 Katere so naloge tržne logistike?</strong></mark></summary><ul id="f5641eb5-291b-4d15-8e86-76c4a78e40dd" class="bulleted-list"><li style="list-style-type:disc">Naloge tržne logistike so: <ul id="18e7c408-ae54-47f2-8871-2ac90cf437ce" class="bulleted-list"><li style="list-style-type:circle">transport (organiziranje prevoza izdelkov)</li></ul><ul id="b89d56a0-95c6-4123-a161-e4c0cd88168e" class="bulleted-list"><li style="list-style-type:circle">skladiščenje (organiziranje priprave pošiljk v skladišču)</li></ul><ul id="eedb2117-d1ff-46d4-a0fc-249959a3ba00" class="bulleted-list"><li style="list-style-type:circle">distribucija</li></ul><ul id="f9c6405d-970c-487e-9f5a-123056fafa98" class="bulleted-list"><li style="list-style-type:circle">upravljanje zalog (decentralizirana prodajna skladišča, da bi lahko podjetje skrajšalo dobavne roke)</li></ul><ul id="06e7ad41-9da8-4ba5-9086-6d674f9626ac" class="bulleted-list"><li style="list-style-type:circle">svetovanje pri optimizaciji tržne logistike. (optimizacija zaloge rezervnih delov ipd.)</li></ul></li></ul><ul id="6bfc407f-c048-406b-97ae-6807dbc9ea65" class="bulleted-list"><li style="list-style-type:disc">Poudarek je na pravočasni in učinkoviti dostavi izdelkov in storitev od proizvajalcev do kupcev ter na optimalnem izkoristku prostora in sredstev ter optimizaciji stroškov. </li></ul></details></li></ul><ul id="2f04322d-094b-46f1-92ce-cf140902dfca" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>21 Naštej korake pri oblikovanju učinkovitih komunikacij.</strong></mark></summary><ol type="1" id="caf37608-827e-4a5a-8282-bce2d9b56141" class="numbered-list" start="1"><li>Določiti ciljne skupine odjemalcev</li></ol><ol type="1" id="fb5de4ca-3115-4d1b-a9cb-82f66362c2c2" class="numbered-list" start="2"><li>Opredeliti cilje komuniciranja</li></ol><ol type="1" id="a15c4fec-341d-4887-9ec1-e9a5c0e3bcd0" class="numbered-list" start="3"><li>Oblikovati sporočilo</li></ol><ol type="1" id="9931e3d4-389b-4d08-b101-f13b4716d09a" class="numbered-list" start="4"><li>Izbrati komunikacijske kanale</li></ol><ol type="1" id="7ea78726-7563-4b20-85ad-18230c197a79" class="numbered-list" start="5"><li>Določiti proračun za promocijo</li></ol><ol type="1" id="de95334e-be2a-4b9e-a91f-80408b1d7dc3" class="numbered-list" start="6"><li>Izbrati komunikacijski splet</li></ol><ol type="1" id="6c7fd117-958c-49fc-9478-ea8cab4bfbb4" class="numbered-list" start="7"><li>Izmeriti učinkovitost komuniciranja</li></ol><ol type="1" id="0b8d3d99-861f-49a0-9782-b5b06d0bed9e" class="numbered-list" start="8"><li>Koordinirati celotni proces komuniciranja</li></ol></details></li></ul><ul id="768b260a-3bab-4ef7-bccb-7158d6914ac0" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>22 Naštej in razloži cilje komuniciranja.</strong></mark></summary><ul id="b4db556a-963e-415e-9300-d6b97eb74787" class="bulleted-list"><li style="list-style-type:disc">Informirati ( o novem izdelku, o spremembi cene, o novi uporabi izdelka...)</li></ul><ul id="6664d1f7-f1a0-4eab-9067-d90f1d65b2a2" class="bulleted-list"><li style="list-style-type:disc">Prepričevati (k nakupu naše znamke...)</li></ul><ul id="1c385ce4-0dff-40dd-8eae-98df05f28222" class="bulleted-list"><li style="list-style-type:disc">Spomniti (če so izdelki že v fazi zrelosti...)</li></ul></details></li></ul><ul id="544dc62f-4d53-4321-b1cb-80d932946b84" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>23 Kaj zajema splet tržnega komuniciranja (promocijski splet), ki zajema več orodij za komuniciranje?</strong></mark></summary><p id="6ebf0d89-2ce9-41bd-80b5-c16005d18814" class="">Splet tržnega komuniciranja, imenovan tudi promocijski splet, zajema:</p><ul id="0fc74aed-7384-4029-b7a0-1759af9c1951" class="bulleted-list"><li style="list-style-type:disc">oglaševanje</li></ul><ul id="3e7f781c-c119-4944-bfda-44838f4d4d5f" class="bulleted-list"><li style="list-style-type:disc">pospeševanje prodaje</li></ul><ul id="24fc2f2e-fce4-4161-9a1e-ddc021fcae45" class="bulleted-list"><li style="list-style-type:disc">odnose z javnostmi</li></ul><ul id="c06ddd2e-7e04-4282-9d22-751c2a7257f0" class="bulleted-list"><li style="list-style-type:disc">neposredno trženje</li></ul></details></li></ul><ul id="775b976a-6a44-439e-83f1-53848561c58e" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>24 Kakšna morajo biti vsa orodja komunikacijskega spleta?</strong></mark></summary><ul id="ba3b74e8-d991-4d4e-898a-7b18661924a9" class="bulleted-list"><li style="list-style-type:disc">Povezana med seboj in hkrati tudi z ostalimi elementi trženjskega spleta (izdelkom, ceno, prodajno potjo, ljudmi, fizičnimi dokazi).</li></ul></details></li></ul><ul id="b026f3e0-27cd-43fd-ab86-a2c7244ba290" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>25 Kaj tudi vključuje komunikacijska politika podjetja?</strong></mark></summary><ul id="da3bc9bd-9fbb-4ba6-b5e8-a6e5dc02dc06" class="bulleted-list"><li style="list-style-type:disc">Psihološko pravilno vodeni prodajni razgovori.</li></ul></details></li></ul><ul id="a7a61a68-1fda-4de2-a315-10c6be5a4570" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>26 Kaj je oglaševanje?</strong></mark></summary><ul id="9f08f489-eea9-4f05-8374-7be0c332c235" class="bulleted-list"><li style="list-style-type:disc">Oglaševanje je plačana oblika neosebne predstavitve izdelka, storitve ali ideje v medijih.</li></ul></details></li></ul><ul id="dc84dd89-fc7b-4519-aae5-6f15815407a7" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>27 Kaj želi doseči podjetje z oglasi?</strong></mark></summary><p id="c416d660-7b47-4a56-b228-b70f934897d2" class="">Z oglasi podjetje želi porabnike:</p><ul id="168be649-2200-4fc2-b104-1cc20ca3761f" class="bulleted-list"><li style="list-style-type:disc">obveščat, prepričati in spomniti o izdelkih, storitvah ali ideji</li></ul></details></li></ul><ul id="c4f7a4cc-3a91-44a4-a5b9-cfc5cbd72e2e" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>28 Kaj mora poznati oglaševalec, da bo oglasno sporočilo uspešno?</strong></mark></summary><p id="92024632-e355-4a5d-abbc-deb0d80f9c8c" class="">Da bo sporočilo uspešno, mora oglaševalec poznati:</p><ul id="b7a89ffb-a68a-47fe-a183-d62d9b12040a" class="bulleted-list"><li style="list-style-type:disc">ciljno občinstvo, cilje komuniciranja, značilnosti medija</li></ul></details></li></ul><ul id="d6438989-ae8c-4b40-9230-db7224aad1e4" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>29 Katera so odločitvena področja oglaševanja?</strong></mark></summary><ul id="5b026401-1b1d-4a61-9db3-768916bff675" class="bulleted-list"><li style="list-style-type:disc">oglaševalski objekti - kaj oglašujemo</li></ul><ul id="c3358b30-523e-434a-a382-e517ebdae821" class="bulleted-list"><li style="list-style-type:disc">oglaševalski partnerji – s kom oglašujemo</li></ul><ul id="41dab4e8-4833-47b2-8c81-88d6e7cfc4b5" class="bulleted-list"><li style="list-style-type:disc">oglaševalski subjekti – komu oglašujemo</li></ul><ul id="293375be-82af-4ffa-94f5-35950830b137" class="bulleted-list"><li style="list-style-type:disc">oglasna sporočila – kako oglašujemo</li></ul><ul id="3e81b70f-078d-4997-95e3-aad7c2055cbc" class="bulleted-list"><li style="list-style-type:disc">oglasna sredstva – s čim oglašujemo</li></ul><ul id="f8068eda-a763-4970-b651-4768c84e7d37" class="bulleted-list"><li style="list-style-type:disc">oglaševalski nosilci – kje oglašujemo</li></ul><ul id="d532d463-b6d4-46b4-945f-24d53ad835b3" class="bulleted-list"><li style="list-style-type:disc">čas oglaševanja – kdaj oglašujemo</li></ul><ul id="9c9a2288-4e2f-4cbd-b0c4-2e016c2ecf0e" class="bulleted-list"><li style="list-style-type:disc">stroški oglaševanja – koliko denarja potrebujemo</li></ul></details></li></ul><ul id="b4af170e-f4fb-4ae3-9c8c-9b96213aa453" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>30 Katera so oglaševalska sredstva in oglaševalski nosilci (mediji)?</strong></mark></summary><table id="8b20adaf-0833-4565-bc4b-456ed53a648c" class="simple-table"><tbody><tr id="eb75efb3-252b-4e0f-8e2e-cf63dae1a95d"><td id="maP?" class=""><strong>Oglaševalsko sredstvo</strong></td><td id="rlwW" class=""><strong>Oglaševalski nosilec (medij)</strong></td></tr><tr id="48b6bd75-4610-4a98-b419-d0b4e95c4feb"><td id="maP?" class=""><strong>oglas</strong></td><td id="rlwW" class=""><strong>dnevni in tedenski časopisi, ilustrirane revije, strokovni časopisi, programi prireditev, telefonski imeniki, itd.,</strong></td></tr><tr id="59a8db99-8326-46da-8110-f331c3047a11"><td id="maP?" class=""><strong>TV spoti, radijski spoti</strong></td><td id="rlwW" class=""><strong>Televizija, radijske postaje</strong></td></tr><tr id="e2a3ddbc-90c2-40dd-a4e9-3264bd88d8e4"><td id="maP?" class=""><strong>oglasni filmi, diapozitivi,</strong></td><td id="rlwW" class=""><strong>Kino, gledališče, prireditve, itd.</strong></td></tr><tr id="2e3cbb38-5595-4af3-b9ee-b69b55e41303"><td id="maP?" class=""><strong>plakati, oglasne table</strong></td><td id="rlwW" class=""><strong>Zidovi za plakatiranje oglasni stebri, javna prevozna sredstva, športna igrišča, itd.</strong></td></tr><tr id="943b8460-e2b5-4055-9399-e894d7c4ae03"><td id="maP?" class=""><strong>Oglasno pismo, letaki, prospekti, katalogi</strong></td><td id="rlwW" class=""><strong>Pošta, razdeljevalci oglaševalskega  materiala, prireditve, časopisne priloge, itd.</strong></td></tr></tbody></table></details></li></ul><ul id="5ca4ec85-1fe3-49a8-af4f-a46e611a7d73" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>31 Katere so faze načrta oglaševalske akcije?</strong></mark></summary><ul id="470546d6-5196-41fc-8634-fdced94bb1fa" class="bulleted-list"><li style="list-style-type:disc">ciljna skupina – komu je oglas namenjen</li></ul><ul id="d6fd18c2-225e-4549-ab8e-b7f5a8874e29" class="bulleted-list"><li style="list-style-type:disc">cilji komuniciranja – kaj hočemo doseči: obvestiti, prepričati, spomniti?</li></ul><ul id="00cefbb4-f948-4bf2-9ce7-fe4d1224765c" class="bulleted-list"><li style="list-style-type:disc">oblikovanje sporočila = ideja = vsebina sporočila</li></ul><ul id="f7cd4d94-4975-493c-afff-f09f78d001ba" class="bulleted-list"><li style="list-style-type:disc">izberemo medij: Tv, radio, tisk, splet.</li></ul></details></li></ul><ul id="d73d0a45-c05b-4a4b-b896-c8d52b9b6fe3" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>32 Razloži oblikovanje sporočila po modelu AIDA.</strong></mark></summary><p id="81e6b26a-d681-47c2-bd35-cdcbabde4e01" class="">MODEL AIDA</p><ol type="1" id="da505e26-7cfb-4a01-8896-70b674b82e2e" class="numbered-list" start="1"><li>Pozornost</li></ol><ol type="1" id="6a2f90a7-70ba-4eec-ac56-912d94eaeeed" class="numbered-list" start="2"><li>Zanimanje</li></ol><ol type="1" id="eb6bcd59-c561-4e46-836f-c3dd4742f2b4" class="numbered-list" start="3"><li>Želja</li></ol><ol type="1" id="aadd67bb-bc81-4845-be5c-8fb75fead931" class="numbered-list" start="4"><li>Akcija</li></ol><p id="a8ebc23c-9934-4f73-babb-c68fe490df0a" class="">Idealno sporočilo mora najprej pritegniti pozornost, vzbuditi zanimanje, spodbuditi željo in povzročiti nakup.</p><p id="c8fbb58c-1503-4579-9527-0ea55c8744d0" class="">zato dobro premislimo:</p><ul id="2e47079d-d337-42b6-9d48-0a83a74d6ef7" class="bulleted-list"><li style="list-style-type:disc">Kaj povedati</li></ul><ul id="b0ad1a4e-2489-40c7-99d6-2711182c6e85" class="bulleted-list"><li style="list-style-type:disc">Kako povedati</li></ul><ul id="b641a39c-5093-4845-a447-3e1577575732" class="bulleted-list"><li style="list-style-type:disc">Kakšno obliko uporabiti</li></ul><ul id="4a29a5f1-2889-4c9a-b354-bc078d32b025" class="bulleted-list"><li style="list-style-type:disc">Kdo naj posreduje sporočilo</li></ul></details></li></ul><ul id="c138a607-3b45-4905-a876-d956b7de4706" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>33 Kaj želi podjetje z orodji za pospeševanje prodaje (ang. sales promotion)?</strong></mark></summary><p id="63af5e0c-090d-407b-afe2-da70d5e60671" class="">Z orodji za pospeševanje prodaje podjetje želi na kratek rok povečati prodajo. Svoje kupce želi nagovoriti, da kupujejo več in pogosteje, ter privabiti kupce konkurenčnih izdelkov.</p></details></li></ul><ul id="e2992985-ac12-4c0d-879e-f5359ac9999f" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>34 S katerimi ugodnostmi in spodbudami podjetje pospešuje prodajo pri trgovcu?</strong></mark></summary><p id="7839cd14-bdd2-42c6-a2d6-9e8acb6d4767" class="">Prodaja je odvisna tudi od trgovca, zato podjetje prodajo pri njem pospešuje z raznimi ugodnostmi in spodbudami: · šolanje prodajnega osebja, tekmovanje prodajalcev na terenu (angl. staff promotion); · spodbujanje trgovskih podjetij (ang. merchandising):</p><ul id="1f25ce71-b04c-4773-8c8c-aa8be0b5232e" class="bulleted-list"><li style="list-style-type:disc">predstavitvijo izdelkov,</li></ul><ul id="29bc2d26-f791-44aa-b8a7-e8452dc29df9" class="bulleted-list"><li style="list-style-type:disc">šolanjem prodajalcev,</li></ul><p id="30cf6561-3a8e-455f-9038-5d1915330632" class="">o pomoč pri opremi, npr. prodajne police, nalepke; · posebna pritegnitev potrošnikov v prodajalnah (angl. consumer promotion) z:</p><ul id="15688ba1-7a90-4914-98f9-2a2cd1ceb2f4" class="bulleted-list"><li style="list-style-type:disc">degustacijo izdelkov, vzorci, nagradnimi igrami</li></ul></details></li></ul><ul id="9ecd323f-9459-458b-a4e8-16f73af728d3" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>35 Kateri so ukrepi za izboljšanje odnosov z javnostmi?</strong></mark></summary><ul id="689804bb-f01e-4811-b2a4-be7cf55de577" class="bulleted-list"><li style="list-style-type:disc">tiskovne konference, npr. pri: o inovacijah, o objavi četrtletnih ali letnih poslovnih rezultatov.</li></ul><ul id="6421b45e-6dcd-40e4-ac06-69fd77233a4b" class="bulleted-list"><li style="list-style-type:disc">plačana ali neplačana pozitivna poročila v tisku,</li></ul><ul id="36617a41-1c17-4eed-97d5-596d6228bc3f" class="bulleted-list"><li style="list-style-type:disc">atraktivno sestavljena poslovna poročila,</li></ul><ul id="087aac1c-b660-47c5-bb61-823102e1355d" class="bulleted-list"><li style="list-style-type:disc">dnevi odprtih vrat,</li></ul><ul id="5fb57b65-16e3-453a-b5ea-a3e6c72f884b" class="bulleted-list"><li style="list-style-type:disc">podpiranje znanstvenih ali kulturnih projektov – sponzoriranje, npr. o podpiranje raziskovalnih projektov, o mladih umetnikov, o športnih društev.</li></ul></details></li></ul><ul id="3c22ede1-182d-4f53-9e51-fccc2a252ad3" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>36 Kaj vključuje neposredno trženje?</strong></mark></summary><ul id="cdca52db-15cf-41ec-ae45-59722155e71b" class="bulleted-list"><li style="list-style-type:disc">osebno prodajo,</li></ul><ul id="8890a49d-9623-4ba3-a8fb-2244115a612c" class="bulleted-list"><li style="list-style-type:disc">neposredno oglaševanje:<ul id="3d4b6acf-9910-4552-a857-76d7e0f75d8c" class="bulleted-list"><li style="list-style-type:circle">po pošti,</li></ul><ul id="97a78455-18a3-48e3-a184-80b094998e36" class="bulleted-list"><li style="list-style-type:circle">po telefonu.</li></ul></li></ul><ul id="93dccf94-0fb1-4350-bf34-a4af01ec56fa" class="bulleted-list"><li style="list-style-type:disc">kataloško trženje,</li></ul><ul id="33033d35-f4a4-48cf-b2c0-171e134c2efc" class="bulleted-list"><li style="list-style-type:disc">TV-prodajo,</li></ul><ul id="932b821f-60b3-4099-88bc-f09e5bd912c5" class="bulleted-list"><li style="list-style-type:disc">trženje v kioskih,</li></ul><ul id="eb27598e-a349-456f-a8f4-d2fcf3b8276a" class="bulleted-list"><li style="list-style-type:disc">elektronsko trženje.</li></ul></details></li></ul><ul id="d864d5ba-3f20-4846-bce5-e7762476dfee" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>37 Pojasni segmentacijo trga.</strong></mark></summary><ul id="3d9cafed-eb63-4f60-828b-1eb00ad039fb" class="bulleted-list"><li style="list-style-type:disc"><strong>Segmentacija / delitev</strong> se nanaša na proces delitve trga na manjše skupine na podlagi določenih značilnosti. To lahko storimo iz različnih razlogov, med drugim zaradi, boljšega razumevanja vedenja potrošnikov ali ugotavljanja trendov ali vzorcev na trgu.</li></ul><ul id="be281bc5-9aad-4465-bf7e-3890afb28eb0" class="bulleted-list"><li style="list-style-type:disc">Beseda “segment” pomeni del.</li></ul></details></li></ul></div></article></body></html>
