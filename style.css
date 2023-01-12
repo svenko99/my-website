@@ -37,3 +37,29 @@ div {
   margin: center;
   margin-left: 105px;
 }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: #1B1E23;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  font-family: "JetBrains Mono";
+  font-weight: 80;
+  border: 2px solid #1B1E23;
+  border-radius: 10px;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  transform: translate(10%, 10%);
+}
+
+  
+
+
+  }
+

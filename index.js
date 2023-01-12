@@ -42,3 +42,14 @@ function updateTimer() {
     document.getElementById("p").textContent = timerString;
   }
 }
+
+const button = document.getElementById("dark-mode-btn");
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  if (button.innerHTML === "Dark Mode") {
+    button.innerHTML = "Light Mode";
+  } else {
+    button.innerHTML = "Dark Mode";
+  }
+}
