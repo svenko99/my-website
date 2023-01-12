@@ -10,6 +10,15 @@ h4 {
   font-weight: 80;
 }
 
+.selection {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#p {
+  font-size: 15px;
+}
+
 div {
   width: 240px;
   height: 450px;
