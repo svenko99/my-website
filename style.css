@@ -43,6 +43,17 @@ div {
   color: white;
 }
 
+@media (max-width: 414px) {
+  #dark-mode-btn {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+
 button {
   background-color: #1B1E23;
   color: #fff;
@@ -59,7 +70,4 @@ button {
 }
 
   
-
-
-  }
 
