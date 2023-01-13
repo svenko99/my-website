@@ -25,20 +25,31 @@ function updateTimer() {
     var minutes = Math.floor(diffMinutes % 60);
     var seconds = Math.floor(diffSeconds % 60);
 
+    // this timer string checks for singular and plural
     var timerString =
       years +
-      " year " +
+      " year" +
+      (years > 1 ? "s" : "") +
+      ", " +
       months +
-      " months " +
+      " month" +
+      (months > 1 ? "s" : "") +
+      ", " +
       days +
-      " days " +
+      " day" +
+      (days > 1 ? "s" : "") +
+      ", " +
       hours +
-      " hours " +
+      " hour" +
+      (hours > 1 ? "s" : "") +
+      ", " +
       minutes +
-      " minutes " +
+      " minute" +
+      (minutes > 1 ? "s" : "") +
+      ", " +
       seconds +
-      " seconds";
-
+      " second" +
+      (seconds > 1 ? "s" : "");
     document.getElementById("p").textContent = timerString;
   }
 }
