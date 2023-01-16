@@ -1,3 +1,5 @@
+// To-do: Add check to a timer if its 0, then don't show it (except for seconds)
+
 var startDate = new Date("2021-06-12");
 var currentTime = new Date();
 var diff = currentTime - startDate;
