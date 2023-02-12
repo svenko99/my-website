@@ -1,9 +1,7 @@
-// To-do: Add check to a timer if its 0, then don't show it (except for seconds)
-
 var startDate = new Date("2021-06-12");
 var currentTime = new Date();
-var diff = currentTime - startDate;
-var diffSeconds = diff / 1000;
+var diffTime = currentTime - startDate;
+var diffSeconds = diffTime / 1000;
 var diffMinutes = diffSeconds / 60;
 var diffHours = diffMinutes / 60;
 var diffDays = diffHours / 24;
@@ -20,10 +18,23 @@ function updateTimer() {
   if (format === "days") {
     document.getElementById("p").textContent = Math.floor(diffDays) + " days";
   } else {
-    var years = Math.floor(diffDays / 365);
-    var months = Math.floor((diffDays % 365) / 30);
-    var days = Math.floor((diffDays % 365) % 30);
-    var hours = Math.floor(diffHours % 24);
+    var years = currentTime.getFullYear() - startDate.getFullYear();
+    var months = currentTime.getMonth() - startDate.getMonth();
+    var days = currentTime.getDate() - startDate.getDate();
+    if (days < 0) {
+      months--;
+      var daysInPrevMonth = new Date(
+        currentTime.getFullYear(),
+        currentTime.getMonth(),
+        0
+      ).getDate();
+      days = daysInPrevMonth + days;
+    }
+    if (months < 0) {
+      years--;
+      months = 12 + months;
+    }
+    var hours = Math.floor(diffHours % 24) + 1;
     var minutes = Math.floor(diffMinutes % 60);
     var seconds = Math.floor(diffSeconds % 60);
 
@@ -31,27 +42,27 @@ function updateTimer() {
     var timerString =
       years +
       " year" +
-      (years > 1 ? "s" : "") +
+      (years > 1 || years == 0 ? "s" : "") +
       ", " +
       months +
       " month" +
-      (months > 1 ? "s" : "") +
+      (months > 1 || months == 0 ? "s" : "") +
       ", " +
       days +
       " day" +
-      (days > 1 ? "s" : "") +
+      (days > 1 || days == 0 ? "s" : "") +
       ", " +
       hours +
       " hour" +
-      (hours > 1 ? "s" : "") +
+      (hours > 1 || hours == 0 ? "s" : "") +
       ", " +
       minutes +
       " minute" +
-      (minutes > 1 ? "s" : "") +
+      (minutes > 1 || minutes == 0 ? "s" : "") +
       ", " +
       seconds +
       " second" +
-      (seconds > 1 ? "s" : "");
+      (seconds > 1 || seconds == 0 ? "s" : "");
     document.getElementById("p").textContent = timerString;
   }
 }
