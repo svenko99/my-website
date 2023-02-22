@@ -16,7 +16,8 @@ function updateTimer() {
   var format = document.querySelector('input[name="format"]:checked').value;
 
   if (format === "days") {
-    document.getElementById("p").textContent = Math.floor(diffDays) + " days";
+    document.getElementById("count").textContent =
+      Math.floor(diffDays) + " days";
   } else {
     var years = currentTime.getFullYear() - startDate.getFullYear();
     var months = currentTime.getMonth() - startDate.getMonth();
@@ -63,7 +64,7 @@ function updateTimer() {
       seconds +
       " second" +
       (seconds > 1 || seconds == 0 ? "s" : "");
-    document.getElementById("p").textContent = timerString;
+    document.getElementById("count").textContent = timerString;
   }
 }
 
