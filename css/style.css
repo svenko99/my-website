@@ -85,8 +85,3 @@ button {
   top: 8px;
   transform: translate(10%, 10%);
 }
-
-button:hover {
-  background-color: #5c6ace;
-  border: 2px solid #5c6ace;
-}
