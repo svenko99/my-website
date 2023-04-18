@@ -35,7 +35,7 @@ function updateTimer() {
       years--;
       months = 12 + months;
     }
-    var hours = Math.floor(diffHours % 24) + 1;
+    var hours = Math.floor(diffHours % 24) + 2;
     var minutes = Math.floor(diffMinutes % 60);
     var seconds = Math.floor(diffSeconds % 60);
 
