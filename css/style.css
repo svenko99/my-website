@@ -15,10 +15,6 @@ a {
   color: #323236;
 }
 
-i {
-  margin-top: 18px;
-  margin-right: 20px;
-}
 .selection {
   margin-top: 15px;
   font-size: 16px;
@@ -64,7 +60,7 @@ i {
 @media (max-width: 414px) {
   #dark-mode-btn {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 50%;
 
     transform: translate(-50%, -50%);
@@ -84,4 +80,19 @@ button {
   right: 20px;
   top: 8px;
   transform: translate(10%, 10%);
+}
+
+.icon {
+  display: inline-block;
+  margin: 0;
+}
+
+.fa-2xl {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 40px; /* Add gap between icons */
+  margin-right: 6px;
 }
