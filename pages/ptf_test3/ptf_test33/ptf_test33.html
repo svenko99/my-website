@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 31px;
+	background-color: #000;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+	color: white;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7c21127b-9792-47f8-8c5d-2ca46d1c9a52" class="page sans"><header><h1 class="page-title"></h1></header><div class="page-body"><ul id="97f46bd7-f3fb-417f-9ee8-ed027b5045ea" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>14 Razloži vrste stroškov v frizerskem salonu.</strong></mark></summary><ul id="7ef4c2b8-ac7d-4fc3-a799-361eb4f4b94e" class="bulleted-list"><li style="list-style-type:disc">Stroški v frizerskem salonu so vsi izdatki, ki nastanejo pri poslovanju. Stroške delimo na:<ul id="e0d964b7-3715-40bc-b6ab-90ed2044c2b6" class="bulleted-list"><li style="list-style-type:circle"><strong>stalne oz. fiksne stroške (FC</strong>) - najemnina,
+zavarovanje, internet, plača direktorja, elektrika</li></ul><ul id="bb1a4242-3b07-465b-933c-61d36427f059" class="bulleted-list"><li style="list-style-type:circle"><strong>spremenljive oz. varibilne (VC) </strong>- potrošni material (šamponi, balazmi, barve, laki…), oglaševanje in marketing, plača zaposlenih </li></ul></li></ul></details></li></ul><ul id="b22046b3-2f5d-4f06-997e-196bd4ec2c25" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>16 Pojasni pojem dobiček in pojem izguba v frizerskem salonu. Pojasni namen dobička.</strong></mark></summary><ul id="61d90901-43ee-4bb7-b579-665889e5ec61" class="bulleted-list"><li style="list-style-type:disc">Če je poslovni izid pozitiven, govorimo o dobičku, če pa je negativen govorimo o izgubi.</li></ul><ul id="455eb47d-77f1-4416-8dd9-7eeb95df8be3" class="bulleted-list"><li style="list-style-type:disc">Namen dobička je torej zagotoviti stabilnost podjetja in mu omogočiti, da se prilagaja spreminjajočim se razmeram na trgu ter izkorišča nove poslovne priložnosti.</li></ul><ul id="9e35bd1a-9a32-4c18-a996-515c64804385" class="bulleted-list"><li style="list-style-type:disc">Namen dobička je zagotavljanje finančnega blagostanja podjetja in ohranjanje njegovega dolgoročnega obstoja.</li></ul><ul id="db810280-8261-4573-bc49-0ca6c71360be" class="bulleted-list"><li style="list-style-type:disc">Dobiček podjetju omogoča tudi, da si izplača dividende delničarjem.</li></ul><ul id="8c641dcb-9798-4aa0-9f3e-6f78e64f3b76" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>17 Razloži produktivnost dela v frizerskem salonu. Kateri dejavniki vplivajo na produktivnost dela?</strong></mark></summary><ul id="bccb1c7c-2184-42b4-b627-6fa32e02522f" class="bulleted-list"><li style="list-style-type:disc">Produktivnost dela v frizerskem salonu predstavlja razmerje med proizvedeno količino storitev in zanj vloženim delovnim časom.<figure id="224dc0d6-c4ce-47aa-b2fd-454cbb7b9c9c" class="image"><a href="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Untitled.png"><img style="width:384px" src="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Untitled.png"/></a></figure></li></ul><ul id="2152026f-2e8a-441b-8a31-951c974c30b1" class="bulleted-list"><li style="list-style-type:disc">Izraža uspešnost dela proizvodnje.</li></ul><ul id="1de9fe3f-c0c9-4ac6-b497-4e2e78b8ee4d" class="bulleted-list"><li style="list-style-type:disc">Na produktivnost dela vplivajo različni dejavniki:<ul id="10616222-fac2-42c7-b5b8-c951122ea5e4" class="bulleted-list"><li style="list-style-type:circle"><strong>tehnični</strong> (vrsta opreme, kvaliteta surovin ...)</li></ul><ul id="133501f2-7447-4fc4-9a58-56156b12c145" class="bulleted-list"><li style="list-style-type:circle"><strong>organizacijski</strong> (ustrezna organizacija dela, delovni razporedi, normiranje dela)</li></ul><ul id="51dbd002-2ad5-41d6-817d-8196393f74a1" class="bulleted-list"><li style="list-style-type:circle"><strong>kadrovski</strong> (usposobljenost delavcev, delovni pogoji, disciplina,
+motiviranost delavcev za delo - ustrezne plače)</li></ul><ul id="f4d7d115-db99-4143-b638-1e635caa19d1" class="bulleted-list"><li style="list-style-type:circle"><strong>tržni</strong> (možnost prodaje izdelkov, konkurenca, kupna moč prebivalstva - politične razmere)</li></ul><ul id="e4eecde4-7580-40f6-ad20-18541111c532" class="bulleted-list"><li style="list-style-type:circle"><strong>vremenske</strong> in podobne razmere</li></ul></li></ul></details></li></ul></details></li></ul><ul id="0f5c42ca-2a1b-4cfa-9d6c-92ccaf336c60" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>17 Razloži produktivnost dela v frizerskem salonu. Kateri dejavniki vplivajo na produktivnost dela?</strong></mark></summary><ul id="f87a6363-ff76-4d1f-9803-d8500f4e5002" class="bulleted-list"><li style="list-style-type:disc">Produktivnost oz. proizvodnost je razmerje med doseženim razultati in vloženim delom, torej to pomeni, koliko naredimo na enoto.</li></ul><ul id="68a56ba0-ba33-439a-a293-8bb10037de7e" class="bulleted-list"><li style="list-style-type:disc">Na produktivnost vplivajo različni dejavniki:<ul id="b539e4e8-e114-42d7-8e64-abae55a49feb" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em>tehnični</em></span> (vrsta opreme, kvaliteta surovin...)</li></ul><ul id="d7469bfc-23e1-401c-9271-833c3d3fe546" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em>organizacijski</em></span> (ustrezna organizacija dela, delovni razporedi)</li></ul><ul id="318f1909-2924-4786-ba86-3f49012dae35" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em>kadrovski</em></span> (usposobljenost delvacev, delovni pogoji, disciplina)</li></ul><ul id="cae8eec0-ae4e-42bb-bc28-5ec267cc1cfc" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em>tržni</em></span> (možnost prodaje izdelkov, konkurenca)</li></ul><ul id="11914044-4771-4d09-bf48-1680df8f40a4" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em>vremenske</em></span> in podobne razmere</li></ul></li></ul></details></li></ul><ul id="ba24467f-b233-4650-a888-e69524b53072" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>18 Pojasni kazalnik tehnične opremljenosti dela.</strong></mark></summary><ul id="2bcd441c-97ff-489b-8d77-fc652927fa0d" class="bulleted-list"><li style="list-style-type:disc">Kazalnik tehnične opremljenosti dela predstavlja razmerje med vrednostjo osnovnih sredstev podjetja in številom zaposlenih v podjetju. Ta kazalnik omogoča podjetju, da oceni, kako učinkovito izkorišča svoje osnovna sredstva glede na število zaposlenih, ki so vključeni v proizvodni proces ali izvajajo storitve.</li></ul><ul id="56713838-b9b2-4afb-b139-c6dc7092f2d9" class="toggle"><li><details ><summary><strong>PRIMER</strong></summary><ul id="0c539595-49b6-48bc-8789-b079a11b8950" class="bulleted-list"><li style="list-style-type:disc">Recimo, da ima frizerski salon 3 frizerske stole, 2 umivalnika, 1 sušilnik za lase, 1 grelec za lase in 1 klimatsko napravo. Skupna vrednost teh osnovnih sredstev znaša 15.000 EUR. V salonu ima 5 zaposlenih frizerjev, kar pomeni, da je kazalnik tehnične opremljenosti 15.000 EUR / 5 = 3.000 EUR na zaposlenega.</li></ul><ul id="60f3dbc9-b272-4eb9-9d37-2c199d47e0e5" class="bulleted-list"><li style="list-style-type:disc">Visok kazalnik tehnične opremljenosti na zaposlenega lahko kaže na to, da ima salon dobro opremljene delovne prostore in da lahko frizerji učinkovito uporabljajo razpoložljivo opremo za izvajanje storitev. To lahko prispeva k zadovoljstvu strank, saj bodo frizerji lahko hitreje in učinkoviteje opravljali svoje delo.</li></ul></details></li></ul></details></li></ul><ul id="31f32984-6da1-41f5-9086-01858426f535" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>19 Pojasni kazalnik produktivnosti dela.</strong></mark></summary><figure id="8a2e44f6-f237-4a4f-bdaf-ded580274ce1" class="image"><a href="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-01-26_at_08.27.23.png"><img style="width:288px" src="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-01-26_at_08.27.23.png"/></a></figure><ul id="b30fc9f1-258c-4b34-85f1-39d109403ef7" class="bulleted-list"><li style="list-style-type:disc">Produktivnost oz. proizvodnost je razmerje med doseženim razultati in vloženim delom, torej to pomeni, koliko naredimo na enoto.</li></ul><ul id="12085bca-1f09-405a-85cf-5515c7230713" class="bulleted-list"><li style="list-style-type:disc">Enota je lahko časovna (koliko naredimo na uro, dan, mesec, leto ali pa je enota delavec) (koliko naredimo na delavca)</li></ul><ul id="8075d516-f58b-4322-888a-82ef9c449843" class="bulleted-list"><li style="list-style-type:disc">Produktivnost se izraža v količinah ali v denarni obliki.</li></ul></details></li></ul><ul id="ae498b27-896c-4927-bf17-ea7c779d567a" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>20 Razloži vrednostno produktivnost dela.</strong></mark></summary><ul id="2d0c9271-c331-482a-b519-56615cf7b1b2" class="bulleted-list"><li style="list-style-type:disc">Produktivnost vrednostna (prihodki / št. delavcev) (izraža v denarju)</li></ul><ul id="46345d84-4395-4d37-9d7c-f3e1db9d5a22" class="bulleted-list"><li style="list-style-type:disc">Produktivnost vrednostna (prihodki / št. ur) (izraža v denarju)</li></ul></details></li></ul><ul id="02690911-be80-4a84-8f26-708be3b04dd0" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>21 Razloži kazalnik ekonomičnosti.</strong></mark></summary><ul id="032cfd06-89c5-49d7-8b71-e38b137b2416" class="bulleted-list"><li style="list-style-type:disc">ekonomičnost oz. gospodarnost</li></ul><ul id="052e1882-1173-4505-ac22-b0f1fcabc88e" class="bulleted-list"><li style="list-style-type:disc">Ekonomičnost oz. gospodarnost je razmerje med doseženimi rezultati in stroški poslovanja.</li></ul><ul id="3d40cce3-f571-4888-a8cb-957ce590db63" class="bulleted-list"><li style="list-style-type:disc">Pomeni narediti čim več s čim manjšimi stroški.</li></ul><ul id="ae8c978e-44df-491b-8c44-e4cdccf8533a" class="bulleted-list"><li style="list-style-type:disc">Podjetje posluje ekonomično, če je razmerje med celotnimi poslovnimi prihodki in odhodki večje od ena. V tem primeru posluje tudi z dobičkom.</li></ul><figure id="4427c715-bfa3-4505-9fe3-ef50526e8543" class="image"><a href="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Untitled%201.png"><img style="width:1146px" src="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Untitled%201.png"/></a></figure></details></li></ul><ul id="b1aee9d4-a2af-4db3-ada1-47cd54d41ed7" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>22 Razloži kazalnik rentabilnosti.</strong></mark></summary><ul id="be446517-f3e3-4d3c-8a4d-f7c90062ad1b" class="bulleted-list"><li style="list-style-type:disc">rentabilnost ali donosnost</li></ul><ul id="ad4f1adb-7949-4f29-9c42-598c5a3d6f2e" class="bulleted-list"><li style="list-style-type:disc">Rentabilnost predstavlja razmerje med dobičkom in zanj vloženim kapitalom oz. sredstvi.</li></ul><ul id="04beb6f3-a418-430d-a7a9-aa7d98a6fd2c" class="bulleted-list"><li style="list-style-type:disc">Naložbe oz. investicije, ki se povrnejo v manj kot letu dni, so izredno rentabilne.</li></ul><ul id="d60d9838-149e-4a49-bbb6-2bc81a6c33c7" class="toggle"><li><details ><summary><strong>Primer</strong></summary><p id="8048fc4e-a890-492d-9ce7-84a933a0ae46" class="">Primer rentabilnosti v realnem življenju bi lahko bil investicija v sončno elektrarno na strehi hiše. Predpostavimo, da imate hišo, na katero bi lahko namestili sončne panele, in se odločite vložiti 50.000 evrov v nakup in namestitev teh panelov.</p><p id="256c2704-e26b-4f3e-b0cc-49904dae0405" class="">Letno pričakujete, da boste zaradi sončne elektrarne prihranili 5.000 evrov na električnih stroških. Poleg tega lahko prodajate presežno električno energijo nazaj v omrežje po ceni 2.000 evrov letno. Skupni letni dohodek iz sončne elektrarne je torej 7.000 evrov.</p><p id="c372d521-4cf3-4385-b41f-72ceb915f81f" class="">Da izračunamo rentabilnost, moramo upoštevati tudi stroške. Predpostavimo, da ima sončna elektrarna vzdrževalne stroške v višini 1.000 evrov na leto.</p><p id="a1c72234-6b93-4615-9b5c-00b1a8e86249" class="">Neto dobiček iz sončne elektrarne se izračuna kot letni dohodek minus vzdrževalni stroški:</p><p id="dfdf3082-dad4-40b2-ab5a-e8f169aefa02" class="">Neto dobiček = 7.000 evrov - 1.000 evrov = 6.000 evrov</p><p id="5b349c6f-8de7-44b4-a768-4c1af778e1b4" class="">Rentabilnost se izračuna kot razmerje med neto dobičkom in vloženim kapitalom:</p><p id="5bf84baf-793b-44e4-b7a2-868b5564fb34" class="">Rentabilnost = Neto dobiček / Vloženi kapital</p><p id="e16402fb-fc49-407e-a0dc-65feef5bdff9" class="">Rentabilnost = 6.000 evrov / 50.000 evrov ≈ 0,12 ali 12%</p><p id="5111a30c-1ec9-452a-9448-74de40aac046" class="">V tem primeru je rentabilnost 12%. To pomeni, da bi se vloženi kapital povrnil v približno 8 letih in 4 mesecih (50.000 evrov / 6.000 evrov letno). Glede na navedeno, bi lahko rekli, da je investicija v sončno elektrarno na strehi hiše izredno rentabilna, saj se povrne v relativno kratkem času.</p></details></li></ul><figure id="aa6c8bc8-d7a1-455e-89e0-0f05f094bcba" class="image"><a href="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-05-12_at_13.41.162x.png"><img style="width:192px" src="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-05-12_at_13.41.162x.png"/></a></figure></details></li></ul><ul id="56be2fc0-dcde-4394-b0c6-40a46478c192" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>23 Pojasni pojem likvidnost.</strong></mark></summary><ul id="6d13a321-ed77-4499-b5a5-73c3b44f1c51" class="bulleted-list"><li style="list-style-type:disc">Likvidnost ali plačilna sposobnost pomeni ali smo sposobni plačati vse obveznosti (račune).</li></ul><ul id="a7ba49e3-374d-465a-b995-592ec15aeb18" class="bulleted-list"><li style="list-style-type:disc">Likvidnost je razmerje med razpoložljivimi denarnimi sredstvi in zapadlimi obveznostmi.</li></ul><ul id="e78d185e-f0d3-41d7-9d83-83736c732af2" class="bulleted-list"><li style="list-style-type:disc">Če podjetje ni likvidno, si lahko pomaga tako, da najame posojilo.</li></ul><ul id="56f06dcc-f790-4d3d-ad8c-265123fbbd5e" class="bulleted-list"><li style="list-style-type:disc">Če je podjetje nelikvidno, se blokira transakcijski račun in podjetje ne more finančno poslovati.</li></ul><ul id="a8c17379-01a1-46c3-b6a6-c49622fe63f3" class="bulleted-list"><li style="list-style-type:disc">Kljub temu, da je boljše imeti visoko likvidnost, kot nizko likvidnost je pomembno vedeti, da visoka likvidnost lahko kaže, da se podjetje preveč osredotoča na likvidnost, kar lahko negativno vpliva na učinkovito uporabo kapitala in razširitev poslovanja. (podjetje nikamor ne investira)</li></ul><figure id="5fd29394-a15a-4990-8180-6a1506c96394" class="image"><a href="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-05-12_at_14.05.242x.png"><img style="width:336px" src="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-05-12_at_14.05.242x.png"/></a></figure></details></li></ul><ul id="4ba508d1-370f-40d2-97e6-1cc6e4c6b755" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>24 Naštej dejavnike, ki pozitivno vplivajo na likvidnost.</strong></mark></summary><ul id="de23b4b1-a559-4a75-9956-d756bae0f7e4" class="bulleted-list"><li style="list-style-type:disc">Na likvidnost pozitivno vplivajo naslednji dejavniki:<ul id="0e32b554-99b2-4649-9710-e79326254a37" class="bulleted-list"><li style="list-style-type:circle">prodaja za takojšnje plačilo, ne pa na kredit</li></ul><ul id="86416043-dbfb-405c-8686-46ed98a3fe9c" class="bulleted-list"><li style="list-style-type:circle">prodaja za gotovino, ne pa na čeke, kreditne kartice, naročilnice, voucherje</li></ul><ul id="c735429b-312d-4ab2-a43d-f9ac9232e402" class="bulleted-list"><li style="list-style-type:circle">čim manjši stroški</li></ul><ul id="c2b37fb7-45bb-4f1e-a077-6038935afa0b" class="bulleted-list"><li style="list-style-type:circle">čim manjše zaloge (s tem je manj vezanega denarja)</li></ul><ul id="14667e7b-f61d-4c2d-94f7-f571858ea891" class="bulleted-list"><li style="list-style-type:circle">nabava na kredit</li></ul><ul id="1b7657a4-1783-4c93-98fa-07ee8002bbf7" class="bulleted-list"><li style="list-style-type:circle">čim boljša in hitra izterjava terjatev (pri nas je velik problem finančna nedisciplina)</li></ul></li></ul></details></li></ul><ul id="353a9cd9-ca1e-493f-b94d-f151ae7d43f1" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>25 Razloži kazalnik akumulativnosti.</strong></mark></summary><ul id="17abcaf7-7365-40ff-9bd4-1c74772d17e7" class="bulleted-list"><li style="list-style-type:disc">Akumulativnost je zbiranje denarnih sredstev za razvoj oz. razširitev.</li></ul><ul id="ce9ef8ff-5780-42ad-b405-61a458e07e11" class="bulleted-list"><li style="list-style-type:disc">Akumulacija pomeni zbiranje (npr. akumulacijsko jezero zbira vodo, akumulator zbira energijo)</li></ul><ul id="eb5726dd-f9ab-48e3-bf04-5295bf948e18" class="bulleted-list"><li style="list-style-type:disc">Akumulacija v ekonomskem pomenu pa je zbiranje denarnih sredstev.</li></ul><ul id="f220c7f7-e0d4-46cb-a6a9-13c2543deede" class="bulleted-list"><li style="list-style-type:disc">Podjetje je akumulativno takrat, ko je poslovalo z dobičkom in je del dobička namenilo za razvoj oz. razširitev<figure id="e704b630-787b-4435-9ff1-99d633c4b389" class="image"><a href="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-05-12_at_14.10.232x.png"><img style="width:718px" src="Untitled%207c21127b979247f88c5d2ca46d1c9a52/Screenshot_2023-05-12_at_14.10.232x.png"/></a></figure></li></ul></details></li></ul><ul id="ff92ec0f-73d5-40cf-9189-5eba7103903b" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>26 Pojasni pojem trajnostni razvoj v frizerstvu.</strong></mark></summary><ul id="358b5a39-f543-4b57-b539-19ed04495e62" class="bulleted-list"><li style="list-style-type:disc">Trajnostni razvoj v frizerstvu pomeni zagotavljanje kakovostnih frizerskih storitev ob hkratnem zmanjševanju negativnega vpliva na okolje in družbo. To vključuje uporabo okolju prijaznih izdelkov, recikliranje odpadkov, zmanjševanje porabe vode in energije.</li></ul><ul id="138ad600-c165-4084-beab-ba5078507f37" class="bulleted-list"><li style="list-style-type:disc">Sodobni potrošniki namreč vse bolj iščejo podjetja, ki se zavedajo svoje odgovornosti do okolja in družbe.</li></ul></details></li></ul><ul id="ca75a180-a182-4f82-8317-5b6c3396f191" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>27 Katera podjetja poznaš? Naštej jih po dejavnosti in glede na pravnoorganizacijsko obliko.</strong></mark></summary><ul id="6c054c91-935a-4969-82e4-a8c8201b511f" class="bulleted-list"><li style="list-style-type:disc">Fizična oseba: <strong>s.p.</strong></li></ul><ul id="6aa6c9c5-bc32-4cf2-b580-8810d3a9e078" class="toggle"><li><details ><summary>Pravna oseba:</summary><ul id="83fa0b77-5ca6-4ff6-8437-fb2061e7def2" class="bulleted-list"><li style="list-style-type:disc">osebne družbe:<ul id="c36ba684-1025-44ba-bb13-9fb74bc5dd70" class="bulleted-list"><li style="list-style-type:circle"><strong>d.n.o. </strong>—&gt; tisit ki to ustavnovi jamči neomejeno z svojim premoženjem,</li></ul><ul id="21fdc306-0210-4ef2-9130-d2d2798b88bb" class="bulleted-list"><li style="list-style-type:circle"><strong>t.d. </strong>(tiha družba)</li></ul><ul id="a26396cf-93f4-44b5-bd80-432d09f362ff" class="bulleted-list"><li style="list-style-type:circle"><strong>k.d. </strong>(komanditna družba))</li></ul></li></ul><ul id="6a438a26-09db-4c00-9cf1-e5afb3cfbfde" class="bulleted-list"><li style="list-style-type:disc">kapitalske družbe:<ul id="e0b6935d-96ba-4523-b00e-e22fd9a21c57" class="bulleted-list"><li style="list-style-type:circle"><strong>d.o.o.</strong> (družba z omejeno odgovornostjo) → jamčijo z vloženim kapitalom 7500e</li></ul><ul id="81f10a5a-6c82-424b-af39-5140e0c6588f" class="bulleted-list"><li style="list-style-type:circle"><strong>d.d.</strong> (delniške družbe: banka, zavarovalnica)</li></ul><ul id="8267a90a-b1a8-4554-a7e6-2bfe74a4758e" class="bulleted-list"><li style="list-style-type:circle"><strong>k.d.d.</strong> (komanditna delniška družba)</li></ul></li></ul></details></li></ul></details></li></ul><ul id="7f1c2a29-0860-451b-8447-a182f89374cf" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>28 Kaj je delniška družba – d. d. ?</strong></mark></summary><ul id="33ca0ebc-61c1-4062-933f-f528d016c554" class="bulleted-list"><li style="list-style-type:disc">Delniška družba je kapitalska družba, ki ima osnovni kapital (osnovno glavnico) razdeljen na delnice.</li></ul><ul id="e95f4492-38b4-4c3e-b577-87efa92a634f" class="bulleted-list"><li style="list-style-type:disc">Predstavlja jo pravna oseba, kar pomeni, da je le-ta samostojni nosilec pravic in obveznosti v pravnem prometu.</li></ul></details></li></ul><ul id="5e925a8a-5f32-4a4e-9ea6-13235e124eb5" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>29 Kdo ustanovi d. d.?</strong></mark></summary><ul id="1add5a8c-a907-40f2-800b-a2a1c54ce6f6" class="bulleted-list"><li style="list-style-type:disc">Delniško družbo lahko ustanovi <mark class="highlight-red">ena ali več domačih</mark> ali tujih fizičnih ali pravnih oseb, ki sprejmejo <strong><mark class="highlight-red">statut</mark></strong> (ustanovitveni akt), ki mora biti pripravljen v obliki <mark class="highlight-red">notraskega zapisa</mark>. </li></ul><ul id="2b128b76-a312-4d89-8109-04713c178e17" class="bulleted-list"><li style="list-style-type:disc">Delničarji (imetniki delnic) niso lastniki družbe, temveč na podlagi vplačanega deleža (delnic) v osnovnem kapitalu le <mark class="highlight-red">uresničujejo svoje članske in premoženjske pravice.</mark></li></ul></details></li></ul><ul id="5d6bcfa1-4ac1-409b-8f89-05510ce6b825" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>30 Pojasni pomen statuta d. d.</strong></mark></summary><ul id="959eb94b-fb6f-4695-a05a-5502eff18ca0" class="bulleted-list"><li style="list-style-type:disc">Statut je ustanovitveni akt delniške družbe in je zato <mark class="highlight-red">najpomembnejši akt D.D.</mark>, ker ureja <mark class="highlight-red">način njenega delovanja in razmerja med družbeniki.</mark></li></ul></details></li></ul><ul id="6ce585af-a11e-42cc-af9b-f237d728a527" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>32 Kaj so obveznice?</strong></mark></summary><ul id="886fab0f-f282-4453-8670-e1593fbadf25" class="bulleted-list"><li style="list-style-type:disc">Obveznica je dolžniški vrednostni papir, pri katerem se izdajatelj (dolžnik) obveznice obveže, da bo ob določenem času poplačal glavnico (posojilo) in dogovorjene obresti imetniku te obveznice (upnik).</li></ul><ul id="92793721-a062-48b5-b033-db5eb8407489" class="bulleted-list"><li style="list-style-type:disc">Izdajatelj obveznice je lahko država, občina, investicijski sklad ali podjetje. Navadno so obveznice države najvarnejše.</li></ul></details></li></ul><ul id="86e3a63b-25ca-4c46-9eca-be4413926686" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>33 Kaj so delnice? Naštej vrste delnic.</strong></mark></summary><ul id="896d0b1e-315a-441a-8ad2-edee9d649494" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">Delnice so vrednostni papirji</mark>. Glasijo se na prinosnika ali na ime.</li></ul><ul id="1a49e219-6ae4-4849-8773-aa2fb2e844a0" class="bulleted-list"><li style="list-style-type:disc">Delnica <mark class="highlight-red">ima dvojni pomen</mark>, po eni strani predstavlja enakopraven del osnovnega kapitala, obenem pa predstavlja vrednostni papir, ki vključuje <mark class="highlight-red">vsebino člasnkih pravic njenega imetnika. Članske pravice vključujejo premoženjske pravice in članske pravice v ožjem smislu. Najpomembnejša premoženjska pravica je</mark> pravica do udeležbe pri delitvi dobička, najpomembnejša članskega pravica pa je udeležba pri upravljanju družbe.</li></ul><ul id="94685110-941e-4b83-a913-8c53bbf8d709" class="bulleted-list"><li style="list-style-type:disc">Vrste:<ul id="80fd27fc-f1c1-4fb4-bf14-d75642f359ed" class="bulleted-list"><li style="list-style-type:circle">Delnice glede na pravice delimo na <mark class="highlight-red"><strong>navadne (redne)</strong></mark> in <mark class="highlight-red"><strong>prednostne (ugodnostne)</strong></mark>. </li></ul><ul id="1035cf2d-9221-4374-8f07-27390832ba95" class="bulleted-list"><li style="list-style-type:circle"><em>Dividendne delnice</em> - (delničarji so izplačani v obliki dividend)</li></ul><ul id="a59f8cce-364b-4aef-826c-6639ecb78429" class="bulleted-list"><li style="list-style-type:circle"><em>Delnice modrih čipov</em> - (delnice dobro uveljavljenih podjetji)</li></ul><ul id="5c39f669-9085-4693-91a0-46f807cba8e8" class="bulleted-list"><li style="list-style-type:circle"><em>Delnice ESG</em> - (ESG pomeni Environmental, Social, Governance - okolje, družba, upravljanje)</li></ul></li></ul></details></li></ul><ul id="64fdda34-03d1-45bd-8df2-3c3ec62b9ba5" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>34 Pojasni pomen delnic.</strong></mark></summary><ul id="e214c7e5-f888-4289-a761-b1a61a3efcfd" class="bulleted-list"><li style="list-style-type:disc">Delnice imajo dvojni pomen, po eni strani predstavljajo enakopravni del osnovnega kapitala, po drugi strani pa predstavljajo članske pravice, ki jih ima imetnik delnice. V članske pravice spada premoženjska pravica in članske pravice v ožjem smislu. Najpomembnejša premoženjska pravica je pravica udeležitve pri delitvi dobička (devidenda) in najpomembnejša članska pravica je pravica udeležitvi pri upravljanju družbe.</li></ul></details></li></ul><ul id="f8b7e5d0-ebcf-4e6c-955b-637679935f6d" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>35 Kako delimo delnice glede na pravice? Pojasni razlike med njimi.</strong></mark></summary><ul id="6e78351d-6689-44f8-85a6-2a159cc9df13" class="bulleted-list"><li style="list-style-type:disc">Delnice glede na pravice delimo na <mark class="highlight-red"><strong>navadne (redne) </strong></mark>in <mark class="highlight-red"><strong>prednostne (ugodnostne)</strong></mark>. <ul id="b9fe02fd-0b25-418d-9098-b7d4afef6819" class="toggle"><li><details ><summary><mark class="highlight-red">Navadne ali redne delnice dajo imetniku pravico do:</mark></summary><ul id="7b3cd258-1558-48f1-9fdf-5f8f870b5239" class="bulleted-list"><li style="list-style-type:disc">udeležbe pri upravljanju družbe,</li></ul><ul id="38dee893-7206-44a9-af5e-359170fe5337" class="bulleted-list"><li style="list-style-type:disc">dela dobička (dividenda),</li></ul><ul id="443d87a4-3cf6-45ab-aa58-369fe47bed4a" class="bulleted-list"><li style="list-style-type:disc">ustreznega dela preostalega premoženja po likvidaciji ali stečaju družbe.</li></ul></details></li></ul><ul id="7157718d-4b19-441c-8ed8-ddd6b9204c41" class="toggle"><li><details ><summary><mark class="highlight-red">Prednostne ali ugodnostne delnice</mark> zagotavljajo poleg vsega navedenega še določene prednostne pravice:</summary><ul id="b71e9176-49be-4f23-99a2-317262405c92" class="bulleted-list"><li style="list-style-type:disc">pri izplačilu vnaprej določenih zneskov ali odstotkov od nominalne vrednosti delnic ali od dobička,</li></ul><ul id="7e4dfac1-8b63-49d0-9d23-4e49833c6d76" class="bulleted-list"><li style="list-style-type:disc">pri izplačilu ob likvidaciji družbe,</li></ul><ul id="3c741e9c-8b85-406d-85bd-78f2da8dc5e6" class="bulleted-list"><li style="list-style-type:disc">druge pravice, določene s statutom družbe.</li></ul></details></li></ul><ul id="179837f2-7f4c-46e4-bf68-a056e9cff647" class="bulleted-list"><li style="list-style-type:circle">Vsaka delnica zagotavlja tudi <mark class="highlight-red">glasovalno pravico</mark>. Brez glasovalne pravice se lahko izdajajo samo prednostne delnice, vendar družba ne sme imeti več kot polovice tovrstnih delnic v sestavi osnovnega kapitala.</li></ul></li></ul></details></li></ul><ul id="2024bb77-6809-42e5-a181-2f76c4fd891a" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>36 Razloži razliko med delnicami in obveznicami. </strong></mark></summary><ul id="011e13d0-f0e4-47fd-9836-56660264bdac" class="bulleted-list"><li style="list-style-type:disc">Razlika med delnicami in obveznicami je v tem, da delnice predstavljajo lastniški vrednostni papir, medtem ko obveznice predstavljajo dolžniški vrednostni papir. Delničarji imajo pravico do glasovanja na skupščinah in imajo koristi od rasti vrednosti delnice in/ali izplačila dividend, medtem ko obvezničarji prejemajo obresti na vloženi kapital in imajo prednostno pravico do poplačila dolga v primeru stečaja podjetja.</li></ul></details></li></ul><ul id="0ae29086-93ff-4f9b-9be4-41eea3c782f0" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>37 Razloži postopek ustanovitve d. d.</strong></mark></summary><ul id="07d684c6-3ec8-475e-8762-e82ca6649481" class="bulleted-list"><li style="list-style-type:disc">Delniška družba se ustanovi pri <strong><em><span style="border-bottom:0.05em solid">notarju</span></em></strong>. Notar sestavi vse potrebne listine. Za sestavo in podpis listin je potrebna osebna prisotnost ustanoviteljev (fizične osebe, oziroma zakoniti zastopniki pravnih oseb). Ustanovitelji <strong>sprejmejo statut</strong>.</li></ul><ul id="1fa8ce21-68b8-4a58-a3ce-8d3cc34a2db1" class="bulleted-list"><li style="list-style-type:disc"><strong>Ustanovitvena skupščina</strong> mora biti sklicana najpozneje v dveh mesecih po poteku roka za vpis delnic. Če se ustanovitvena skupščina ne skliče, se šteje, da <strong>ustanovitev družbe ni uspela</strong>. Na ustanovitveni skupščini se ugotavlja pravilnost vpisa delnic in izvoli tiste organe družbe, za katere je po zakonu o gospodarskih družbah pristojna skupščina. Šele ko so sprejeti vsi sklepi skupščine, je delniška družba ustanovljena.</li></ul><ul id="26504c5b-eb6e-416b-97c7-90db0c3ca2a7" class="bulleted-list"><li style="list-style-type:disc">Pri delniški družbi poznamo dva načina ustanovitve:<ul id="f52a15b2-c7a1-4989-a1eb-0cce3b89f947" class="toggle"><li><details ><summary><strong><mark class="highlight-red">sočasna (simultana) ustanovitev</mark></strong></summary><p id="d732e97b-4c46-4fc1-95a5-0cb5261e224d" class="">To pomeni, da vsi ustanovitelji sprejmejo in podpišejo statut ter sami prevzamejo delnice. Družba je ustanovljena, ko ustanovitelji prevzamejo vse delnice.</p></details></li></ul><ul id="0483acc1-c0f7-49f5-89c1-204385bb0641" class="toggle"><li><details ><summary><strong><mark class="highlight-red">postopna (sukcesivna) ustanovitev</mark></strong></summary><p id="cb3a564c-ae43-4514-894d-3138202d1e9c" class="">To pomeni, da se izvede z javnim vpisom delnic (prospekt) na podlagi oglasa.</p></details></li></ul></li></ul></details></li></ul><ul id="3b2d286c-6be8-4b83-b665-a52e9558122b" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>38 Opiši funkcije organov vodenja v d. d. (nadzorni svet, upravo, upravni odbor in skupščino).</strong></mark></summary><ul id="1e573773-c7bf-4838-ad4b-7b4b6b723514" class="toggle"><li><details ><summary><mark class="highlight-red">NADZORNI SVET</mark></summary><ul id="4e6f0f6c-d7a4-4879-af45-0d88a59aa6f1" class="bulleted-list"><li style="list-style-type:disc">Vloga nadzornega sveta je nadzor nad vodenjem poslov družbe, kar mu daje pravico, da od uprave zahteva poročanje o vprašanjih, ki se mu zdijo pomembna. Nadzorni svet <strong>mora imeti vsaj tri člane. </strong>Ena skupina članov nadzornega sveta zastopa <strong>interese delničarjev </strong>(te člane imenuje skupščina), druga skupina pa so <strong>predstavniki delavcev </strong>(kot določa Zakon o sodelovanju delavcev pri upravljanju).</li></ul></details></li></ul><ul id="14b98107-e17e-489c-8c62-efa100fbe8dd" class="toggle"><li><details ><summary><mark class="highlight-red">UPRAVA</mark></summary><ul id="48081a52-a756-4f88-ac8b-a9eb61b5e047" class="bulleted-list"><li style="list-style-type:disc">Uprava je nosilec dveh funkcij, to sta <strong>poslovodstvo in zastopanje delniške družbe</strong>. Uprava je lahko individualni ali kolektivni organ, član uprave pa je lahko vsaka fizična oseba, tudi če ni delničar. Člane uprave (direktorje) imenuje nadzorni svet za obdobje, ki je določeno v statutu in ni daljše od 6 let, imajo pa možnost ponovnega imenovanja.</li></ul></details></li></ul><ul id="a9470571-b3ac-4d1d-9a0f-2c529f8363e4" class="toggle"><li><details ><summary><mark class="highlight-red">UPRAVNI ODBOR</mark></summary><ul id="0f8ad7d2-0d2a-4042-b9db-af83fe80a989" class="bulleted-list"><li style="list-style-type:disc">V delniški družbi, ki pozna <strong>le enotirni sistem upravljanja, poleg skupščine obstaja upravni odbor</strong>, ki ima podobne funkcije kot nadzorni svet v dvotirnem sistemu. Upravni odbor vodi družbo, nadzoruje opravljanje njenih poslov, ter jo zastopa in predstavlja.</li></ul></details></li></ul><ul id="9de1d08d-3e32-4c00-8fd5-cf1f01d14efa" class="toggle"><li><details ><summary><mark class="highlight-red">SKUPŠČINA</mark></summary><ul id="cc0726a4-bb0b-4a52-a7b5-c804e0c5fcd1" class="bulleted-list"><li style="list-style-type:disc">Vsaka delniška družba ima organ, ki se imenuje <strong>skupščina</strong>. V tem organu delničarji uresničujejo svoje pravice in odločajo o sprejetju letnega poročila, uporabi bilančnega dobička, imenovanju, oziroma odpoklicu članov nadzornega sveta ali upravnega odbora, spremembi statuta, imenovanju revizorja itd.</li></ul></details></li></ul></details></li></ul><ul id="81095a2e-7ee7-4ce3-9105-2cec08ed0ec5" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>39 Pojasni prednosti d. d. Pojasni slabosti d. d.</strong></mark></summary><ul id="f34c9c4e-db86-48ab-a7b7-0c6a335ca598" class="bulleted-list"><li style="list-style-type:disc">Prednosti delniških družb so predvsem v tem, da:<ul id="1fd00637-4386-482b-9d9a-ee2bcef2893f" class="bulleted-list"><li style="list-style-type:circle">družbeniki ne odgovarjajo za obveznost družbe,</li></ul><ul id="8e7649b7-f97d-4552-be74-f53beaeb442c" class="bulleted-list"><li style="list-style-type:circle">obstaja možnost sklepanja pravnih poslov med družbo in njenimi družbeniki</li></ul><ul id="1f9fe916-453a-4b94-9455-daeddbd5991d" class="bulleted-list"><li style="list-style-type:circle">lahko delujejo na borzi</li></ul></li></ul><ul id="2555fc02-9171-478e-b2fb-0865f33c8fc1" class="bulleted-list"><li style="list-style-type:disc">Slabosti delniških družb so predvsem v tem, da:<ul id="619ee3e8-626c-4970-a390-25cf730e779c" class="bulleted-list"><li style="list-style-type:circle">obstaja dolžnost vplačila osnovnega kapitala;</li></ul><ul id="293fab31-a618-4a38-9813-590cec07ef31" class="bulleted-list"><li style="list-style-type:circle">je izplačevanje dobička visoko davčno obremenjeno</li></ul><ul id="a6e68133-2e1e-4bde-8077-397914e5cda1" class="bulleted-list"><li style="list-style-type:circle">ima zahtevnejši postopek ustanovitve</li></ul><ul id="0e878c02-8321-47fd-ab6c-215b7e004b71" class="bulleted-list"><li style="list-style-type:circle">ima višje stroške poslovanja</li></ul></li></ul></details></li></ul><ul id="36f91ba6-b1d8-490d-b63a-112624f4c516" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>40 Pojasni naslednje pojme: management, planiranje, organiziranje, vodenje, nadzor oz. kontroling, organigram frizerskega podjetja, organizacijska kultura, organizacijska klima.</strong></mark></summary><table id="316a9a69-9b22-4d84-bb9d-ed7cf0434afc" class="simple-table"><tbody><tr id="490441f8-acb8-4afc-8d07-8b6a3c492b0a"><td id="gQbD" class="">Managment</td><td id="dseV" class="">je proces planiranja, organiziranja, upravljanja človeških virov, vodenja in nadzora nad uporabo virov (materialnih, finančnih, človeških, informacijskih in časovnih virov), z namenom da bi dosegli zastavljene cilje uspešnosti</td></tr><tr id="4aa30eac-b9e9-422e-80fc-b8f3059c73cb"><td id="gQbD" class="">Planiranje</td><td id="dseV" class="">je proces, ki vključuje predvidevanje in določanje ciljev ter ukrepov, ki jih je treba izvesti, da bi dosegli te cilje
+Ločimo: strateško ali dologorčno planiranje in operativno ali srednjeročno in kratkoročno planiranje</td></tr><tr id="4eafa06f-4bc8-4afd-a91d-7b46826219cd"><td id="gQbD" class="">Organiziranje</td><td id="dseV" class="">Organiziranje je dejavnost urejanja odnosov med zaposlenimi.</td></tr><tr id="b2dd2193-7606-4187-88f2-58db0076ec9a"><td id="gQbD" class="">Vodenje</td><td id="dseV" class="">Vodenje je sposobnost vplivanja, spodbujanja, motiviranja in usmerjanja sodelovalcev k zastavljenim ciljem.</td></tr><tr id="394a80e0-d0c2-4d89-8980-e56caa27c186"><td id="gQbD" class="">Nadzor oz. kontroling</td><td id="dseV" class="">je posebna funkcija nadzorovanja in vodenja procesov v podjetju skozi finančne podatke.</td></tr><tr id="54ea1f21-4256-4432-864d-c1b7c55a7233"><td id="gQbD" class="">Organigram frizerskega podjetja</td><td id="dseV" class="">grafična ponazoritev organiziranosti frizerskega podjetja</td></tr><tr id="148b1384-2855-462c-b8c7-338770900c52"><td id="gQbD" class="">Organizacijska kultura</td><td id="dseV" class="">Je skupek vrednot in prepričanj kako se člani določene organizacije vedejo med seboj in do svojega dela.</td></tr><tr id="c7090107-c6d2-41fa-8f85-88090985a739"><td id="gQbD" class="">Organizacijska klima</td><td id="dseV" class="">Je vzdušje v organizaciji, ki vpliva na obnašanje ljudi in na njihovo zmogljivost opravljanja dela.</td></tr></tbody></table></details></li></ul><ul id="2f47b7d7-5c34-4f5f-ac55-00792200c42a" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>41 Pojasni stile vodenja v podjetju.</strong></mark></summary><ol type="1" id="8b2a3028-606d-4e06-b8f0-50830dd8843b" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><em>Avtoritativni stil vodenja</em></span>: Voditelji, ki uporabljajo avtoritativni stil vodenja, sprejemajo odločitve sami in dajejo jasna navodila zaposlenim. Voditelji imajo v tem primeru veliko moč in nadzor nad delovnimi procesi.</li></ol><ol type="1" id="e50b8a88-2c7e-4e20-afc5-cec949474edd" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><em>Demokratični stil vodenja</em></span>: Demokratični stil vodenja vključuje sodelovanje zaposlenih pri sprejemanju odločitev in upoštevanje njihovega mnenja. Voditelji spodbujajo odprt dialog, sodelovanje in ideje zaposlenih.</li></ol><ol type="1" id="7feb2cfa-c863-4c8b-91ad-7a4fdda849b1" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><em>Pusti (liberalni) stil vodenja</em></span>: Pri pustem stilu vodenja voditelji zaposlenim dajejo veliko avtonomijo in svobode pri izvajanju nalog. Ta stil je primeren v primerih, ko imajo zaposleni visoko stopnjo strokovnosti in motivacije za samostojno delo.</li></ol></details></li></ul><ul id="4728e5f6-182d-4157-a4be-a05d28a98207" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>42 Pojasni analizo SWOT ali SPIN (slabosti, prednosti, izzivi, nevarnosti).</strong></mark></summary><ul id="5c3539a2-985b-45f2-9d93-7c8e6ecd18f9" class="bulleted-list"><li style="list-style-type:disc">SWOT analiza je metoda, ki se uporablja za analiziranje podjetja in okolja, v katerem deluje. Namen SWOT analize je, da podjetje razume svoje moči, šibkosti, priložnosti in grožnje za boljše načrtovanje in odločanje.
+SWOT je akronim za:<ul id="91c01851-8b92-4bdc-b8e7-a75be3f482a7" class="bulleted-list"><li style="list-style-type:circle"><strong>S </strong>- Strengths (prednosti) - kaj podjetje dela dobro</li></ul><ul id="6d1fd733-4fcf-4294-b115-d495196c90c1" class="bulleted-list"><li style="list-style-type:circle"><strong>W </strong>- Weaknesses (slabosti) - kaj podjetje ne dela dobro</li></ul><ul id="4ee26251-bfe7-4166-a1bd-cdcf94ce0f3a" class="bulleted-list"><li style="list-style-type:circle"><strong>O </strong>- Opportunities (priložnosti) - kaj so priložnosti za podjetje</li></ul><ul id="02fb4bc1-3cd1-4699-88d3-4dad0c728db3" class="bulleted-list"><li style="list-style-type:circle"><strong>T </strong>- Threats (tveganja/grožnje) - kaj so grožnje za podjetje</li></ul></li></ul></details></li></ul><ul id="71893e04-2d50-4ef2-a407-7c853519124e" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>43 Kaj je poslovni načrt?</strong></mark></summary><ul id="096c473e-6b74-4314-8baa-98361f392277" class="bulleted-list"><li style="list-style-type:disc">Poslovni načrt je pisni dokument, v katerem podjetnik opredeli svoje cilje za določen posel in strategije, s katerimi namerava doseči te cilje.</li></ul><ul id="e293632f-49f3-45e6-ba36-4c425c2c664e" class="bulleted-list"><li style="list-style-type:disc">Dober poslovni načrt naj bi med drugim vseboval kratek povzetek, raziskavo trga, načrt trženja, terminski plan in pa finančni načrt, ki vključuje finančne projekcije in način pridobitve finančnih sredstev.</li></ul></details></li></ul><ul id="b6351e0b-e37d-42ef-8c8a-245f6d8833be" class="toggle"><li><details ><summary><mark class="highlight-teal"><strong>44</strong></mark><mark class="highlight-purple"><strong> Katere oblike poslovnega načrta poznaš?</strong></mark></summary><ul id="ed5576e7-fb7e-47fb-ae1c-bed7d98048b7" class="bulleted-list"><li style="list-style-type:disc">Klasični poslovni načrt</li></ul><ul id="d8d9bce0-fdb8-47dd-a227-25f0756ed4de" class="bulleted-list"><li style="list-style-type:disc">Poslovni načrt kanvas</li></ul><ul id="48826de7-996c-4ab7-a365-f799737de3dd" class="bulleted-list"><li style="list-style-type:disc">“Lean Startup” načrt</li></ul><ul id="26671dd2-e1f8-4563-999c-f46687eb694c" class="bulleted-list"><li style="list-style-type:disc">Pitch Deck</li></ul></details></li></ul><ul id="bb2f6da2-8079-46c0-a204-7b3903af4cc5" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>45 Kaj vsebuje poslovni načrt? Pojasni vsebino poslovnega načrta.</strong></mark></summary><ul id="32b0f5b6-eda9-4c28-b84f-8523b4b09cab" class="bulleted-list"><li style="list-style-type:disc">Dober poslovni načrt naj bi med drugim vseboval:<ul id="3bda9cb5-c34c-49cc-abbc-7d5a4b1db3ad" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em><strong>kratek povzetek</strong></em></span> - Glavni namen povzetka poslovnega načrta je utemeljiti poslovno priložnost. Vsebovati mora kratek opis pomembnih vidikov poslovnega načrta: predstaviti izdelek oz. storitev, prednosti pred konkurenco, vrednost za
+ uporabnika, potencialni trg, predviden obseg prodaje…</li></ul><ul id="32181806-8f29-493a-b692-cb937c408c17" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><strong><em>raziskavo trga</em></strong></span> - je proces zbiranja in analiziranja podatkov o kupcih, konkurentih in drugih dejavnikih, ki vplivajo na odnose med ponudniki izdelkov in storitev ter kupci.</li></ul><ul id="1276db9d-1f28-40a6-ae70-06091e10d85e" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em><strong>načrt trženja</strong></em></span> - opisuje, kako bo podjetje doseglo predvideno prodajo. Prikazati mora natančne projekcije prodaje in celotno trženjsko strategijo.</li></ul><ul id="c3a284a1-1717-4561-aa7a-63cb8ba48487" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em><strong>terminski plan</strong></em></span> - prikazuje časovni okvir in soodvisnost aktivnosti, ki so potrebne za zagon podjetja in uresničitev ciljev poslovnega načrta</li></ul><ul id="c6f32e04-8103-48d9-8f13-6b847ab614de" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><em><strong>finančni načrt</strong></em></span> - vključuje finančne projekcije in način pridobitve finančnih sredstev.</li></ul></li></ul></details></li></ul><ul id="e1a3f537-f97c-4ef2-bdea-6165271af233" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>46 Primerjaj klasični poslovni načrt in canvas model.</strong></mark></summary><ul id="7087e26d-eb57-41c5-90fc-f2dde9427af4" class="bulleted-list"><li style="list-style-type:disc">Klasični poslovni načrt je podroben dokument, ki opisuje vse vidike podjetja, medtem ko je Canvas model strukturiran vizualni okvir, ki poudarja ključne elemente poslovnega modela na eni strani papirja.</li></ul><ul id="35145758-3a9f-4c98-bb2c-e03f952e73aa" class="bulleted-list"><li style="list-style-type:disc">Klasični poslovni načrt je običajno bolj dolgotrajen in zahteva podrobno raziskavo, medtem ko je Canvas model bolj agilen in omogoča hitro iteracijo ter prilagajanje poslovnega modela.</li></ul></details></li></ul></div></article></body></html>
