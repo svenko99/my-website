@@ -1,9 +1,10 @@
 function get_data() {
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://www.lpp.si/lpp/ajax/1/803211", true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const data = JSON.parse(xhr.responseText);
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const apiUrl = "https://www.lpp.si/lpp/ajax/1/803211";
+
+  fetch(proxyUrl + apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
       const result = [];
       for (const bus of data) {
         for (const bus_stop of bus) {
@@ -16,9 +17,10 @@ function get_data() {
       }
       const output = document.getElementById("output");
       output.innerHTML = result.map((res) => `<p>${res}</p>`).join("");
-    }
-  };
-  xhr.send();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
 window.addEventListener("load", get_data);
