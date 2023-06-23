@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* CSS for the laptop view */
+@media (min-width: 640px) {
+  body {
+    background-color: #2661e9;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .main {
+    padding-bottom: 8rem;
+    padding-top: 2rem;
+    border-radius: 0.75rem;
+    min-height: calc(100vh - 1.25rem);
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.275);
+  }
+
+  .title_bar {
+    width: 26%;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+  .max-w-screen-sm {
+    max-width: 640px;
+  }
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    display: inline;
+    margin-left: -48px;
+  }
+
+  .logo-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 0.5rem;
+    position: relative;
+    top: -0.5rem;
+    left: 1.3rem;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 2.9rem;
+  }
+  .header-items-right {
+    padding-top: 1.44rem;
+  }
+
+  .box {
+    margin-top: -5px;
+    border-radius: 0.75rem;
+    margin-bottom: 2.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 245 / var(--tw-bg-opacity));
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border with transparency */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    padding: 20px; /* Adjust padding as needed */
+    background-image: url(../images/noise.png);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* CSS for the mobile view */
+@media not all and (min-width: 640px) {
+  body {
+    background-color: #2661e9;
+    border-top-width: 5px;
+    padding-bottom: 0.5rem;
+  }
+
+  .main {
+    padding-bottom: 8rem;
+    padding-top: 1.7rem;
+    border-radius: 0.75rem;
+    min-height: calc(100vh - 1.25rem);
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.275);
+  }
+
+  .logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #374151;
+    display: inline;
+  }
+
+  .logo-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 0.5rem;
+    /* make it on the top of the logo-text */
+    position: relative;
+    top: -0.6rem;
+    left: 1.3rem;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 2.9rem;
+  }
+
+  .header-items-right {
+    font-size: 1.1rem;
+    padding-top: 1.56rem;
+    padding-right: 1.5rem;
+  }
+
+  .box {
+    margin-top: -5px;
+    border-radius: 0.35rem;
+    margin-bottom: 2.2rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 245 / var(--tw-bg-opacity));
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border with transparency */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    padding: 15px;
+    /* Make the width smaller a bit */
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-image: url(../images/noise.png);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Other CSS */
+
+.smoothed {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: #374151;
+}
+
+a:hover {
+  color: #2661e9;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #374151;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.colored {
+  color: #2661e9;
+}
