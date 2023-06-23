@@ -48,4 +48,4 @@ function updateTimer() {
   document.getElementById("count").textContent = timerString;
 }
 
-setInterval(updateTimer, 1000);
+updateTimer();
