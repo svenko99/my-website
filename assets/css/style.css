@@ -63,7 +63,7 @@
     --tw-bg-opacity: 1;
     background-color: rgb(243 244 245 / var(--tw-bg-opacity));
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
-    border: 1px solid rgba(210, 210, 210, 0.2); /* Border with transparency */
+    border: 1px solid rgba(220, 220, 220, 0.2); /* Border with transparency */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
     padding: 20px; /* Adjust padding as needed */
     background-image: url(../images/noise.png);
@@ -131,7 +131,7 @@
     --tw-bg-opacity: 1;
     background-color: rgb(243 244 245 / var(--tw-bg-opacity));
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
-    border: 1px solid rgba(210, 210, 210, 0.2); /* Border with transparency */
+    border: 1px solid rgba(220, 220, 220, 0.2); /* Border with transparency */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
     padding: 15px;
     /* Make the width smaller a bit */
