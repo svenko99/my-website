@@ -45,6 +45,7 @@
     top: -0.5rem;
     left: 1.3rem;
   }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -52,6 +53,7 @@
     font-weight: 500;
     padding-bottom: 2.9rem;
   }
+
   .header-items-right {
     padding-top: 1.44rem;
   }
@@ -160,7 +162,7 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  
+
   ul {
     list-style: none;
     font-weight: 500;
@@ -176,6 +178,7 @@
 
   .plugins-list {
     margin-bottom: 0.7rem;
+    margin-left: -0.5rem;
   }
 }
 
