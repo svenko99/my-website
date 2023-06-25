@@ -64,12 +64,29 @@
     background-color: rgb(246 247 248 / var(--tw-bg-opacity));
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
     border: 1px solid rgba(225, 225, 225, 0.2); /* Border with transparency */
-    padding: 20px; /* Adjust padding as needed */
+    padding: 10px 20px 10px 20px;
   }
 
   h2 {
     font-size: 1.2rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    font-weight: 500;
+  }
+
+  li::before {
+    content: "•";
+    color: rgb(208 209 210 / var(--tw-bg-opacity));
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  .plugins-list {
     margin-bottom: 0.5rem;
   }
 }
@@ -130,7 +147,7 @@
     background-color: rgb(246 247 248 / var(--tw-bg-opacity));
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
     border: 1px solid rgba(225, 225, 225, 0.2); /* Border with transparency */
-    padding: 15px;
+    padding: 10px 15px 10px 15px;
     /* Make the width smaller a bit */
     width: 82%;
     margin-left: auto;
@@ -142,6 +159,23 @@
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+  }
+  
+  ul {
+    list-style: none;
+    font-weight: 500;
+  }
+
+  li::before {
+    content: "•";
+    color: rgb(208 209 210 / var(--tw-bg-opacity));
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  .plugins-list {
+    margin-bottom: 0.7rem;
   }
 }
 
@@ -180,4 +214,5 @@ strong {
 
 .colored {
   color: #2661e9;
+  text-decoration: underline;
 }
