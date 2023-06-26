@@ -3,7 +3,7 @@
 /* CSS for the laptop view */
 @media (min-width: 640px) {
   body {
-    background-color: #2661e9;
+    background-color: #3c6fe7;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     padding-right: 0.2rem;
@@ -23,14 +23,14 @@
     border-radius: 0.75rem 0.75rem 0 0;
   }
   .max-w-screen-sm {
-    max-width: 640px;
+    max-width: 650px;
   }
   .mx-auto {
     margin-left: auto;
     margin-right: auto;
   }
   .logo-text {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
     display: inline;
     margin-left: -48px;
@@ -41,8 +41,8 @@
     height: 2.7rem;
     border-radius: 0.5rem;
     position: relative;
-    top: -0.5rem;
-    left: 1.3rem;
+    top: -0.6rem;
+    left: 1.4rem;
   }
 
   header {
@@ -50,11 +50,15 @@
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 2.9rem;
+    padding-bottom: 3.5rem;
   }
 
   .header-items-right {
     padding-top: 1.44rem;
+    /* display the items next to each other exactly 10px */
+    display: flex;
+    justify-content: space-between;
+    width: 5em;
   }
 
   .box {
@@ -69,7 +73,7 @@
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
@@ -95,7 +99,7 @@
 /* CSS for the mobile view */
 @media not all and (min-width: 640px) {
   body {
-    background-color: #2661e9;
+    background-color: #3c6fe7;
     border-top-width: 5px;
     padding-bottom: 0.5rem;
   }
@@ -110,10 +114,11 @@
   }
 
   .logo-text {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 800;
     color: #374151;
     display: inline;
+    margin-left: -10px;
   }
 
   .logo-icon {
@@ -130,7 +135,7 @@
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 2.9rem;
+    padding-bottom: 3rem;
   }
 
   .header-items-right {
@@ -175,7 +180,7 @@
   }
 
   .plugins-list {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.7rem;
     margin-left: -0.5rem;
   }
 }
@@ -193,7 +198,7 @@ a {
 }
 
 a:hover {
-  color: #2661e9;
+  color: #3c6fe7;
 }
 
 body {
@@ -214,7 +219,7 @@ strong {
 }
 
 .colored {
-  color: #2661e9;
+  color: #3c6fe7;
   text-decoration: underline;
 }
 
@@ -226,5 +231,4 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
