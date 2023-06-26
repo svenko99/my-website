@@ -54,11 +54,11 @@
   }
 
   .header-items-right {
-    padding-top: 1.44rem;
-    /* display the items next to each other exactly 10px */
+    padding-top: 1.4rem;
+    padding-right: 0.35rem;
     display: flex;
     justify-content: space-between;
-    width: 5em;
+    width: 5.5rem;
   }
 
   .box {
@@ -109,6 +109,7 @@
     border-radius: 0.75rem;
     min-height: calc(100vh - 1.25rem);
     width: 100%;
+    /* Make the background white  but add var() so it will act accoridly in dark mode*/
     background-color: white;
     border: 1px solid rgba(255, 255, 255, 0.275);
   }
@@ -116,7 +117,6 @@
   .logo-text {
     font-size: 1.7rem;
     font-weight: 800;
-    color: #374151;
     display: inline;
     margin-left: -10px;
   }
@@ -141,7 +141,10 @@
   .header-items-right {
     font-size: 1.1rem;
     padding-top: 1.56rem;
-    padding-right: 1.5rem;
+    padding-right: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
   }
 
   .box {
@@ -194,7 +197,7 @@
 
 a {
   text-decoration: none;
-  color: #374151;
+  color: var(--tw-text-opacity);
 }
 
 a:hover {
@@ -211,7 +214,7 @@ p {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5rem;
-  color: #374151;
+  color: var(--tw-text-opacity);
 }
 
 strong {
@@ -219,16 +222,15 @@ strong {
 }
 
 .colored {
-  color: #3c6fe7;
+  color: rgb(60 111 231 / var(--tw-bg-opacity));
   text-decoration: underline;
 }
 
-footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.dark-mode {
+  background-color: #1f2937;
+  color: #fff;
+}
+
+#toggle:hover {
+  cursor: pointer;
 }

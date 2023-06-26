@@ -49,3 +49,25 @@ function updateTimer() {
 }
 
 updateTimer();
+
+// Dark mode switcher
+
+const toggle = document.querySelector("#toggle");
+toggle.addEventListener("click", modeSwitch);
+
+let isLight = true;
+
+function modeSwitch() {
+  isLight = !isLight;
+  isLight ? (toggle.innerText = "🌞") : (toggle.innerText = "🌚");
+  let rootElement = document.body;
+  rootElement.classList.toggle("dark-mode");
+  // also add dark-mode class to the class main
+  let mainElement = document.querySelector(".main");
+  mainElement.classList.toggle("dark-mode");
+  // also add dark-mode class to all classes box
+  let boxElement = document.querySelectorAll(".box");
+  boxElement.forEach((element) => {
+    element.classList.toggle("dark-mode");
+  });
+}
