@@ -70,4 +70,9 @@ function modeSwitch() {
   boxElement.forEach((element) => {
     element.classList.toggle("dark-mode");
   });
+  // also change src of the image with class logo-icon from https://emojicdn.elk.sh/ to assets/images/cap.png
+  let logoElement = document.querySelector(".logo-icon");
+  !isLight
+    ? (logoElement.src = "assets/images/dark_cap.png")
+    : (logoElement.src = "https://emojicdn.elk.sh/🧢");
 }
