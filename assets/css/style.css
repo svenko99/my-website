@@ -58,7 +58,7 @@
     padding-right: 0.35rem;
     display: flex;
     justify-content: space-between;
-    width: 5.5rem;
+      
   }
 
   .box {
@@ -144,7 +144,6 @@
     padding-right: 1.3rem;
     display: flex;
     justify-content: space-between;
-    width: 5rem;
   }
 
   .box {
