@@ -1,14 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-/* CSS for the laptop view */
-@media (min-width: 640px) {
-  body {
-    background-color: #3c6fe7;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-right: 0.2rem;
-  }
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #3c6fe7;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.2rem;
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #3c6fe7;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: inherit;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.colored {
+  color: rgb(60 111 231 / var(--tw-bg-opacity));
+  text-decoration: underline;
+}
+
+.dark-mode {
+  background-color: #1f2937;
+  color: #fff;
+}
+
+#toggle:hover {
+  cursor: pointer;
+}
+
+/* CSS for the desktop view */
+@media (min-width: 640px) {
   .main {
     padding-top: 2rem;
     border-radius: 0.75rem;
@@ -58,7 +95,6 @@
     padding-right: 0.35rem;
     display: flex;
     justify-content: space-between;
-      
   }
 
   .box {
@@ -191,51 +227,4 @@
     position: relative;
     top: -0.2rem;
   }
-}
-
-/* Other CSS */
-
-.smoothed {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-  color: var(--tw-text-opacity);
-}
-
-a:hover {
-  color: #3c6fe7;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-p {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-  color: var(--tw-text-opacity);
-}
-
-strong {
-  font-weight: 500;
-}
-
-.colored {
-  color: rgb(60 111 231 / var(--tw-bg-opacity));
-  text-decoration: underline;
-}
-
-.dark-mode {
-  background-color: #1f2937;
-  color: #fff;
-}
-
-#toggle:hover {
-  cursor: pointer;
 }
