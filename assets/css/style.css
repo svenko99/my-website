@@ -58,7 +58,6 @@
     padding-right: 0.35rem;
     display: flex;
     justify-content: space-between;
-      
   }
 
   .box {
@@ -238,4 +237,11 @@ strong {
 
 #toggle:hover {
   cursor: pointer;
+}
+
+.confetti {
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  user-select: none;
 }
