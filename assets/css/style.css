@@ -240,8 +240,9 @@ strong {
 }
 
 .confetti {
-  position: absolute;
+  position: fixed;
   display: block;
   margin: 0 auto;
-  user-select: none;
+  pointer-events: none;
+  z-index: 9999;
 }

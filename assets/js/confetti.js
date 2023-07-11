@@ -6,6 +6,7 @@ canvas.height = window.innerHeight;
 cx = ctx.canvas.width / 2;
 cy = ctx.canvas.height / 2;
 
+let day_to_execute = 12;
 let confetti = [];
 const confettiCount = 200;
 const gravity = 0.5;
@@ -103,14 +104,12 @@ render = () => {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
   });
 
-
-
   window.requestAnimationFrame(render);
 };
 
 //---------Execution--------
 const currentDate = new Date();
-if (currentDate.getDate() === 12) {
+if (currentDate.getDate() === day_to_execute) {
   initConfetti();
   render();
 }
