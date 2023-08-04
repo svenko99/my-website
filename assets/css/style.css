@@ -23,7 +23,7 @@
     border-radius: 0.75rem 0.75rem 0 0;
   }
   .max-w-screen-sm {
-    max-width: 650px;
+    max-width: 690px;
   }
   .mx-auto {
     margin-left: auto;
@@ -50,7 +50,7 @@
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 3.5rem;
+    padding-bottom: 3.8rem;
   }
 
   .header-items-right {
@@ -92,6 +92,13 @@
 
   .plugins-list {
     margin-bottom: 0.8rem;
+  }
+
+  .cuber-image {
+    width: 100%;
+    border-radius: 10px;
+    /* Make space bellow the image */
+    margin-bottom: 2.2rem;
   }
 }
 
@@ -190,6 +197,16 @@
     position: relative;
     top: -0.2rem;
   }
+
+  .cuber-image {
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    /* Make space bellow the image */
+    margin-bottom: 2.2rem;
+    /* Align it to the center */
+    display: block;
+  }
 }
 
 /* Other CSS */
@@ -246,3 +263,32 @@ strong {
   pointer-events: none;
   z-index: 9999;
 }
+
+.cuber-icon {
+  /* Center it to the middle */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.cuber-title {
+  /* Center text to the middle */
+  font-size: 2.3rem;
+  font-weight: 600;
+  text-align: center;
+  /* Make it a bit up */
+  position: relative;
+  top: -1rem;
+}
+
+.cuber-subtitle {
+  /* Center text to the middle */
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  /* Make it a bit up */
+  position: relative;
+  top: -1.8rem;
+}
+
+
