@@ -3,7 +3,6 @@
 /* CSS for the laptop view */
 @media (min-width: 640px) {
   body {
-    background-color: #3c6fe7;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     padding-right: 0.2rem;
@@ -94,7 +93,6 @@
 /* CSS for the mobile view */
 @media not all and (min-width: 640px) {
   body {
-    background-color: #3c6fe7;
     border-top-width: 5px;
     padding-bottom: 0.5rem;
   }
@@ -205,6 +203,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #111827;
+  background-color: #3c6fe7;
 }
 
 p {
