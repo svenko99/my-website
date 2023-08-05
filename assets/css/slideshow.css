@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  opacity: 0.9;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+.next:hover,
+.prev:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: #717171;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.4s ease;
+  margin-top: -1.4rem;
+  margin-bottom: 2.9rem;
+}
+
+.active,
+.dot:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.slideshow-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CSS for the mobile view */
+@media not all and (min-width: 640px) {
+  .slideshow-image {
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    display: block;
+  }
+  .prev,
+  .next {
+    top: 40%;
+    padding: 30px;
+    font-size: 16px;
+  }
+
+  .dot {
+    margin-bottom: 2.9rem;
+    margin-top: -0.62rem;
+    width: 5.5px;
+    height: 5.5px;
+  }
+}

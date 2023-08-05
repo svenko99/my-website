@@ -6,7 +6,9 @@
     <title>Svenko</title>
     <link rel="icon" href="../assets/images/light_cap.png" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/slideshow.css" />
     <script src="../assets/js/darkmode.js" async=""></script>
+    <script src="../assets/js/slideshow.js" async=""></script>
   </head>
   <body>
     <div class="main">
@@ -37,20 +39,43 @@
               <p class="cuber-subtitle">Mini Browser for the Menu Bar</p>
             </div>
 
-            <!-- Images -->
-            <img
-              class="cuber-image"
-              src="../assets/images/cuber-image-2.png"
-              alt="Cuber Image 2"
-            />
-            <img
-              class="cuber-image"
-              src="../assets/images/cuber-image-1.png"
-              alt="Cuber Image 1"
-              <!--
-              Introduction
-              --
-            />
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                <img
+                  src="/assets/images/cuber-image-1.png"
+                  class="slideshow-image"
+                />
+              </div>
+
+              <div class="mySlides fade">
+                <img
+                  src="/assets/images/cuber-image-2.png"
+                  class="slideshow-image"
+                />
+              </div>
+
+              <div class="mySlides fade">
+                <img
+                  src="/assets/images/cuber-image-3.png"
+                  class="slideshow-image"
+                />
+              </div>
+
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+              <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
+            </div>
+
+            <!-- The dots/circles -->
+
             <div class="box">
               <h2>About Cuber</h2>
               <p>
