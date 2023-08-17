@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 
 /* CSS for the laptop view */
 @media (min-width: 640px) {
@@ -32,12 +32,12 @@
   }
 
   .logo-icon {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-radius: 0.5rem;
     position: relative;
-    top: -0.7rem;
-    left: 1.5rem;
+    top: -0.8rem;
+    left: 1.4rem;
   }
 
   header {
@@ -67,7 +67,7 @@
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
@@ -75,6 +75,7 @@
   ul {
     list-style: none;
     font-weight: 500;
+    font-size: 1.1rem;
   }
 
   li::before {
@@ -115,13 +116,13 @@
   }
 
   .logo-icon {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 0.5rem;
     /* make it on the top of the logo-text */
     position: relative;
-    top: -0.6rem;
-    left: 1.3rem;
+    top: -0.7rem;
+    left: 1.33rem;
   }
   header {
     display: flex;
@@ -156,7 +157,7 @@
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
@@ -199,15 +200,16 @@ a {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #111827;
-  background-color: #3c6fe7;
+  background-color: #207fff;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.5rem;
   color: var(--tw-text-opacity);
@@ -218,7 +220,7 @@ strong {
 }
 
 .colored {
-  color: rgb(60 111 231 / var(--tw-bg-opacity));
+  color: rgb(32 127 255 / var(--tw-bg-opacity));
   text-decoration: underline;
 }
 
