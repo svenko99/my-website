@@ -49,7 +49,7 @@
   }
 
   .header-items-right {
-    padding-top: 1.4rem;
+    padding-top: 1.2rem;
     padding-right: 0.35rem;
     display: flex;
     justify-content: space-between;
@@ -134,7 +134,7 @@
 
   .header-items-right {
     font-size: 1.1rem;
-    padding-top: 1.56rem;
+    padding-top: 1.2rem;
     padding-right: 1.3rem;
     display: flex;
     justify-content: space-between;
@@ -227,6 +227,18 @@ strong {
 .dark-mode {
   background-color: #1f2937;
   color: #fff;
+}
+
+.dark-mode-toggle {
+  /* Make the button edges and other stuff disapear */
+  border: none;
+  background: none;
+}
+
+/* Make scaling animation for the dark mode when hoverd using tronsform */
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
 }
 
 #toggle:hover {
