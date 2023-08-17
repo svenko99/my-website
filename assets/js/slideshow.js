@@ -1,32 +1,48 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+const slides = document.querySelectorAll('.slider img');
+const dots = document.querySelectorAll('.slider-nav a');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const slider = document.querySelector('.slider');
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
+slider.addEventListener('scroll', () => {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  const currentIndex = Math.round(slider.scrollLeft / slideWidth);
+  
+  updateActiveDot(currentIndex);
+});
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', (event) => {
+    event.preventDefault();
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    slider.scrollLeft = index * slideWidth;
+    updateActiveDot(index);
+  });
+});
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
+leftArrow.addEventListener('click', () => {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  const currentIndex = Math.round(slider.scrollLeft / slideWidth);
+  const nextIndex = currentIndex - 1;
+  
+  if (nextIndex >= 0) {
+    slider.scrollLeft = nextIndex * slideWidth;
+    updateActiveDot(nextIndex);
   }
-  if (n < 1) {
-    slideIndex = slides.length;
+});
+
+rightArrow.addEventListener('click', () => {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  const currentIndex = Math.round(slider.scrollLeft / slideWidth);
+  const nextIndex = currentIndex + 1;
+  
+  if (nextIndex < slides.length) {
+    slider.scrollLeft = nextIndex * slideWidth;
+    updateActiveDot(nextIndex);
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+});
+
+function updateActiveDot(index) {
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
 }
