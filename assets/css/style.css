@@ -49,10 +49,7 @@
   }
 
   .header-items-right {
-    padding-top: 1.2rem;
-    padding-right: 0.35rem;
-    display: flex;
-    justify-content: space-between;
+    padding-top: 1rem;
   }
 
   .box {
@@ -133,11 +130,8 @@
   }
 
   .header-items-right {
-    font-size: 1.1rem;
     padding-top: 1.2rem;
-    padding-right: 1.3rem;
-    display: flex;
-    justify-content: space-between;
+    padding-right: 0.9rem;
   }
 
   .box {
