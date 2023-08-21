@@ -108,6 +108,6 @@
 
   .slider img {
     scroll-snap-align: start;
-    object-fit: scale-down;
+    object-fit: contain;
   }
 }
