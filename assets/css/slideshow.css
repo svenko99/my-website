@@ -105,4 +105,9 @@
     font-size: 1rem;
     right: 0.3rem;
   }
+
+  .slider img {
+    scroll-snap-align: start;
+    object-fit: cover;
+  }
 }
