@@ -13,7 +13,7 @@
     border-radius: 0.75rem;
     min-height: calc(100vh - 1.25rem);
     width: 100%;
-    background-color: #eff6ff;
+    background-color: white;
     border: 1px solid rgba(225, 225, 225, 0.7);
   }
 
@@ -55,11 +55,11 @@
   .box {
     margin-top: -5px;
     border-radius: 12px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     --tw-bg-opacity: 1;
-    /* background-color: rgb(248 249 250 / var(--tw-bg-opacity)); */
+    /*background-color: rgb(248 250 252 / var(--tw-bg-opacity));*/
     /*border-color: rgb(243 244 246 / var(--tw-border-opacity));*/
-    border: 1px solid rgba(225, 225, 225, 0.7);
+    /*border: 1px solid rgba(225, 225, 225, 0.7);*/
     padding: 10px 20px 10px 20px;
   }
 
@@ -137,11 +137,11 @@
   .box {
     margin-top: -5px;
     border-radius: 5.6px;
-    margin-bottom: 2.2rem;
+    margin-bottom: 1rem;
     --tw-bg-opacity: 1;
     /* background-color: rgb(248 249 250 / var(--tw-bg-opacity)); */
     /* border-color: rgb(243 244 246 / var(--tw-border-opacity)); */
-    border: 1px solid rgba(225, 225, 225, 0.7);
+    /*border: 1px solid rgba(225, 225, 225, 0.7);*/
     padding: 10px 15px 10px 15px;
     /* Make the width smaller a bit */
     width: 82%;
@@ -272,4 +272,13 @@ strong {
   /* Make it a bit up */
   position: relative;
   top: -1.8rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #d8dee4;
+  /*Make it a bit longer */
+  /*width: 106%;*/
+  /*margin-left: -1.15em;*/
 }
