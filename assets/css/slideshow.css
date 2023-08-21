@@ -108,6 +108,8 @@
 
   .slider img {
     scroll-snap-align: start;
-    object-fit: contain;
+    object-fit: cover;
+    height: auto;
+    max-width: 100%;
   }
 }
