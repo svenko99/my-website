@@ -114,13 +114,13 @@
   }
 
   .logo-icon {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 0.5rem;
     /* make it on the top of the logo-text */
     position: relative;
-    top: -0.7rem;
-    left: 1.33rem;
+    top: -0.8rem;
+    left: 1.25rem;
   }
   header {
     display: flex;
