@@ -112,4 +112,9 @@
     height: auto;
     max-width: 100%;
   }
+
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
 }
