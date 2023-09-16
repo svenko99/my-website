@@ -9,14 +9,12 @@
   }
 
   .main {
-    padding-top: 2rem;
+    padding-top: 1.7rem;
     border-radius: 0.75rem;
     min-height: calc(100vh - 1.25rem);
     width: 100%;
     background-color: white;
-    border: 1px solid rgba(225, 225, 225, 0.7);
   }
-
   .max-w-screen-sm {
     max-width: 690px;
   }
@@ -29,6 +27,10 @@
     font-weight: 700;
     display: inline;
     margin-left: -48px;
+      }
+
+  .logo-text:hover {
+    color: #3388ff;
   }
 
   .logo-icon {
@@ -45,7 +47,7 @@
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 3.8rem;
+    padding-bottom: 3rem;
   }
 
   .header-items-right {
@@ -102,7 +104,7 @@
     width: 100%;
     /* Make the background white  but add var() so it will act accoridly in dark mode*/
     background-color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
   }
 
   .logo-text {
@@ -200,7 +202,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #111827;
-  background-color: #207fff;
+  /*background-color: #207fff;*/
 }
 
 p {
@@ -215,7 +217,11 @@ strong {
 }
 
 .colored {
-  color: rgb(32 127 255 / var(--tw-bg-opacity));
+  color: #3388ff;
+  font-weight: 550;
+}
+
+.colored:hover {
   text-decoration: underline;
 }
 
@@ -257,7 +263,7 @@ strong {
 
 .cuber-title {
   /* Center text to the middle */
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
   /* Make it a bit up */
