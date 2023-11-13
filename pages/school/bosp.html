@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1 test - BOSp</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	color: white;
+	background-color: #000;
+	font-size: 32px;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="704b502c-1a58-487f-be9a-8f2b0f0271dd" class="page sans"><div class="page-body"><ul id="a1acc693-c1d4-4955-9c15-809e845a8c75" class="toggle"><li><details ><summary><strong>Poimenuj barvno globino Schwarckopf barvne karte</strong></summary><p id="ac04d2ae-2e03-4031-9a3f-e6202c722fcc" class="">1 - črna</p><p id="f7dcbb0c-24af-404a-a5b0-ad1fe6c3f953" class="">3 - temno rjava</p><p id="a2d3490c-0f72-4cd9-9494-280cd02b643b" class="">4 - srednje rjava</p><p id="ed4a585c-a4ba-480e-a04b-d9d2fbcb59cb" class="">5 - svetlo rjava</p><p id="a632c9d8-b9c8-4a98-8176-5729499db0df" class="">6 - temna blond</p><p id="6d0590c7-8d52-4418-b7f2-2655a3a5a06b" class="">7 - srednje blond</p><p id="e65bf510-1e47-42cd-996d-76918a92c9c5" class="">8 - svetla blond</p><p id="46cf6995-987b-4fc3-a599-bb763ab09a01" class="">9 - ekstra svetla blond</p><p id="e7543002-6aab-4660-ab41-066ac9a850ec" class="">10 - ultra blond</p><p id="e2da48f4-e6d8-464f-9900-e27146305518" class="">12 - specialna blond</p></details></li></ul><ul id="a96ff19e-88f0-439a-b3bc-5e713edc2add" class="toggle"><li><details ><summary><strong>Poimenuj barvne smeri barvne karte Ilirija</strong></summary><p id="a30f135a-3720-4412-b7a4-72ece18de8d4" class=""><strong>0 - naravna</strong></p><p id="01683da3-e469-4e28-a502-f2148ea607b7" class=""><strong>1 - pepelnata</strong></p><p id="07c77cfe-5d4e-45df-a30e-72b96ba6e7b2" class=""><strong>2 - biserna</strong></p><p id="6b70f457-1bb0-49a9-9c47-48dbc595f211" class="">03 - naravna zlata</p><p id="045a93a8-6d0a-4b59-81e2-3f1031618a85" class=""><strong>3 - zlata</strong></p><p id="da5bc338-d3f5-4414-8864-f7494bd3c978" class="">32 - šampanjec</p><p id="63235a58-af77-441d-83c1-9e8451f806ea" class="">34 - jantar</p><p id="76587c92-acda-4406-b988-9ada31f7c77e" class=""><strong>4 - bakrena</strong></p><p id="6a3b0599-bf58-4ce3-a814-389d843feee9" class="">43 - sončni zahod</p><p id="d8109b6c-d938-429b-b24e-bd6e1952ca00" class=""><strong>5 - rdeča</strong></p><p id="62ce9e4f-040c-4ceb-8f17-c4eea3c1eecc" class="">56 - bordo</p><p id="95ca708e-9a74-4543-aada-3c355faa3095" class=""><strong>6 - vijolična</strong></p><p id="69c08fd2-5d2f-4330-8c77-8f384fbfabc8" class="">65 - mahagonij</p><p id="c13ec117-56f7-46ef-8737-3976832e2acb" class=""><strong>7 - rjava</strong></p><p id="8b2787a4-ef02-45da-9793-6e781f1c9b3a" class="">71 - kamena</p><p id="63dd30e9-9e89-46b4-a66e-099241a7399f" class="">73 - cimet</p><p id="8ea2a4c9-ef07-4f1e-8c7b-b0bff43d03dc" class="">77 - čokoladna</p><p id="5b974e88-6643-437d-9971-199c3939c0b2" class=""><strong>8 - mat</strong></p></details></li></ul><ul id="0d2b4040-f4cb-47eb-a088-8f6ba5153695" class="toggle"><li><details ><summary><strong>Poimenuj barvne smeri barvne karte Schwarckopf</strong></summary><ul id="5e09a6d8-8508-4cf8-acd4-81310e12a987" class="bulleted-list"><li style="list-style-type:disc">0 - naravna</li></ul><ul id="5dabe821-aa92-4c97-a431-4c15d2a8b32e" class="bulleted-list"><li style="list-style-type:disc">1 - cendre</li></ul><ul id="ab4a6764-46c0-4fde-8a4a-57124e5db3b6" class="bulleted-list"><li style="list-style-type:disc">2 - biserna</li></ul><ul id="69aaa691-7be7-4a43-b33b-87af71f3d435" class="bulleted-list"><li style="list-style-type:disc">3 - zelena</li></ul><ul id="49641e3f-c464-41ac-83d2-fc24b1d49022" class="bulleted-list"><li style="list-style-type:disc">4 - bež</li></ul><ul id="7af5205f-3518-47ab-9a17-7c2c486b1508" class="bulleted-list"><li style="list-style-type:disc">5 - zlata</li></ul><ul id="f8a86ffe-cf49-4114-ab6c-3a2fc5d41733" class="bulleted-list"><li style="list-style-type:disc">6 - čokolada</li></ul><ul id="d9232700-0d6d-4531-ae5f-05488e49280b" class="bulleted-list"><li style="list-style-type:disc">7 - bakrena</li></ul><ul id="ef1b53d2-38cf-4136-a5a8-25c5dd27025c" class="bulleted-list"><li style="list-style-type:disc">8 - rdeča</li></ul><ul id="ffb040e6-f31c-4c67-84bb-d0412ce0bc9f" class="bulleted-list"><li style="list-style-type:disc">9 - vijolična</li></ul></details></li></ul><ul id="4d70309a-dbd8-4174-ba14-3cf5b116dbd2" class="toggle"><li><details ><summary><strong>Katere naloge ima </strong><strong><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></strong><strong>?</strong></summary><ul id="45ac5b6e-6618-4d04-bda6-54f20c7a4a79" class="bulleted-list"><li style="list-style-type:disc"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> ima nalogo oksidacijskega sredstva. Torej, da povzroči kemijsko reakcijo oksidacijo (pri kateri se spremeni velikost barvil iz majhnih v ogromne, da ostanejo v lasu), razgrajuje naravne pigmente in umetna barvila in posledično svetli las.</li></ul></details></li></ul><ul id="4f4e768f-6302-4d1e-83af-7e293dfb0a94" class="toggle"><li><details ><summary><strong>Katere naloga ima amonijev hidroksid (</strong><strong><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><msub><mi>H</mi><mn>4</mn></msub><mi>O</mi><mi>H</mi></mrow><annotation encoding="application/x-tex">NH_4OH</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span></span><span>﻿</span></span></strong><strong>)?</strong></summary><ul id="b8d7695e-496e-4d40-8b2c-8ae0ea3775a3" class="bulleted-list"><li style="list-style-type:disc">Odpirajo kutikulo, močno nabreknejo lase in pretrgajo solne vezi nevtralizirajo kisline iz oksidacijskega sredstva in povzoročiijo razgradnjo <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul></details></li></ul><ul id="31854bc6-bf80-431b-9d77-174c3341b90c" class="toggle"><li><details ><summary><strong>Kakšna je barvna masa in </strong><strong><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></strong><strong> po pH lestvici?</strong></summary><ul id="fa0d950a-769c-42af-966e-6dfb92a4f419" class="bulleted-list"><li style="list-style-type:disc">barvna masa je bazična</li></ul><ul id="94ba749d-0f28-4ea9-95f6-34019f0a74bf" class="bulleted-list"><li style="list-style-type:disc"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> je kisel</li></ul></details></li></ul><ul id="71d22338-3596-4ca4-8a4a-600be63c8f24" class="toggle"><li><details ><summary><strong>Ali je v barvni masi amonijak, razloži</strong></summary><ul id="b89dba01-8980-4e85-afb3-7ca6697e03eb" class="bulleted-list"><li style="list-style-type:disc">Ne v barvi ni amonijaka, temveč amonijev hidroksid. Amonijev hidroksid je običajno v  vseh barvah, razen v tistih produktih, ki jih znamka posebaj oglašuje, da nimajo amonijaka. Amonijev hidroksid ima nalogo odpiranja kutikule. Amonijev hidroksid lahko nadomesti MEA (v barvah, kjer je oglaševano da je brez amonijaka)</li></ul></details></li></ul><ul id="425918a6-dab4-4acd-b859-ac8cbe2c3f0a" class="toggle"><li><details ><summary><strong>Kakšna je velikost pigmentov v profesionalni barvi v primerjavi s trgovinsko barvo?</strong></summary><ul id="c720ef54-629b-4249-a876-ac77e58101ea" class="bulleted-list"><li style="list-style-type:disc">Pigmenti v profesionalni barvi so večji v primerjavi s pigmenti trgovinskih barv, ki so manjši. V trgovinskih barvah so pigmenti manjši zato, da lažje prodrejo v las.</li></ul></details></li></ul><ul id="5ed5bbd4-e288-4b4f-9bb2-ff2c30a879c9" class="toggle"><li><details ><summary><strong>Za koliko odtenkov lahko posvetli klasična barva določen naravni ton?</strong></summary><ul id="0f2b6575-a297-4559-99a0-559613254e7d" class="bulleted-list"><li style="list-style-type:disc">Do 3 odtenke.</li></ul></details></li></ul><ul id="994b58fc-f2b8-4dd0-8626-ea4cb0a80a59" class="toggle"><li><details ><summary><strong>Za koliko odtenkov lahko posvetli specialna barva določen naravni ton?</strong></summary><ul id="e7d390c1-3038-45eb-a47e-338e3e1ae246" class="bulleted-list"><li style="list-style-type:disc">Za 4 tone</li></ul></details></li></ul><ul id="afbcf254-c2d1-4efc-9b2e-329cb761959a" class="toggle"><li><details ><summary><strong>Na podlagi česa določimo procent / stopnjo </strong><strong><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></strong><strong> pri uporabi belilnega sredstva?</strong></summary><ul id="651d416f-64ab-4d3f-9b5e-50c199ce1937" class="bulleted-list"><li style="list-style-type:disc">Na podlagi stanja las in željenega razultata.</li></ul></details></li></ul><ul id="36af7f54-a63f-47a3-ae11-860bfd4af3b2" class="toggle"><li><details ><summary><strong>Razloži in opiši barvni krog</strong></summary><ul id="9f649adb-686d-4c98-8033-9045ede15c65" class="bulleted-list"><li style="list-style-type:disc">Barvni krog je prikaz barvnih značilnosti. Prikazuje razmerja med osnovnimi barvami, sekundarnimi barvami, terciarnimi barvami in komplementarnimi barvami. Na področju frizerstva, barvni krog najdemo v nianserjih. V njem so prikazane tudi barvne smeri določene znamke.</li></ul></details></li></ul><ul id="52e013f2-03f6-45e8-a0ae-dda68f5f8fa7" class="toggle"><li><details ><summary><strong>Kakšna je priprava za barvanje las?</strong></summary><ul id="e4e17e08-2d3b-4a37-8e53-0ffc1d1cf302" class="bulleted-list"><li style="list-style-type:disc">Posvet s stranko (kaj si želi, stanje lasišča, katere preparate je imela že na sebi)</li></ul><ul id="7c0e2239-b11d-4ccb-b3fc-21ad41488a1a" class="bulleted-list"><li style="list-style-type:disc">Izbira barve (določitev naravne barve, določimo podton,določimo nivo <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, določimo procent sivih las)</li></ul><ul id="2db6525c-cd1a-4c9e-b783-98dfefedadb8" class="bulleted-list"><li style="list-style-type:disc">priprava pripomočkov in zaščita stranke</li></ul><ul id="ccbf5410-9d99-45b7-b9fd-5181ff2120a8" class="bulleted-list"><li style="list-style-type:disc">barvanje</li></ul></details></li></ul><ul id="dfdb05b9-218a-4e62-b079-1fdf1bcdc1b5" class="toggle"><li><details ><summary><strong>Katera barvanja las poznamo?</strong></summary><ul id="441338f2-29dd-42c3-927f-ea50eaea0b58" class="toggle"><li><details ><summary><mark class="highlight-blue">1 </mark><mark class="highlight-blue"><em>Ninasiranje oz. toniranje (začasno) (NEOKSIDATIVNO BARVANJE)</em></mark></summary><ul id="2b1063af-0ada-4585-a72a-1e36bad1e8e5" class="bulleted-list"><li style="list-style-type:disc">Spremenimo samo nianso oziroma ton in nič drugega.</li></ul><ul id="4a7c69e7-decb-4d73-aac9-089778fb5f85" class="toggle"><li><details ><summary><strong><em>Površinsko barvanje (a primer)</em></strong></summary><ul id="1523649f-d5bc-4203-9886-f9b1291c0791" class="bulleted-list"><li style="list-style-type:disc">barvni laki</li></ul><ul id="2d33d86d-b229-4aaf-bb87-26be342b550b" class="bulleted-list"><li style="list-style-type:disc">barvne pene</li></ul><ul id="e3022cda-3af1-4320-b06a-02669774b754" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><em>Te produkti bodo imeli pH kisel (4,5-5,5) , zato se luske ne bodo odprle (za maturo). Za te produkte so značilne večje molekule pigmenta.</em></mark></li></ul></details></li></ul><ul id="1ec40318-7ff7-4ef2-9f1f-ca84eb720f63" class="toggle"><li><details ><summary><strong><em>semi-permanentno barvanje (b primer)</em></strong></summary><ul id="50836a3e-cd77-47df-8cbc-61433afc6696" class="bulleted-list"><li style="list-style-type:disc">barvni šamponi</li></ul><ul id="660d990d-18b5-448a-ac0a-70f93961a36a" class="bulleted-list"><li style="list-style-type:disc">prelivi brez hidrogena (<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>)</li></ul><ul id="70ed346b-5d91-48a3-8f47-9f85124a9beb" class="bulleted-list"><li style="list-style-type:disc"><em><mark class="highlight-red">Te produkti imajo manjše molekule pigmenta in imajo kation (+) aktivne snovi. Tukaj se luske rahlo odprejo, zato se ta barvila enostavno ugnezdijo v luske. pH je tukaj višji od 5,5.</mark></em></li></ul></details></li></ul></details></li></ul><ul id="0feceed3-be91-4490-a5c2-041080d2f50d" class="toggle"><li><details ><summary><mark class="highlight-blue">2 </mark><mark class="highlight-blue"><em>Koloriranje (OKSIDATIVNO BARVANJE)</em></mark></summary><ul id="222d23fa-0165-4eeb-93db-29d10b0e81cc" class="bulleted-list"><li style="list-style-type:disc">Pri koloriranju gre za oksidativno barvanje, kjer uporabljamo 3% hidrogen ali manj.</li></ul><ul id="b7827399-6217-4feb-a110-46683def311b" class="bulleted-list"><li style="list-style-type:disc">Tukaj pride to kemijske reakcije imenovane oksidacija. To se zgodi, ker kisik vpliva na pigmente (barvila).</li></ul><ul id="18f89979-0b11-433a-8e29-40b138173662" class="bulleted-list"><li style="list-style-type:disc">Tukaj vodikov peroksid razpade na vodo in kisik.</li></ul><ul id="cdab12bd-bbe5-47d8-8f06-fcdc13c0fec7" class="bulleted-list"><li style="list-style-type:disc">Tukaj gredo barvila delno v korteks.</li></ul><ul id="cfc50d37-23f8-4f14-898a-11fcdf1d6153" class="bulleted-list"><li style="list-style-type:disc">Kisik deluje tudi na naravne pigmente. Naravni pigmenti se tudi malo delno razgradijo.</li></ul></details></li></ul><ul id="2ac27a78-c3ed-4fbb-ba78-d898ebad16d0" class="toggle"><li><details ><summary><mark class="highlight-blue">3 </mark><mark class="highlight-blue"><em>Oksidacijsko barvanje (OKSIDATIVNO BARVANJE)</em></mark></summary><ul id="5440413b-a323-43fb-a564-38ec5983206b" class="bulleted-list"><li style="list-style-type:disc">Pri oksidacijskem barvanju uporabljamo 6,9 ali 12% hidrogen.</li></ul><ul id="8b40ed09-f446-4f02-9e25-a9c8cd4378ff" class="bulleted-list"><li style="list-style-type:disc">Tukaj vodikov peroksid razpade na vodo in kisik.</li></ul><ul id="7fedc257-d3c8-4d45-b96e-8ddffbedee0f" class="bulleted-list"><li style="list-style-type:disc">Barvila gredo v koretks in se tam povečajo za 300 krat. Zato ne morajo iti ven barvila in zato je tako barvanje trajno.</li></ul></details></li></ul></details></li></ul><ul id="c7397255-7826-44ca-8635-983fdf6bb135" class="toggle"><li><details ><summary><strong>Za koliko odtenkov svetiljo barvni prelivi?</strong></summary><ul id="820fd5a8-b3b8-47b6-bf02-402e69ab2224" class="bulleted-list"><li style="list-style-type:disc">Za nič!</li></ul></details></li></ul><ul id="83ab7fdf-d7e0-462e-9348-e092fc501f6b" class="toggle"><li><details ><summary><strong>V čem je razlika med barvnimi kartami različnih proizvajalcev?</strong></summary><ul id="79cb6e09-b718-4f08-bf50-1e7062485e97" class="bulleted-list"><li style="list-style-type:disc">V različnih barvnih smereh in v različnosti barvnih smeri (nekatera znamka lahko da sploh ne bo imela določenga odtenka, ki ga ima druga).</li></ul></details></li></ul><ul id="8b0de178-8510-4168-b5de-f743528f0b3e" class="toggle"><li><details ><summary><strong>Za kakšne lase so namenjene barve Absolute (Schwarckopf)?l</strong></summary><ul id="2b87cac5-979e-4620-8f20-43d236ca5425" class="bulleted-list"><li style="list-style-type:disc">Za sive lase, saj bolj učinkovito prekrivajo le-te. </li></ul></details></li></ul><ul id="e04e4ca2-8a43-47b0-93e7-c2a819d21c30" class="toggle"><li><details ><summary><strong>Kaj je predpigmentacija, opiši postopek?</strong></summary><ul id="94269e37-c217-4d1b-b115-49f7bbac0736" class="bulleted-list"><li style="list-style-type:disc">Predpigmentacija je frizerski postopek dodajanja pigmentov za boljšo obstojnost in enakomernost barve. Izvajamo jo pred postopkom barvanja, iz svetlejših v temnejše lase.</li></ul></details></li></ul><ul id="09fb473f-e0d9-49e9-af8e-c92f24c0f533" class="toggle"><li><details ><summary><strong>Katere podtone dodajajo v trgovinske barve in zakaj?</strong></summary><ul id="b4f72e29-7de6-4fb4-a53d-97cf69f5352a" class="bulleted-list"><li style="list-style-type:disc">Dodajajo rdeče tone, ker ti podtoni delujejo komplementarno, da ne bi slučajno dobili neželene zelene odtenke.</li></ul></details></li></ul><ul id="6d51c274-d53b-443a-8b2d-36ffc3e9cfec" class="toggle"><li><details ><summary><strong>Kolikšen je čas delovanja barve?</strong></summary><ul id="7ee36d27-297b-4bba-ba2a-d68c7447f950" class="bulleted-list"><li style="list-style-type:disc">Trajanje delovanja frizerske barve je odvisno od več dejavnikov, vključno z znamko barve, vrsto las, željenim rezultatom in proizvajalčevimi navodili. Na splošno pa večina frizerskih barv deluje med 35 minutami in 50 minutami.</li></ul></details></li></ul><ul id="6f23f760-d86a-483f-91e7-4e4d85a09330" class="toggle"><li><details ><summary><strong>Razloži barve Schwarckopf: 6/88 ; 9/65 ; 9/470</strong></summary><ul id="2a3cda7a-7327-43ce-9e2d-2b6b0d033045" class="bulleted-list"><li style="list-style-type:disc">Tukaj moraš samo znati prebrati barvo. Beremo jo s pomočjo poimenovanja globine, zatem pa sledi poimenovanje barvne smeri od leve proti desni.</li></ul><ul id="407bdd67-1512-4840-8c33-af393b71918c" class="bulleted-list"><li style="list-style-type:disc">Na primer <strong>9/65</strong>:<ul id="b7dd2561-815b-4788-afe3-6995705a735c" class="bulleted-list"><li style="list-style-type:circle">Prvo poimenujemo globino: zelo svetlo blond</li></ul><ul id="f32abaf9-55b7-43ea-a7fa-ced4613114c8" class="bulleted-list"><li style="list-style-type:circle">Nato poimenujemo prvo barvno smer (6): čokoladno</li></ul><ul id="c06d5e9b-f054-4220-bbcc-c65cf8a1be29" class="bulleted-list"><li style="list-style-type:circle">Nato poimenujemo drugo barvno smer (5): zlata</li></ul><ul id="0ed0bf49-816e-4abf-95c2-cd896b6636e2" class="bulleted-list"><li style="list-style-type:circle">Vse dodamo skupaj <strong>zelo svetla čokoladno zlata blond</strong></li></ul></li></ul><ul id="3f516d4c-e924-47ed-9464-0328960b417c" class="bulleted-list"><li style="list-style-type:disc">Pri <strong>6/88</strong> povemo, da je tukaj povečan pigment rdeče barve, da je bolj intenziven</li></ul><ul id="fa4dd51e-da06-4e14-add9-7c6c1f8b5fd1" class="bulleted-list"><li style="list-style-type:disc">Pri<strong> 9/470</strong> poleg barvne smeri, povemo, čemu služi nula (0) na koncu. V bistvu gre za barvo Absolute, ki je namenjena prekrivanju sivih las.<p id="71758759-ee01-4747-8ca7-4c4db4c06593" class="">
+</p></li></ul></details></li></ul><ul id="1b99ce4f-63ec-408c-a9cb-e556853ed538" class="toggle"><li><details ><summary><strong>Katerega odtenka je več v barvi 6/78 in za koliko?</strong></summary><ul id="3eb503b0-e9c1-447e-ab0d-ef5bbcc61aa3" class="bulleted-list"><li style="list-style-type:disc">Več je odtenka 7. Običajno sta v razmerju 60 % prvega odtenka (7) in 40 % drugega odtenka (8).</li></ul></details></li></ul><ul id="5ae7e9c2-8a6c-419b-b83d-3bd6175fbedd" class="toggle"><li><details ><summary><strong>Kaj pri barvnem odtenku pomeni oznaka / ali , ali : ?</strong></summary><ul id="58a19fa5-2cf2-4cbb-b809-d34e0181759d" class="bulleted-list"><li style="list-style-type:disc">Predstavlja mejnik med barvno globino na levi strani in barvno smerjo na desni stran.</li></ul></details></li></ul><ul id="e7bdb99f-2a87-4978-994c-b4ae2f49adf1" class="toggle"><li><details ><summary><strong>Kaj je polpermanentno barvanje? Razloži in naštej.</strong></summary><ul id="f0135104-2d5c-4705-a83e-de482b4390db" class="bulleted-list"><li style="list-style-type:disc">Polpermanentno barvanje ali koloriranje je barvna sprememba las, kjer uporabimo 3% <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> ali manj. Tukaj gredo barvila delno v korteks, naravni pigmenti pa se tudi delno razgradijo. Primer polpermanentnega barvanje je barvni preliv s 3% <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>.</li></ul></details></li></ul><ul id="e86637fe-68b5-48da-9b89-b8c9c5e305cd" class="toggle"><li><details ><summary><strong>Kaj je permanentno barvanje? Razloži in naštej.</strong></summary><ul id="9b5e495f-53b5-4f5b-b8a0-6c7c55bf3235" class="bulleted-list"><li style="list-style-type:disc">Permanentno barvanje ali trajno barvanje je barvna sprememba las, kjer uporabimo <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> večji od 3%. Tukaj gredo barvila v celoti v korteks lasa. Takšnega barvanje se poslužujemo, če svetlimo lase, prekrivamo sive lase in tako naprej.</li></ul></details></li></ul><ul id="a938c9e5-8cfe-4fe3-a1a0-3e22d7cb766c" class="toggle"><li><details ><summary><strong>Kaj je nepermanentno barvanje? Razloži in naštej.</strong></summary><ul id="10a4b0cc-adc8-45ea-95b1-05e2ec7d22db" class="bulleted-list"><li style="list-style-type:disc">Nepermanentno barvanje, toniranje ail niansiranje je barvna sprememba las brez uporabe oksidacijskih sredstev (brez <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_2O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>). Tukaj se barvila vežejo na luske (površinsko barvanje) ali pa tudi med luske kutikule. S tem postopkom las ne moramo svetliti, obstojnost pa je omejena. Primer nepermanentnega barvanje je lahko: barvni spreji, barvni utrjevalci in barvni balzami.</li></ul></details></li></ul><ul id="71f33771-0c94-454a-b8fc-cbfe144e3575" class="toggle"><li><details ><summary><strong>Ali specialne barve prekrivajo sive lase?</strong></summary><ul id="06909a93-db87-4351-80f4-714db28cfc16" class="bulleted-list"><li style="list-style-type:disc">Ne prekrivajo sivih las, so samo za svetlenje las.</li></ul></details></li></ul><ul id="7f6c27f4-d5d5-4f48-8836-f6f1bde80e1b" class="toggle"><li><details ><summary><strong>Kakšni podtoni so v določeni globini?</strong></summary><ul id="e65edc87-77bf-47ff-b20f-c5fa6f704760" class="bulleted-list"><li style="list-style-type:disc">1-5 = rdeč podton</li></ul><ul id="e0211621-a9c4-4009-9ffa-c57f73736f1d" class="bulleted-list"><li style="list-style-type:disc">6 = rdečo oranžen</li></ul><ul id="5f63a8cb-bf6b-46ca-8326-a1cb92e69ecb" class="bulleted-list"><li style="list-style-type:disc">7 = oranžen</li></ul><ul id="5d34e682-5989-44a7-824e-829d56c7aeb5" class="bulleted-list"><li style="list-style-type:disc">8-10 = rumen</li></ul></details></li></ul><ul id="17b26e0c-5bfe-4c23-a5ea-4eb1535c2a4c" class="toggle"><li><details ><summary><strong>Koliko stopenj svetli posamičen razvijalec za barvanje las (klasično ne specialno)?</strong></summary><ul id="60df2930-ede8-4e33-9719-590e0314f108" class="bulleted-list"><li style="list-style-type:disc">3% = 0 stopenj</li></ul><ul id="0e3357a0-aa7e-4e82-a405-db9b266a3ebc" class="bulleted-list"><li style="list-style-type:disc">6% = do 1 stopnje</li></ul><ul id="9794ff4f-9045-4fbe-9fb6-ee5f77768202" class="bulleted-list"><li style="list-style-type:disc">9% = do 2 stopnje</li></ul></details></li></ul><ul id="1dc7b9ed-fa81-47d5-8e18-04c1830c1aa5" class="toggle"><li><details ><summary><strong>Koliko stopenj svetli posamičen razvijalec za specialno barvanje las?</strong></summary><ul id="bb1f7cc0-bd9c-4683-bfea-7b0ac5f4e8ab" class="bulleted-list"><li style="list-style-type:disc">ultra blond 9% = do 3 stopnje</li></ul><ul id="f062b2ef-44f7-4709-9eeb-6995b75a266d" class="bulleted-list"><li style="list-style-type:disc">ultra blond 12% = do 4 stopnje</li></ul><ul id="11a0b6d5-86a9-4839-8777-8e15b3119c43" class="bulleted-list"><li style="list-style-type:disc">specialna blond 9% = do 4 stopnje</li></ul><ul id="edfdc0d7-891b-48bd-9606-88a06ebab080" class="bulleted-list"><li style="list-style-type:disc">specialna blond 12% = do 5 stopnj</li></ul></details></li></ul><ul id="f2003420-ea2b-4621-a287-672d67a1e84b" class="toggle"><li><details ><summary><strong>Pri kateri globini se odločimo za svetlenje z belilom namesto specialne barve?</strong></summary><ul id="c180d51f-fdac-4b3c-846c-48460e30348e" class="bulleted-list"><li style="list-style-type:disc">Če stranka želi stranka najsvetlejšo barvo, uporabi belilo če ima globino 5 ali manj.</li></ul></details></li></ul><ul id="ac0eee5c-e0af-4306-ae6f-5d08e03e6f23" class="toggle"><li><details ><summary><strong>Katere tone poznamo?</strong></summary><ul id="400a0f5d-95af-4742-8cfc-9e84eba08ace" class="bulleted-list"><li style="list-style-type:disc">navadni toni (teh je največ)</li></ul><ul id="3996ccd8-4d8d-4740-bf2a-c8bae320a266" class="bulleted-list"><li style="list-style-type:disc">specialni toni (prepoznamo po ozančbi 10, 12 ali pa 1000, 1200. Običajno jih mešamo 1:2)</li></ul><ul id="aacfc576-985f-41e9-b698-9972e18721fd" class="bulleted-list"><li style="list-style-type:disc">mix toni (uporabljeni zraven navadnih tonov, jih ne upoštevamo pri razmerju razvijalca. Mešamo ga za dodajanje intenzivnosti.)</li></ul><ul id="16d859a1-3ed5-4bae-a34c-5e31ce0e60c0" class="bulleted-list"><li style="list-style-type:disc">pastelni toni (Dodajamo jih po barvanju s specialnim blond barvam, za toniranje, da nevtraliziramo blond barvo.)</li></ul><ul id="25bb7603-56d6-4af7-9689-abc8f321d8f2" class="bulleted-list"><li style="list-style-type:disc">absoluti (za prekirvanje sivih las. Prepoznamo po ničli - 6.40)</li></ul></details></li></ul><ul id="6816a9a0-553e-44d5-8ab8-1bee564e2d4e" class="toggle"><li><details ><summary><strong>Stranka ima 6.0 izrastek in 9.5 konice. Njena želja je 8.1.</strong></summary><ul id="3d4ef2f0-a08c-4964-88c6-672778e80937" class="bulleted-list"><li style="list-style-type:disc">Izrastek: 10.21 + 8.21 + 9% (ta mešanica velja za svarcfopv in keune)</li></ul><ul id="abcd9ac4-c334-40c6-b3d3-2a186bd93e1e" class="bulleted-list"><li style="list-style-type:disc">Ko mešamo barve je bistveno, da dodamo cel spekter komplementarnih barv, da nevtralizramo. Npr. stranka ima 6.0 globino. Imela bo rdeče in oranžne podtone in to moramo nevtralizirati. Druga bistvena stvar je, da izbereš primerno stopnjo hidrogena.</li></ul></details></li></ul><ul id="029a1b73-446a-4e1b-b23c-3ea58617079d" class="toggle"><li><details ><summary><strong>Kakšen nivo hidrogena vsebujejo trgovinske barve?</strong></summary><ul id="6e7a7bdc-1aaa-4428-bc98-aa4d60a5011a" class="bulleted-list"><li style="list-style-type:disc">7,5% za temne tone</li></ul><ul id="3401a93e-a547-4911-9967-9e1ddb78f6a5" class="bulleted-list"><li style="list-style-type:disc">9,5% za svetle tone</li></ul></details></li></ul><ul id="a3eb92b7-dcd3-427f-a069-731c3285def3" class="toggle"><li><details ><summary><strong>Kaj so mix toni?</strong></summary><ul id="a4e37cb0-f45c-42a5-842a-a1f0f5f95cb3" class="bulleted-list"><li style="list-style-type:disc">So koncentritani toni, ki se dodajajo za koncentriranje določenega tona. Poleg tega ne svetlijo in navadno se ne uporabljajo samostojno.</li></ul></details></li></ul><ul id="fc62bb87-3252-48d2-9ba6-68f52d6c642d" class="toggle"><li><details ><summary><strong>Kako se lotimo prvega barvanja?</strong></summary><ul id="2234dced-bfec-488b-8d85-ef10e844c35c" class="bulleted-list"><li style="list-style-type:disc">Začenmo barvati zadaj, in sicer prvo pobarvamo dolžino las, nato izrestek in na koncu konice.</li></ul></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
