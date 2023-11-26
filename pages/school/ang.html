@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 35px;
+	color: white;
+	background-color: black;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fd736f52-0493-4bf7-92a0-ff053d020831" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><p id="8b61e4c3-066f-473e-ad36-cb43db62aafd" class="">
+</p><ul id="727cfd70-939a-4dc6-a080-7b9d1f8628d0" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>The importance of technology in my profession</strong></mark></summary><p id="39f3d588-687c-4520-9531-69439fbeeb5f" class="">In today&#x27;s fast-paced world, technology plays a pivotal role in shaping various professions, and my experience as a budding hairdresser underscores the significance of embracing technological advancements in the field. As a hairdresser, I find that technology not only streamlines our daily tasks but also enhances the overall client experience.</p><p id="5f35d4ee-2fd7-44fe-b09e-518ea94a7c86" class="">In the realm of hairdressing, innovative tools and software contribute to efficient salon management. Online scheduling systems simplify appointment bookings, allowing for better organization and improved customer service. Moreover, modern hairstyling equipment, equipped with cutting-edge technology, facilitates precision in crafting diverse looks.</p><p id="5e6100d7-a818-48b2-97cb-119a3fa899d7" class="">The digital landscape further amplifies the reach of our work. Social media platforms serve as dynamic portfolios, showcasing our skills and attracting a broader clientele. Additionally, online tutorials and webinars provide continuous learning opportunities.</p><p id="69b40623-6c42-4257-8de7-e6bed84a73c2" class="">While embracing technology, it&#x27;s crucial to strike a balance, ensuring that the personal touch in client interactions remains paramount. The artistry of hairdressing, coupled with the efficiency of technology, creates a harmonious blend that elevates my profession, making it both dynamic and client-focused. As I navigate this evolving landscape, I am excited about the endless possibilities technology brings to the world of hairdressing.</p></details></li></ul><ul id="7abbeec9-e353-429f-9a2c-b5b21eefd37d" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>Technology has made our lives faster. But has it made them better, too?</strong></mark></summary><p id="853661a5-8e4c-4e0e-afcb-08c4ac1ed18b" class="">Technology has undeniably accelerated the pace of our lives, but whether it has genuinely made them better remains a subject of contemplation. As a student navigating the digital era, I appreciate the convenience technology brings, yet I also acknowledge its potential drawbacks.</p><p id="38003542-47a4-4d2b-a48d-5278d5053826" class="">On the positive side, the speed of communication has skyrocketed. With instant messaging and social media, staying connected with friends and family worldwide has become seamless. Additionally, the vast array of information available online improves learning and broadens our perspectives.</p><p id="9d0eb8d6-dde2-469c-bf8e-e9fcd5589eda" class="">However, the rapid pace set by technology has its downsides. The constant alerts of notifications and the pressure to keep up with the latest trends can lead to stress and a sense of overwhelm. Moreover, technology has altered the dynamics of human interaction. While it connects us virtually, there&#x27;s a risk of losing the depth of face-to-face relationships. </p><p id="dfc60a08-eebd-4409-9d97-e20efd742019" class="">In conclusion, while technology has for sure made our lives faster and more connected, its impact on the overall quality of our lives is nuanced. Striking a balance between embracing technological advancements and preserving essential human values is crucial for ensuring that the acceleration of our lives also translates into genuine improvement.</p><ul id="de96c01e-9411-4b72-8d68-83c54a8ccdf2" class="toggle"><li><details ><summary>STARA VERZIJA</summary><p id="5d91329b-4018-4e23-b65d-c3d6c754ac31" class="">In this essay, I will be discussing the topic if technology has made our lives better or worse. This topic is important and relevant because we heavily rely on technology.</p><p id="8bc9ddef-7682-46dd-9a61-b526850756f1" class="">There is no doubt that technology has made our lives faster but as soon as we start to question ourselves if technology also made our lives better, doubts arise. At the first sight I would argue that technology has made our lives immenesly better. Nowdays we have almost every information in our pockets. Most of us carry a smartphone almost the whole day. We can’t forget about technology in physical objects like cars, kitchen tech and so on. I could go on and on and list many more technolgies that have made my life better, but I think that we should not be so naive and look just at the positive aspects of technology but also at the negative aspects. Ever since of introduction of the first iPhone the suicide rate has gone up, and it’s still going up. We bacame a bit isolated and lonely beacuse there was no need to go outside with friends and entertein ourselves anymore because you had all the enterteinment on you phone.</p><p id="9c4bb87a-519b-4d38-a462-4603bc7087df" class="">So in conclusion, I would argue, that technology has mad our lives better. The positive aspect outweights the negative aspect of technology.</p></details></li></ul></details></li></ul><ul id="7d1aa2f8-217b-45cf-bebf-17ae4a233056" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>Being multilingual is a benefit and an opportunity</strong></mark></summary><p id="c2ec3a7b-a59e-4870-807d-b6752b30dd1c" class="">In this essay, I will be discussing the topic of being multilingual and the benefits that come along with it. This topic is important and relevant because being multilingual is an opportunity to improve many aspects in one’s life.</p><p id="79686d03-fa47-440f-873d-86c4655be7b6" class="">Firstly, I will state some benefits of being multilingual along with some examples, and then I will disucss why becoming multilingual is a great to imporve a wide range of aspects in one’s life. First benefit that instantly stands out for me is the ability to make a deeper connection with someone that doesn’t speak your native language. I mean, why do languages exist in the first place? Because they serve as a tool to communatw with eachother. Also one benefite of being In this essay, I will be discussing the topic of being multilingual and the benefits that come along with it. This topic is important and relevant because being multilingual is an opportunity to improve many aspects in one’s life. is the abillity to tarve more confidently</p></details></li></ul><ul id="8cbe9d88-c78c-4837-b5a1-fd3ca572b45f" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>Building my professional career</strong></mark></summary><p id="d7d27c21-7383-4756-ba86-df75706d9b8b" class="">Starting my career journey began as an exciting adventure, especially since I started as a student at a hairdressing school. Now, I aim to move from hairstyling to programming. In my early years of learning about hairdressing, I focused on being creative and mastering hairstyling techniques. However, in my third year, I unexpectedly got interested in programming.</p><p id="cb98db00-d321-4d9f-9890-9cd183a520fb" class="">Shifting from the creative world of hairstyling to the structured world of programming might seem like a big change, but I see it as an exciting challenge. While I initially focused on scissors and styling techniques, I&#x27;m now exploring coding languages and software development. This journey combines artistic expression with logical problem-solving, showing the connection between creativity and technology.</p><p id="8348bbbc-1148-46e7-8358-2002f772cae8" class="">As I build my career, I use the creativity from my hairstyling studies while diving into the complexities of coding. This path involves adapting and blending artistic flair with the precision required in programming. I believe this mix defines my unique journey and positions me as a versatile professional ready to navigate the crossroads of creativity and technology with finesse and innovation.</p></details></li></ul><ul id="41fe5f7e-921a-462d-961a-496e97edaf0a" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>Life&#x27;s most enjoyable milestones</strong></mark></summary><p id="c8e52598-811b-44c6-902b-c44715a26a8e" class="">Life&#x27;s most enjoyable milestones are like colorful pieces of a puzzle that gradually come together, forming a beautiful picture of our journey. One of my memorable milestones was a school camping trip that brought me closer to nature and my classmates.</p><p id="8f60119e-dc3d-4eac-9484-9e67ffabda80" class="">As we prepered our tents and gathered around the campfire, a sense of friendship filled the air. Despite the initial challenges of setting up camp, the experience taught me valuable teamwork and problem-solving skills. Sitting under the starry night, sharing stories and laughter, I realized the importance of bonding beyond the classroom.</p><p id="22a12f02-728e-498e-aa6a-e9295bde48d6" class="">The milestone wasn&#x27;t just about surviving in the wilderness; it was about discovering our strengths and creating lasting memories. From conquering fears during a challenging hike to cooking meals together, every moment added a unique hue to our shared adventure.</p><p id="2cd01ba2-7652-480e-be8b-45e046a55cdd" class="">This milestone wasn&#x27;t only about personal growth but also about appreciating the diverse talents within our group. Each person contributed something special.</p><p id="a367f001-764b-4429-a69d-9b1cab39735d" class="">In conclusion, life&#x27;s most enjoyable milestones may not always be grand events; they can be found in the simplicity of shared moments. This camping trip taught me that the journey is as significant as the destination.</p></details></li></ul><ul id="8e34b12a-de7a-486a-8140-5109990b6402" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>Life experience defines our character</strong></mark></summary><p id="626b803a-fe83-4262-9a35-02923cd30e33" class="">Life experiences are crucial in shaping our character. In my 20 years on Earth, I&#x27;ve thought about which ones had the most impact on defining who I am. Middle school, with its social interactions and friendships, marked a foundational period in character development. Learning to navigate relationships and connect with others influenced my social skills.</p><p id="f7191748-69a4-4e63-8baf-c093440ca6e9" class="">Moving on to the secondary school, independence became a key aspect of my character. Despite being enrolled in a hairdressing school, an unexpected passion for programming emerged. This newfound interest, discovered during the secondary school, is likely to define my character, steering me towards a career in programming.</p><p id="e8121c20-1280-481f-a9c2-61c0d49a3251" class="">Reflecting on the broader scope, the most impactful experiences that molded my character involved changes in my environment. I believe this holds true for many others as well. Personal traumas, too, play a crucial role. These challenging moments shape us in profound ways.</p><p id="b36cbdb7-00da-49c4-aa49-a561c1fabd4a" class="">In conclusion, the combination of experiences, including changes in the environment and challenging events, collectively shapes who we are. Life&#x27;s twists and turns, both positive and challenging, contribute to the unique story of shaping our character.</p><ul id="68665088-36bb-4cca-b7ae-4cebc04d1131" class="toggle"><li><details ><summary><strong>STARA VERZIJA</strong></summary><p id="550b7a8a-36ca-4fcd-b932-ff2e323866b2" class="">In this essay, I will be discussing life experience that defines our character. Life experience that defines our character is a broad topic that shoud be talked more often. Throught my living on this planet Earth for almost 20 years, I’m wondering which life experience has defined my character the most. This is a very difficult task because I think that there are multiple experiences that defined my character, and not solely one. Lets start with the middle school. Middle school definitely somewhat defined my character. I learned how to be social and interect with other people. I also made friends that helped define my character. Second big experience that defined my character was and still is high school. In high school I have learned to be more independent, made some new friends, and learned what my true passion is. I am in a hairdressing school so you would probably think that my passion is hairdressing. You would be wrong. Throughout my high school I became to develop a passion for programming. This will probably define my character the most as I will probably be a programmer in the feature. So if we take a step back and look at the bigger picture, the most impactful experiences that defined my character were the change of the environment. I would assume this is also true for other people. Also we can’t forget about the individuals personal experiences, that are lots of the times traumatic. Those experiences also dramatically define our character. So in conclusion there are multiple experiences that define our character, and the most important ones are in my opinion change of enviornment and traumatic events.</p></details></li></ul></details></li></ul><ul id="82de7254-15c3-46e2-8a4f-7b51fccb4bdb" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>Failure teaches us important lessons</strong></mark></summary><p id="6771194b-7765-4c96-abce-f8db9208e3b8" class="">Facing failure is an inevitable aspect of life, and I firmly believe that these experiences are invaluable lessons that contribute to personal growth and development. When we encounter setbacks, it&#x27;s easy to perceive them negatively, but I&#x27;ve come to realize that failures offer profound insights and opportunities for improvement.</p><p id="0ac12b7f-8c3c-4f9e-a757-055b9c4f4850" class="">One crucial lesson I&#x27;ve learned from failure is resilience. Each time I&#x27;ve faced a challenge and fallen short, it has provided a chance to develop resilience – the ability to bounce back and persevere.</p><p id="db7a63cd-65f3-4c4c-8df5-c89679842f32" class="">Moreover, failure serves as a powerful motivator. The disappointment that accompanies falling short of a goal propels me to work harder and smarter. It acts as a catalyst for self-reflection, pushing me to identify areas for improvement and implement necessary changes.</p><p id="a943252f-2b1c-4bac-acf3-8f0edaa85dcd" class="">Failures also teach the importance of adaptability. They encourage us to reevaluate our strategies and adopt alternative approaches.</p><p id="98c354f8-a8d9-4471-ad34-cec2b53d0711" class="">In conclusion, while failure may initially be disheartening, its lessons are transformative. It shapes our character, instills resilience, fuels motivation, and fosters adaptability. These lessons, though challenging, are instrumental in navigating the journey of life and achieving personal and academic success.</p><ul id="9ffdfcb9-4403-45a8-98e9-fd5a9f3c9da9" class="toggle"><li><details ><summary>STARA VERZIJA</summary><p id="37a07ab4-a5e7-4641-b44f-d8b29a5e880f" class="">In this essay, I will be discussing the topic of how failure teaches us important lessons. This topic is important because failure is a crucial step of a learning process, and we should not be afraid to fail.</p><p id="66b20159-324a-4430-963d-e04df3bfd544" class="">Not only does failure teach us important lessons but it de facto teaches us everything. Every learning process comes with failures from which we learn on how to adopt, how to think criticaly, how to communicate with one another, we learn how to be creative, and failure also teaches us an important lessons such as that life is not perfect and that you sometimes have to fail multiple times to achive something. There is also the question what really is a failure? Is it really a failure if it teaches us important stuff for life?</p><p id="7e807a6d-1ef2-4cb4-a775-15ae8c88d8f9" class="">In my own personal life I have failed countless times, and because of all the lessons I have learned throughout the process of failing, I have become who I am today.</p><p id="aad11a3b-0fc3-4f07-85c0-fbf46309e909" class="">So in conclusion, failure is a crucial and an important step in life that without a doubt teaches us important lessons which define our lives.</p></details></li></ul></details></li></ul><ul id="b6bffaf0-b080-4929-8c9e-a59076cae2a0" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>The role of sports in personal or national development</strong></mark></summary><p id="71c94c94-8b2b-4878-a9df-47cb491113b5" class="">Sports hold a crucial role in both personal and national development. From my perspective as a student with a keen interest in sports, I believe that engagement in physical activities not only fosters individual well-being but also contributes to the broader growth of a nation.</p><p id="59f6bc0e-004b-4f5c-bf84-8a71328513b1" class="">On a personal level, participation in sports cultivates discipline, teamwork, and resilience. These qualities are transferable to various aspects of life, aiding in academic pursuits and future career endeavors. Personally, being part of a sports team has taught me the importance of collaboration and the value of hard work.</p><p id="69a9eb08-3271-4f8e-8a56-41402ff82035" class="">Moreover, at a national level, the significance of sports is evident in fostering unity and national pride. Successful athletes become ambassadors, showcasing the capabilities and spirit of a nation on the global stage. Sporting events also have the power to bring communities together, transcending cultural and social barriers.</p><p id="6a83eccb-9255-48a1-825a-dc1befe1f721" class="">In conclusion, the impact of sports extends beyond the playing field. It molds individuals into well-rounded, disciplined citizens while simultaneously contributing to the cohesion and pride of a nation. As we celebrate sporting achievements, we recognize the role they play in shaping both personal character and the identity of a nation.</p></details></li></ul><ul id="d9f6d598-d754-489a-8750-db4974ddc971" class="toggle"><li><details ><summary><strong>How to become an independent individual?</strong></summary><p id="cfe2a045-ab2f-496e-95c5-957e73b97258" class="">Becoming an independent individual is a journey that involves self-discovery, resilience, and the willingness to step out of one&#x27;s comfort zone. To embark on this path, it is essential to cultivate self-awareness. Understanding personal strengths, weaknesses, and values lays the foundation for making informed decisions.</p><p id="80af884e-1bca-4b4c-ac02-4afe2c9431d5" class="">Setting realistic goals is another crucial aspect. By breaking down larger objectives into manageable steps, one can build a sense of accomplishment, fostering independence. Moreover, embracing challenges is key.</p><p id="552d1c8d-ba68-474c-a2c1-3781758d7bf2" class="">Effective communication plays a pivotal role in independence. Expressing thoughts and feelings assertively, yet respectfully, ensures that individual needs are met. Developing a support network is equally important. Surrounding oneself with positive influences provides encouragement and different perspectives, aiding in personal growth.</p><p id="02aa172a-a1df-4883-aee1-bedf0e2d00aa" class="">Financial literacy is a practical skill that empowers independence. Understanding budgeting, savings, and financial planning contributes to a secure and self-sufficient lifestyle. Lastly, continuous learning is a lifelong companion on the journey to independence. Remaining open to new ideas and experiences fosters adaptability and resilience.</p><p id="c742f4e5-af87-4aff-8e95-f720cd0f397f" class="">In conclusion, becoming an independent individual involves a holistic approach that encompasses self-awareness, goal-setting, effective communication, financial literacy, and a commitment to lifelong learning. Through these steps, one can navigate the path towards independence with confidence and purpose.</p></details></li></ul><ul id="cc83edb4-3d95-49dd-97f0-7690e341b5d9" class="toggle"><li><details ><summary><strong>Are we losing authentic relationships because of technology?</strong></summary><p id="ea6cd210-7183-4672-bf27-66f121a90ee2" class="">In our fast-paced digital age, the impact of technology on our interpersonal connections is a subject that often occupies my thoughts. While technology undeniably enhances communication and connectivity, I believe there&#x27;s a growing concern about the authenticity of our relationships.</p><p id="a1422abe-80a2-4c1d-99f3-cf5d01ec5298" class="">The convenience of instant messaging and social media platforms has made communication more accessible, yet it seems to come at the cost of depth. We may find ourselves substituting meaningful face-to-face conversations with quick text exchanges. The emotional nuances conveyed through physical presence can be lost in the realm of screens and emojis.</p><p id="8dc0db9b-ad78-4cc3-9701-520d47e77682" class="">Moreover, the prevalence of social media tends to cultivate a culture of comparison and superficiality. People often showcase curated versions of their lives, creating a distorted perception of reality.</p><p id="8668f84a-9f64-4e58-abc2-b5bbcbd300b0" class="">However, it&#x27;s crucial to acknowledge that technology also provides avenues for maintaining and nurturing relationships, especially across geographical distances. Video calls and online platforms offer a lifeline for staying connected with loved ones, bridging the gaps created by physical separation.</p><p id="ccf16ba6-cf54-4c55-a7c8-ab26a57c87a0" class="">In conclusion, while technology has undoubtedly transformed the way we relate to one another, it&#x27;s essential to strike a balance. We must consciously foster authentic connections by valuing quality over quantity in our digital interactions, ensuring that technology enhances rather than hinders the depth of our relationships.</p></details></li></ul><ul id="3427c711-a0aa-4d2b-81c7-186f7f98667e" class="toggle"><li><details ><summary><strong>Strengths and weaknesses of online friendships</strong></summary><p id="bb08d41d-bbe5-4c00-b0b0-42e0d0a49184" class="">In the age of technology, online friendships have become increasingly popular, bringing both strengths and weaknesses into focus. One evident strength lies in the ability to connect with people globally, breaking geographical boundaries. Through online platforms, I&#x27;ve had the chance to make friendships with individuals from diferent cultures, broadening my perspective and enriching my understanding of the world.</p><p id="9e5cce26-bc28-489c-b33a-23a2b52fb9f4" class="">Moreover, online friendships offer a sense of anonymity, allowing for open and honest communication. It&#x27;s often easier to share thoughts and feelings when there&#x27;s a certain level of distance, creating a space for genuine self-expression.</p><p id="38423f9a-2036-416e-ab4f-63531a3377ea" class="">However, the weaknesses of online friendships should not be overlooked. The lack of physical presence can lead to misunderstandings, as nuances in tone and body language are absent. Trust, a fundamental aspect of any friendship, can be challenging to establish solely through virtual interactions.</p><p id="0e63d942-5e30-4ac7-9439-a7787ad7183b" class="">Additionally, the potential for misrepresentation is a notable weakness. Online, people can craft specific personas, and it&#x27;s essential to navigate through the virtual landscape with caution. Balancing the positives and negatives of online friendships requires a discerning approach, recognizing the value they bring while acknowledging the limitations inherent in the digital realm.</p></details></li></ul><ul id="068b8904-4b8a-4abd-839e-bef9c6d6b138" class="toggle"><li><details ><summary><strong>Sports is not about competitiveness; it is about participation and cooperation</strong></summary><p id="7b31adea-f7e3-42b6-94eb-f3ee6d8dc481" class="">Engaging in sports goes beyond mere competitiveness; it embodies the spirit of participation and cooperation, fostering a sense of unity and camaraderie among individuals. While competition is inherent in sports, the true essence lies in the collective experience of coming together to enjoy a shared activity.</p><p id="4a5ba1af-6ddd-44de-9620-af94bfb59626" class="">Participation in sports instills valuable life skills that extend beyond the playing field. It teaches us the importance of teamwork, communication, and mutual support. Whether we win or lose, the bonds formed through collaboration contribute significantly to personal growth and character development.</p><p id="af3da29e-3ddb-4f1a-ac0b-5fc294591182" class="">Cooperation in sports transcends individual achievements. It&#x27;s about celebrating each other&#x27;s successes, learning from setbacks, and collectively striving for improvement. In team sports particularly, the synergy among teammates is fundamental.</p><p id="6b003142-b185-4e59-82fd-7118dc0b28ed" class="">Moreover, sports serve as a universal language, bridging gaps and fostering understanding among diverse individuals. Regardless of background or skill level, everyone can find a place in the world of sports, creating a rich tapestry of experiences and perspectives.</p><p id="d5927f6b-7d31-41ca-a19a-4a4dc216f9e0" class="">In conclusion, the heart of sports lies in the joy of participation and the bonds forged through cooperation. It is a powerful vehicle for personal development and societal unity, emphasizing that the true victory is in the shared journey, not just the destination.</p></details></li></ul><ul id="8da19d54-afd7-46c4-bc58-976a7a649dd8" class="toggle"><li><details ><summary><strong>Is technology something to appreciate or to fear?</strong></summary><p id="e75193ab-13ba-42c0-a5b4-9e43447e5249" class="">Technology is a topic that sparks both appreciation and fear in our rapidly changing world. From my perspective, I believe that technology is a double-edged sword, offering diverse benefits while also raising concerns.</p><p id="a4082555-262b-4341-a7d8-1f235c346100" class="">On the positive side, technology has undeniably improved our lives. It enhances communication, making it easier for people to connect across the globe. Personally, I appreciate the convenience of smartphones and the ability to access information at our fingertips. Additionally, technological advancements in medicine have led to breakthroughs in healthcare, improving the quality of life for many.</p><p id="4d2391fd-8174-4652-949d-ee3342b16af6" class="">However, there is a growing fear surrounding technology, particularly regarding privacy and job security. The constant connectivity and data-sharing raise questions about the protection of our personal information. Moreover, the automation of certain jobs creates anxiety about unemployment and economic stability.</p><p id="c6417fe7-1d4a-4169-a2a8-0b4b2f199c8b" class="">In conclusion, while I appreciate the positive impact of technology, it&#x27;s essential to address the fears and challenges it brings. Striking a balance between embracing innovation and safeguarding important aspects of our lives is crucial for a harmonious coexistence with technology. As we navigate this digital era, a thoughtful and measured approach will help us appreciate the benefits without succumbing to undue fears.</p></details></li></ul><ul id="33e73b37-8a1b-43e8-b96b-ad7c9e063f45" class="toggle"><li><details ><summary><strong>What would I do without my friends?</strong></summary><p id="11633a80-323a-4029-95b2-c5b5ffb58a87" class="">Friends are like stars in my life, bringing brightness to even the darkest days. Without them, life would be a dull and lonely journey. Firstly, friends provide unwavering support during challenging times. When faced with difficulties, they offer a listening ear and comforting words, turning hardships into shared experiences. This emotional support creates a safety net that I can rely on.</p><p id="fcdaef6a-27bf-4232-849e-f50dbf4cc9e0" class="">Moreover, friends add color to the canvas of my everyday life. Simple moments, like chatting over a cup of coffee or laughing at inside jokes, become cherished memories. Their presence transforms mundane activities into joyful adventures, making life more enjoyable and meaningful.</p><p id="cb9ca907-4f0a-4bb5-9d38-cf62a58496b0" class="">In times of celebration, friends amplify the joy. Whether it&#x27;s a birthday, graduation, or a personal achievement, having friends by my side magnifies the happiness and creates a sense of belonging. The shared laughter and camaraderie make these moments truly special.</p><p id="dfb933cc-943a-44ae-8b32-0d729b581fb7" class="">In essence, my friends are my pillars of strength and the spice of my life. Without them, the journey would lack flavor, and challenges would seem insurmountable. As I navigate the twists and turns of life, I am immensely grateful for the irreplaceable role my friends play in making the ride worthwhile.</p></details></li></ul><ul id="21f0eeff-5610-40ce-81b2-402c4c31e797" class="toggle"><li><details ><summary><strong>Friends are more important than family</strong></summary><p id="67700531-9ab6-4404-8c0d-95d516f46c55" class="">In my humble opinion, the value of friendships often surpasses that of family bonds. While family provides a foundation of support and unconditional love, friends offer a unique connection based on shared interests and personal choices.</p><p id="c0b1a3a6-d453-4697-8b63-60a1d27636f1" class="">Friends are the companions with whom we choose to navigate the journey of life. Unlike family, these connections are voluntary, born out of mutual understanding and common ground. Friendships bring a sense of camaraderie and joy, as we share experiences, laughter, and sometimes even challenges.</p><p id="9cc1e166-576a-40ac-bd02-d12535aee94e" class="">In times of trouble, friends can be pillars of strength. They offer a different perspective, unbiased and rooted in our shared experiences. The freedom to confide in friends without the weight of familial expectations fosters openness and honesty.</p><p id="3938417e-4f05-426e-a7f5-55c182b2bb13" class="">Moreover, friendships often serve as a chosen family. As we grow and evolve, our circle of friends expands, becoming a diverse network of support that complements our familial ties. While family remains a crucial part of our lives, the unique dynamics of friendship contribute immensely to our personal growth and happiness.</p><p id="f6f7070b-f6b4-467f-8b0d-cc01339f396e" class="">In conclusion, while family provides a solid foundation, the importance of friends should not be understated. These relationships, built on choice and shared experiences, enrich our lives in ways that are both distinct and invaluable.</p></details></li></ul><ul id="03cdc3d7-a53b-4825-9bf6-34b82b6c85bf" class="toggle"><li><details ><summary><strong>Problems of the world could be solved</strong></summary><p id="0b7a9074-64ea-47e6-857d-20f265d32d19" class="">In today&#x27;s world, the issues we face may seem overwhelming, but I believe that many of the problems could be solved through collective effort and thoughtful solutions. One of the primary challenges is environmental degradation. Pollution and climate change affect us all, and addressing these issues requires a global commitment to sustainable practices. Simple actions, like reducing single-use plastics and embracing renewable energy, can contribute significantly.</p><p id="74e73fa7-ad1f-4017-8a8d-f8b89ba7e39d" class="">Another critical problem is inequality. Economic disparities and social injustices persist, but through education and awareness, we can work towards a fairer society. Supporting initiatives that provide equal opportunities, regardless of background, is a step in the right direction.</p><p id="379b134e-ce0f-4fb1-8854-85270fdca677" class="">Additionally, conflicts and wars continue to disrupt lives globally. Diplomacy and dialogue can pave the way for peaceful resolutions. By fostering understanding between nations and promoting open communication, we can strive for a more harmonious world.</p><p id="1d504a3b-7173-4f4c-82d6-3564e2560710" class="">In conclusion, while the world faces complex challenges, solutions exist. Small, everyday actions and a collective commitment to positive change can address issues ranging from environmental concerns to social inequalities and global conflicts. Through unity and understanding, we can contribute to a better future for our world.</p></details></li></ul><ul id="28168372-f976-46fa-a4e2-f1d2dc356ee7" class="toggle"><li><details ><summary><strong>The value of education today</strong></summary><p id="08d47521-210a-433c-aaf6-9cfb24384140" class="">Education holds immense importance in today&#x27;s world, providing a foundation for personal and societal growth. From my perspective, it serves as a guiding light, shaping individuals into informed and responsible members of society.</p><p id="2a302332-e7f6-461c-a5e5-359df34a35fc" class="">One crucial aspect of the value of education lies in its role in fostering critical thinking skills. Through exposure to diverse subjects and ideas, students learn to analyze, question, and form their own opinions. This ability is vital in navigating the complexities of the modern world.</p><p id="75691ea1-ed4b-4b8b-98bf-f0ad7d2a794b" class="">Furthermore, education opens doors to opportunities. It equips individuals with the knowledge and skills needed for various professions, increasing the likelihood of career success. This not only benefits the individual but also contributes to the overall progress of communities and nations.</p><p id="9abe66a2-7e66-4420-bbc1-3cc41559778a" class="">Education is also a tool for promoting understanding and tolerance. Exposure to different cultures and perspectives encourages empathy and helps break down societal barriers. In a globalized world, this cultural awareness is invaluable.</p><p id="1a555a5c-539e-43e8-b3a3-40b1abd113db" class="">While challenges may exist in the education system, recognizing its intrinsic value is crucial. Education empowers individuals, shapes communities, and builds a foundation for a brighter future. As we navigate the complexities of the 21st century, the value of education remains unwavering.</p></details></li></ul><ul id="6e0c5acf-d71f-4eee-a355-c115676d9ffb" class="toggle"><li><details ><summary><strong>The dangers young people face in their everyday lives</strong></summary><p id="253fbb02-e31d-4003-a242-56e163481be9" class="">Growing up in today&#x27;s world exposes young people to various challenges and dangers in their everyday lives. One prevalent concern is the impact of social media on mental health. Constant exposure to idealized images can create unrealistic expectations, leading to issues like low self-esteem and body image concerns. As a teenager, I&#x27;ve witnessed the pressure to conform to online standards.</p><p id="389900b3-1ae2-4c2e-b499-f95792421318" class="">Moreover, the prevalence of cyberbullying has emerged as a significant threat. The anonymity provided by online platforms sometimes emboldens individuals to engage in hurtful behavior, affecting the emotional well-being of their peers. It&#x27;s essential for young people to be cautious and report such incidents to ensure a safer online environment.</p><p id="68cedf0f-c930-4d50-b4b9-24f655cb852b" class="">Outside the digital realm, substance abuse remains a persistent danger. Peer pressure and a desire to fit in can lure young individuals into experimenting with drugs and alcohol. Education and open communication within families and schools are crucial in addressing this issue.</p><p id="ea446910-79a2-468a-a811-96c1a59b0535" class="">In navigating these hazards, fostering a supportive community that encourages open dialogue is vital. Young people need guidance and understanding to make informed decisions and develop resilience in the face of these challenges.</p></details></li></ul><ul id="c4d3612b-2efb-41de-b29d-0dd780b5f2cc" class="toggle"><li><details ><summary><strong>We are (not) what we wear</strong></summary><p id="03016d44-d4d7-4511-a922-c7df124fdf3f" class="">In today&#x27;s society, what we wear often serves as a form of self-expression, reflecting our personality, interests, and even our mood. Clothing becomes a silent language, conveying messages about who we are or aspire to be. However, it&#x27;s essential to question whether our outward appearance truly defines us.</p><p id="7f15320a-4117-440e-b5ab-ea4ab88b5a64" class="">On one hand, fashion choices can empower individuals, allowing them to embrace their uniqueness and convey their cultural or personal identity. Wearing attire that resonates with our values can boost confidence and create a sense of belonging. On the other hand, the danger lies in stereotyping and judging people solely based on their clothing. It&#x27;s easy to misinterpret someone&#x27;s character, interests, or socioeconomic status based on outward appearances.</p><p id="34cd67b7-002f-47b1-ad33-596db44fb8e2" class="">Personally, I believe that while clothing plays a role in self-expression, it should not be the sole determinant of one&#x27;s identity. It&#x27;s crucial to recognize the diversity within individuals and appreciate that clothing is just one facet of a much broader and intricate picture. Ultimately, our actions, beliefs, and relationships define us more than the garments we choose to adorn ourselves with.</p></details></li></ul><ul id="745c1765-d71d-408d-bc14-7afef192a168" class="toggle"><li><details ><summary><strong>Can teenagers change the world?</strong></summary><p id="c5b0c441-d51a-4e4e-8835-f0fe44dfa8d3" class="">Teenagers possess a unique power to effect positive change in the world. Despite our age, we harbor fresh perspectives and an inherent drive for a better future. It&#x27;s a misconception that impactful change requires advanced age or vast resources; in reality, small actions by teenagers can create ripples that extend far beyond.</p><p id="5aa6f461-ff9e-4561-a8a0-a28b579dde31" class="">One powerful avenue for teenage influence is social media. Platforms like Instagram and TikTok provide us with a global stage to amplify our voices. By sharing ideas, spreading awareness, and fostering dialogue, we can mobilize communities toward collective action. Take, for instance, youth-led environmental movements that have gained momentum worldwide, illustrating the potency of our unified voices.</p><p id="321ccd20-1fb7-47a6-b0dd-21944d8c3548" class="">Education is another realm where teenagers can instigate change. By challenging outdated norms and advocating for inclusive curricula, we contribute to shaping a more equitable society.</p><p id="460854bc-32c7-4729-a454-b494ac69ae1f" class="">In conclusion, while the notion of teenagers changing the world may seem ambitious, it is rooted in the understanding that our actions, no matter how small, hold the potential for significant impact. The world is malleable, and as teenagers, we possess the enthusiasm and courage to mold it into a better place for all.</p></details></li></ul><ul id="6038a8db-b6c7-462b-81ea-6b3416db65a0" class="toggle"><li><details ><summary><strong>Being a teenager can be challenging but also fun</strong></summary><p id="afc155e3-5248-4c20-846c-8baf81451a37" class="">Being a teenager is like riding a roller coaster – full of ups and downs, twists and turns. It&#x27;s undeniably a challenging phase of life, but amidst the struggles, there&#x27;s a unique kind of fun that comes with it.</p><p id="c72aeba1-8311-41a2-8c74-e16bab6247fd" class="">One of the challenges teenagers often face is navigating the complexities of identity. Figuring out who you are and where you fit in can be perplexing, but it&#x27;s also a journey of self-discovery that brings a sense of accomplishment.</p><p id="28489891-5e57-42cc-9cda-2f40640f3a2f" class="">Friendships form a significant part of the teenage experience. While misunderstandings and conflicts are inevitable, the bonds forged during this period can be some of the most enduring. The shared laughter, inside jokes, and the support of friends make the challenges easier to bear.</p><p id="36fdef84-048a-4166-bee0-ecc62a1a0f86" class="">Of course, there are moments of stress, be it academic pressure or the uncertainty of the future. Yet, the sense of achievement when overcoming obstacles is immensely gratifying.</p><p id="3ab99c8e-4c04-4955-bc42-353996ff0606" class="">In essence, being a teenager is a balancing act between facing challenges and embracing the joy that comes with self-discovery, friendships, and personal growth. Despite the uncertainties, the teenage journey is an adventure worth experiencing.</p></details></li></ul><ul id="744e241a-b270-46f8-b85b-0f129d86257e" class="toggle"><li><details ><summary><strong>A smile is worth a thousand words</strong></summary><p id="917d237f-fff7-41bb-b951-792125f227b1" class="">A smile says more than words ever could. It&#x27;s a universal language that brings people together, creating warmth and understanding. In my daily life, I&#x27;ve seen how a simple smile can make a connection, breaking down barriers and making things feel friendly.</p><p id="809b5dd9-8312-4d8a-af73-f37d04de0283" class="">Beyond that, a smile expresses emotions effortlessly. It can brighten someone&#x27;s day, offer comfort when needed, or share joy in moments of celebration. In a world that can be complicated, a genuine smile spreads happiness to those around us.</p><p id="66cff972-0d79-45e3-b638-7864abd39f4a" class="">The beauty of a smile is that it&#x27;s a silent language. It transcends cultural differences, allowing people to connect on a basic human level. This makes a smile a valuable form of communication that goes beyond words.</p><p id="f861a2f8-b9b1-43fd-b778-9a86a825bfb0" class="">In summary, the saying &quot;A smile is worth a thousand words&quot; holds true for me. Its simplicity and universality make it a powerful tool for building connections and understanding in our world.</p></details></li></ul><p id="7f499b80-4e96-4334-8342-19dfad930b59" class="">
+</p><ul id="92f15ed5-0966-4067-b9fc-15f5c13b8bd4" class="toggle"><li><details ><summary><mark class="highlight-purple"><strong>BOILERPLATE</strong></mark></summary><ul id="f7e58b0a-a1d7-4d7a-bd2f-a9421a2d5023" class="bulleted-list"><li style="list-style-type:disc"><strong>Introduction</strong>:
+In this essay, I will be discussing the topic of [insert topic]. [Insert topic] is a broad/narrow topic that has gained significant attention in recent times. It is important/interesting/relevant because [insert reasons why it matters].</li></ul><ul id="cd5a35a8-91d1-4903-8f08-303c4483cff4" class="bulleted-list"><li style="list-style-type:disc"><strong>Body Paragraphs</strong>:
+The body of this essay will focus on main points to support the thesis statement. Each paragraph will begin with a topic sentence that introduces the main idea, followed by supporting details and examples. The following are possible points that can be discussed in this essay:<ul id="a65aabc0-5113-4496-82a5-431576aa1d39" class="bulleted-list"><li style="list-style-type:circle">[Insert first point]. This point is important because [insert explanation].</li></ul><ul id="55091ac5-24d4-46fa-89f9-3409e639af43" class="bulleted-list"><li style="list-style-type:circle">[Insert second point]. This point is relevant because [insert explanation].</li></ul><ul id="e44c88e1-9ced-4803-ba36-040c2e7acbd0" class="bulleted-list"><li style="list-style-type:circle">[Insert third point]. This point is significant because [insert explanation].</li></ul></li></ul><ul id="206ed836-f75a-4a17-877a-f48e277a5ec6" class="bulleted-list"><li style="list-style-type:disc"><strong>Conclusion</strong>:
+In conclusion, [restate thesis statement]. [Insert summary of main points]. [Insert final thoughts on the topic]. Overall, [insert final opinion on the topic].</li></ul></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
