@@ -23,9 +23,7 @@ function toggleMode() {
   mainElement.classList.toggle("dark-mode");
   // also add dark-mode class to all classes box
   let boxElement = document.querySelectorAll(".box");
-  // alo add dark-mode class to html
-  let htmlElement = document.querySelector("html");
-  htmlElement.classList.toggle("dark-mode");
+
   boxElement.forEach((element) => {
     element.classList.toggle("dark-mode");
   });

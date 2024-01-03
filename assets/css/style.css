@@ -204,6 +204,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #111827;
   /*background-color: #207fff;*/
+  background-color: #f5f5f5;
 }
 
 p {
@@ -289,8 +290,4 @@ hr {
   /*Make it a bit longer */
   /*width: 106%;*/
   /*margin-left: -1.15em;*/
-}
-
-html {
-  background-color: #f5f5f5;
 }
