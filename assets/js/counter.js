@@ -30,7 +30,7 @@ function updateTimer() {
     { value: years, unit: "year" },
     { value: months, unit: "month" },
     { value: days, unit: "day" },
-    { value: (diffHours % 24) + 2, unit: "hour" },
+    { value: (diffHours % 24) + 1, unit: "hour" },
   ]
     .filter((part) => part.value !== 0)
     .map((part) => `${part.value} ${part.unit}${part.value !== 1 ? "s" : ""}`);
