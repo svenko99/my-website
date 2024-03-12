@@ -215,7 +215,7 @@ p {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .colored {
@@ -290,4 +290,51 @@ hr {
   /*Make it a bit longer */
   /*width: 106%;*/
   /*margin-left: -1.15em;*/
+}
+
+
+/* CSS for the card flip */
+.card {
+  width: 120px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+}
+
+.card_front,
+.card_back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  backface-visibility: hidden;
+
+  /* Just styling the text nicely */
+  line-height: 150px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.card_front {
+  background-color: #64a1f7;
+  z-index: 1;
+  transform: rotateY(0deg);
+}
+
+.card_back {
+  background-color: #64a1f7;
+  transform: rotateY(180deg);
+}
+
+.card:active {
+  transform: perspective(400px) rotateY(180deg);
+}
+
+.card-cont {
+  display: inline-block;
+}
+
+.card-cont:hover .card {
+  transform: perspective(400px) rotateY(180deg);
 }
