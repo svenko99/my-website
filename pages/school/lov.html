@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 35px;
+	color: white;
+	background-color: black;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 1.25em;
+	margin-block-end: 1.25em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ee5fa13d-113b-4da7-a8e7-5b1164010494" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><ul id="acd82597-54a6-481f-be98-ee83dbf4f363" class="toggle"><li><details ><summary><strong>Simon Gregorčič: Človeka nikar</strong></summary><p id="e5714045-a699-416a-9dff-81887bc02b01" class=""><strong>avtor rojen: </strong>Vrsno</p><p id="17601666-a329-4953-a7ed-6f7e30c4f2a0" class=""><strong>izdan</strong>: 1882</p><p id="e3c110b3-fefa-4523-92bc-feee7832ab44" class=""><strong>vrsta</strong>: lirska pesem</p><p id="3a023e2d-7b3e-4320-9a28-f3df3a06cbc5" class=""><strong>motivi</strong>: hrepenenje, smrt</p><p id="6b53bfb0-175c-4db2-acdf-e3428e3546fa" class=""><strong>sporočilo</strong>: Pesnik osebno pesmistično prikaže svoje življenje. Ima bivanjsko stisko, razočaran je nad svetom in ljudmi.</p></details></li></ul><ul id="7dba4b65-4cc0-474f-b4e1-4462b9e05cbe" class="toggle"><li><details ><summary><strong>Simon Jenko: Obrazi</strong></summary><p id="35917bba-9d5b-4ce5-8034-be1c9f414bcf" class=""><strong>avtor rojen: </strong>Podrača</p><p id="1ca784f4-cdc4-4ac7-9a53-a844d9e8b05d" class=""><strong>izdan:</strong> 1865</p><p id="684bd685-2eca-4d66-b797-c4cdf345c7b5" class=""><strong>vrsta</strong>: obraz (pesem, v katerem se avtorjevo trenutno razpoloženje primerja, izenačuje z motivom iz narave)</p><p id="d4b19b02-c537-4786-9dba-ad9473eea329" class=""><strong>motivi: </strong><div class="indented"><ul id="e9abc940-4cf3-4db5-98d3-d95dcb37478f" class="bulleted-list"><li style="list-style-type:disc">7. človeško življenje, motiv narave, prikaz nadvlade narave.</li></ul><ul id="537a74ad-fe73-4155-9155-83aaecebd4ea" class="bulleted-list"><li style="list-style-type:disc">10. razmerje med človekom in naravo, minljivost človeka, nepomembnost človeka v primerjavi z naravo, neprestrano spreminjanje vsega.</li></ul></div></p><p id="179bf7e8-2cd6-4590-b0ac-20bbd1e5418e" class=""><strong>sporočilo</strong>: <div class="indented"><ul id="a14a9bd0-e4a3-49c4-83cf-0577a2a03c77" class="bulleted-list"><li style="list-style-type:disc">7. Prav tako kot je minljiv človek, so minljiva tudi njegova dela</li></ul><ul id="5b84e5a4-7546-4f0d-8a23-5b10e608aa07" class="bulleted-list"><li style="list-style-type:disc">10. Naravi ni mar za človekovo bolečino</li></ul></div></p></details></li></ul><ul id="42cd0bfe-e2a4-4d36-9f46-96810a7ac884" class="toggle"><li><details ><summary><strong>Anton Aškerc: Mejnik</strong></summary><p id="eaa474f2-0544-47d6-9a10-f1b89f239534" class=""><strong>avtor rojen:</strong> Rimske Toplice</p><p id="8a22ee3e-ca8f-4587-a63f-7e4fc6249c9b" class=""><strong>izšlo</strong>: 1890</p><p id="b9d1c59d-30d8-4a3e-a70e-b6a224ba8f29" class=""><strong>zvrst</strong>: epika</p><p id="dcf317d2-4115-4a39-b7fe-b9cf88307680" class=""><strong>vrsta</strong>: realistična moška balada</p><p id="c3c6c1c5-2f2d-4c13-b3a3-84b7e9be18f9" class=""><strong>motivi</strong>: slaba vest, mejnik, zemlja, privid, motiv življenja in smrti, soočanje z resnico</p><p id="be24d2c2-110e-4f31-8ba2-51057fdc0e2c" class=""><strong>sporočilo</strong>: Občutek krivde te spremlja skozi celotno življenje, celo v onstranstvu</p></details></li></ul><ul id="608e8bff-12f7-4894-9dd9-c6f5a276a943" class="toggle"><li><details ><summary><strong>Oscar Wilde: Saloma</strong></summary><p id="b50de96f-595b-4db2-9770-5bae0647956c" class=""><strong>avtor rojen:</strong> Dublin</p><p id="e3c66789-74c5-4f1e-b6e5-868694b9a5bd" class=""><strong>izšlo:</strong> 1893</p><p id="f7e3df3b-daca-4b8c-9cc2-66b69fc257a2" class=""><strong>zvrst:</strong> dramatika</p><p id="f9a0a28f-cbf6-44ce-9dbf-fa4bd2962ad8" class=""><strong>vrsta:</strong> poetična drama (dekadenčna drama)</p><p id="a4bfd709-b20e-4a1c-aa97-ee2b7c184bc6" class=""><strong>motivi</strong>: nusilšana ljubezen, askeza, čutnost, greh, incest</p><p id="5b54d3d5-e534-4ae4-b525-8e96fc97b207" class=""><strong>sporočilo:</strong> Pogubnost človekove strasti. Uničevalna moč želje in hrepenenja.</p></details></li></ul><ul id="7cd65500-db10-4e2b-a84d-6a458aeb4861" class="toggle"><li><details ><summary><strong>Ivan Cankar: Martin Kačur</strong></summary><p id="d4a2bb7d-1035-4c9c-8c15-0dca4d72b748" class=""><strong>izšlo</strong>: 1906</p><p id="879fd847-7b49-4524-a8c1-e7b0cf5d223d" class=""><strong>vrsta</strong>: povest</p><p id="fb5ff847-9cfe-4e7a-b859-08f3d2b59d56" class=""><strong>motivi</strong>: idealizem, propadanje, vaško življenje, spopad posameznika z družbo</p><p id="a767e5cd-d761-4702-930b-237a5ae183ff" class=""><strong>sporočilo</strong>: Človek, ki nima dovolj moči, da bi vztrajal v svojih prepričanjih in se boril zanje, tragično propade, delno zaradi krivične družbe, delno pa tudi zaradi lastne šibkosti.</p></details></li></ul><ul id="6cfc8adb-11dc-46c7-bb0d-7774161fb2a0" class="toggle"><li><details ><summary><strong>Ivan Cankar: Hlapci</strong></summary><p id="fc3b4988-6988-46d1-9950-9b1207898c84" class=""><strong>izdano</strong>: 1910</p><p id="b5dddae8-ec47-4615-a7bf-d003ee9438a5" class=""><strong>vrsta</strong>: politična satirična drama</p><p id="3122f91b-04ce-4f54-bfd4-e497bcd2ff4d" class=""><strong>motivi</strong>: neznačajnost, klečeplazenje (ritoliznik), politične razmere, nenačelnost, konflikt med politčnim prepričanjem in ljubeznijo matere.</p><p id="3774f403-e8db-4cdf-a970-087687e10694" class=""><strong>sporočilo</strong>: Kritika človeške neznačajnosti in hlapčevstva. Kritika družbenih in političnih razmer. Ideja o odrešilni moči ljubezni (na koncu).</p></details></li></ul><ul id="b0e8ef74-bb44-460a-bac5-c1ffec88aa8b" class="toggle"><li><details ><summary><strong>Ivan Cankar: Gospod Stotnik</strong></summary><p id="7b37fc4f-8f11-4cff-937f-ec62330a2d61" class=""><strong>izdano</strong>: 1916</p><p id="268ebd53-d217-44e3-a994-3615359e220b" class=""><strong>zvrst</strong>: lirsko-epska</p><p id="25c4ee8d-1144-461b-acb8-b978c6633a73" class=""><strong>vrsta</strong>: črtica</p><p id="6312d959-7aea-45b0-bda7-775b1dc88689" class=""><strong>motivi</strong>: vojna, sljutna smrti</p><p id="8702da3d-6ef1-4602-ba86-5775e1eb4207" class=""><strong>sporočilo</strong>: Vojna ni nikoli dobra. Kritka vojne.</p></details></li></ul><ul id="8e120056-1e9a-431e-b1b8-104792508d59" class="toggle"><li><details ><summary><strong>Josip Murn: Sneg</strong></summary><p id="f645b249-bd9b-406c-ae3c-826177c06bf0" class=""><strong>avtor rojen</strong>: Ljubljana</p><p id="a74e0dfc-e707-4489-a789-4b9854abd6bf" class=""><strong>izšlo</strong>: 1903</p><p id="44ad7c31-9d95-4106-bd93-6a4c0e94d242" class=""><strong>vrsta</strong>: impresionistična pesem</p><p id="61e70655-38a0-4d3e-b948-b78c6b89718d" class=""><strong>motivi</strong>: zimska narava, minljivost, spkojnost / tišina, preteklost, prihodnost,</p><p id="765908ad-ce8a-4d20-b628-f02339af73e6" class=""><strong>sporočilo</strong>: Pesnik se počuti izgubljenega - preteklost zanj ne obstaja, od prihodnosti nič ne pričakuje. Nemoč posameznika. Odtujenost v medčloveških odnosih.</p></details></li></ul><ul id="2e921642-54ef-4ff2-b988-5b6463dbc97b" class="toggle"><li><details ><summary><strong>Oton Župančič: Zvečer</strong></summary><p id="f99e6322-7cf3-4ed5-b54e-6c14273b922d" class=""><strong>avtor rojen:</strong> Vinica, Bela Krajina</p><p id="0ab9b419-ee10-41f5-8689-7fb302a8f0cb" class=""><strong>izdano</strong>: 1904</p><p id="c284421b-3ff3-4209-9150-238fc53d7691" class=""><strong>zvrst</strong>: lirika</p><p id="7abcd7f7-0649-497e-9767-bf8a1535beca" class=""><strong>vrsta</strong>: simbolistična impresionistična pesem</p><p id="2ca2e5f2-22c7-4d5c-9e2d-b6db19a721cf" class=""><strong>tema</strong>: narava in človek</p><p id="61d940f5-98cc-4e77-bd3a-e6a20d9a1080" class=""><strong>motivi</strong>: doživljanje ljubezni, žalost, hrepenenje po sreči</p><p id="37c49c15-9d9c-4ec5-b9a0-7bbf50497e7a" class=""><strong>sporočilo</strong>: različnost doživljanja ljubezenske sreče</p></details></li></ul><ul id="b4c3ec76-99e6-4abb-af04-445107c16ef4" class="toggle"><li><details ><summary><strong>Franz Kafka: Preobrazba</strong></summary><p id="fcd3c645-3a4a-4a81-9e8c-e1fe2024fc8d" class=""><strong>avtor rojen</strong>: Praga</p><p id="c683af8c-72a8-4e9c-9c0d-7bae7019da1e" class=""><strong>izadno</strong>: 1915</p><p id="863afc92-99a2-4716-8866-c50284c603c3" class=""><strong>vrsta</strong>: novela (moderna pripovedna groteska)</p><p id="9edc5375-fad9-4702-8b3d-9f794123449d" class=""><strong>motivi</strong>:<div class="indented"><ul id="a9ff7cf8-3574-4ab7-a0f3-a9d3b2a58b46" class="bulleted-list"><li style="list-style-type:disc">preobrazba,</li></ul><ul id="853b574b-b29b-439d-b427-1bffd2207ea4" class="bulleted-list"><li style="list-style-type:disc">smrt,</li></ul><ul id="f816605a-52d0-44b4-ba91-b94197b29232" class="bulleted-list"><li style="list-style-type:disc">prehranjevanje,</li></ul><ul id="ce42ccae-8dfb-4e9c-99b1-a39937a12638" class="bulleted-list"><li style="list-style-type:disc">soba (ujetost v prostoru)</li></ul><ul id="cb3e5e04-b087-45c0-9ce6-a4b3d1eeebae" class="bulleted-list"><li style="list-style-type:disc">ura (ujetost v času),</li></ul><ul id="ee13cd8c-bbc8-4bdc-ac99-755a2789cd99" class="bulleted-list"><li style="list-style-type:disc">slika (prekrita erotika)</li></ul></div></p><p id="dd1dd1e1-827d-4b5e-8971-f6b717f03041" class=""><strong>sporočilo</strong>:<div class="indented"><ul id="5da49f63-1d95-4f39-98a6-04488a20856e" class="bulleted-list"><li style="list-style-type:disc">Avtor predstavi idejo o odtujenosti v medčloveških odnosih. Družba posamezniku (Gregorju) ne priznava njegove individualnosti in se do njega vede prezirljivo.</li></ul><ul id="1b85bdf7-5d22-4ed7-a78c-d1606f689f83" class="bulleted-list"><li style="list-style-type:disc">Pomembna je tudi ideja posameznikovega <strong>iskanja življenjskega smisla.</strong> Tega pa Gregor ne najde, zato se odloči za smrt.</li></ul></div></p></details></li></ul><ul id="755a4d1e-8e9a-429e-98da-8b2e87e4abd7" class="toggle"><li><details ><summary><strong>Srečko Kosovel: Slutnja</strong></summary><p id="0d419778-ceb2-4081-bb6e-b285b4d03e28" class=""><strong>avtor rojen</strong>: Sežana</p><p id="90a62da7-d633-4bc8-bf16-ae79efbf8548" class=""><strong>zvrst</strong>: lirika</p><p id="61f1044a-a92f-4100-ad18-37d9daaed1c3" class=""><strong>vrsta</strong>: lirska pesem / impresionistična pesem</p><p id="1038f77f-0e93-490b-a205-69791abf15ff" class=""><strong>motivi</strong>: slutnja smrti, bolest (trplenje, bolečina), nemir, nasportje med temo in svetlobo.</p><p id="e9191411-1973-4920-9267-afcc3865cf2a" class=""><strong>sporočilo</strong>: Sljutna bližajoče se smrti. Strah pred smrtjo, minljivost človeka.</p></details></li></ul><ul id="219dda1a-90fc-41be-9682-2652c577730f" class="toggle"><li><details ><summary><strong>Srečko Kosovel: Kons. 5</strong></summary><p id="88a90053-3554-44ac-ab94-50a99e33e018" class=""><strong>avtor rojen</strong>: Sežana</p><p id="ce1bb535-32f7-4d6a-b0fe-a01c6f4db492" class=""><strong>izdan</strong>: 1967</p><p id="8679ce30-1d6a-4344-ae78-319a1d40b776" class=""><strong>zvrst</strong>: lirika</p><p id="8407f2f4-133e-4a32-afe4-36d797fdfacd" class=""><strong>vrsta</strong>: lirska pesem</p><p id="f2a2dd2b-9da8-44e4-a55b-661ee5fc7675" class=""><strong>motivi</strong>: gnoj, zlato, razmišljanje o duši, I.A., črke so manj od številk</p><p id="74e0495a-bb2d-4550-9186-f2ef73de4ed1" class=""><strong>sporočilo</strong>: Umetnik sporoča, da je družba pokvarjena in brezdušna. Svet je kaotičen, narobe obrnjen, besede izgubljajo pomen.</p></details></li></ul><ul id="3b227e4f-9f4a-4876-9a42-9d7758f45069" class="toggle"><li><details ><summary><strong>Slavko Grum: Dogodek v mestu Gogi</strong></summary><ul id="b421f9f1-f414-4c8d-b43a-c074528a6df8" class="bulleted-list"><li style="list-style-type:disc"><strong>Avtor rojen</strong>: Šmartno pri Litiji</li></ul><ul id="c87e1b3c-1a7b-4bf1-bca7-1f64227ddaf5" class="bulleted-list"><li style="list-style-type:disc"><strong>Izšla</strong>: 1930, uprizorjena: 1931</li></ul><ul id="944818b9-1c70-4b05-8e5c-c6177acdb0cc" class="bulleted-list"><li style="list-style-type:disc"><strong>Zvrst</strong>: dramatika</li></ul><ul id="c9326836-aebc-4a06-b2d3-7f2a553c2fc1" class="bulleted-list"><li style="list-style-type:disc"><strong>Vrsta</strong>: psihološka drama (groteska)</li></ul><ul id="136c40ca-e5b2-4f7a-bf02-83b0fc0974d9" class="bulleted-list"><li style="list-style-type:disc"><strong>Motivi</strong>: patološki motiv kaotičnega, obupnega človeka s traumo, posilstvo, pedofilija, prevara, fetišizem</li></ul><ul id="0c375b7a-b46f-4f7d-84c0-eace118130c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Osebe</strong>: Maša, posiljevalec Prelih, pisar Klikot, Afra, Tarbula, Julio Gapit, grbavec Teobald</li></ul><ul id="13f6c241-0544-4949-9a70-d565e33c3b00" class="bulleted-list"><li style="list-style-type:disc"><strong>Sporočilo</strong>: Avtor želi pokazati realen svet, v katerem živimo. Če v njem ne najde smisla, začne iz njega bežati, vendar mu beg in zanikanje povzročita travme. Teh pa se reši samo tako, da se z njimi sooči in jih v sebi predela.</li></ul></details></li></ul><ul id="9b9eb6d5-036c-4c11-b077-3904de2687f1" class="toggle"><li><details ><summary><strong>Miško Kranjec: Režonja na svojem</strong></summary><ul id="91e62a37-55e3-4b2a-bff0-cddab7452568" class="bulleted-list"><li style="list-style-type:disc"><strong>Avtor rojen</strong>: Velika Polana</li></ul><ul id="6823843e-9d62-4d35-9eae-0eaf63132cf9" class="bulleted-list"><li style="list-style-type:disc"><strong>Izšla</strong>: 1935</li></ul><ul id="626f7d90-30ff-40b6-861a-a2f67eea94ea" class="bulleted-list"><li style="list-style-type:disc"><strong>Zvrst</strong>: epika z dramskimi elementi</li></ul><ul id="461919c7-19c6-49d8-a65f-507409fe4e9e" class="bulleted-list"><li style="list-style-type:disc"><strong>Vrsta</strong>: novela</li></ul><ul id="b950a77a-5815-4b73-8d61-88ae532520c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Motivi</strong>: pohlep, tatvina, zemlja (kot vrednota), lastnina</li></ul><ul id="9b2e69b8-9873-4893-922a-b3e00ad45634" class="bulleted-list"><li style="list-style-type:disc"><strong>Osebe</strong>: Jožef Režonja, nejgova žena Geti, sin Naci, hči Katica, žid Bergmann</li></ul><ul id="77b33329-f7cd-4f68-91b7-7edf78e46981" class="bulleted-list"><li style="list-style-type:disc"><strong>Sporočilo</strong>: Človek ne najde sreče v ljubezni ali družini, ampak v lastnini. Sreča<br/>je ko imaš nekaj, ko si lastnik nečesa.<br/></li></ul></details></li></ul><ul id="a8ff9953-84ad-4925-ae3d-10c75dbdeb2a" class="toggle"><li><details ><summary><strong>Ciril Kosmač: Tantadruj</strong></summary><ul id="9811846f-c3e6-47b4-856a-f55506b9f025" class="bulleted-list"><li style="list-style-type:disc"><strong>Avtor rojen</strong>: Slap ob Idrijci</li></ul><ul id="3daf35eb-f3bb-4408-ac4f-942c3061320e" class="bulleted-list"><li style="list-style-type:disc"><strong>Zvrst</strong>: epika</li></ul><ul id="1be62abc-b8da-49e7-a089-82c3e7dc24d2" class="bulleted-list"><li style="list-style-type:disc"><strong>Vrsta</strong>: novela</li></ul><ul id="d46419ef-b270-406c-8233-ee30a7704464" class="bulleted-list"><li style="list-style-type:disc"><strong>Motivi</strong>: motiv vaških norčkev, zvonci</li></ul><ul id="b95bdb63-9157-44f5-87a5-68a57b70b3a0" class="bulleted-list"><li style="list-style-type:disc"><strong>Osebe</strong>: štirje norčki - Tantadruj, Luka Božorno-boserna, Matic enaka palica, Rusepatacis (repa in krompir); župnik, kmet Hotejec, Najdeni Peregrin, Jeličica</li></ul><ul id="76e64cf4-65f7-42c4-973f-435ee1d5f10a" class="bulleted-list"><li style="list-style-type:disc"><strong>Sporočilo</strong>: <ul id="18196375-1ae6-48ad-976d-9ca6fdb9d3b9" class="bulleted-list"><li style="list-style-type:circle">Posameznik ima pravico, da sam odloča, kaj bo storil s svojim življenjem.</li></ul><ul id="d2922589-c180-47ee-b37f-d7dd2a003856" class="bulleted-list"><li style="list-style-type:circle">Drugačni ljudje so obsojeni na osamljenost</li></ul></li></ul></details></li></ul><ul id="14b367f6-7d87-48fb-8de0-1e1f8110a602" class="toggle"><li><details ><summary><strong>Drago Jančar: Veliki briljantni valček</strong></summary><ul id="d44aa6d3-45d6-4044-aa2e-aaefc3135ad9" class="bulleted-list"><li style="list-style-type:disc"><strong>Avtor rojen</strong>: Maribor</li></ul><ul id="29690560-46d8-46c8-be2b-80d26e549d52" class="bulleted-list"><li style="list-style-type:disc"><strong>Izdano</strong>: 1985</li></ul><ul id="51aa4052-d72f-4a76-af7e-990202899655" class="bulleted-list"><li style="list-style-type:disc"><strong>Snov</strong>: zgodovinska / družbena</li></ul><ul id="af14004a-d6a4-4f20-837a-003d9e1739ec" class="bulleted-list"><li style="list-style-type:disc"><strong>Tematika</strong>: totalitarizem / družbenokritična</li></ul><ul id="9e84bb1e-f273-4ecd-8c48-1192335a7b3a" class="bulleted-list"><li style="list-style-type:disc"><strong>tema</strong>: konflikt med posameznikom in družbo (inštiticijo)</li></ul><ul id="6082905f-cbf5-4f95-a73c-c6762c2d3dda" class="bulleted-list"><li style="list-style-type:disc"><strong>Zvrst</strong>: dramatika</li></ul><ul id="df4a59bc-99ef-4cff-bbf6-6eb39bf23402" class="bulleted-list"><li style="list-style-type:disc"><strong>Vrsta</strong>: družbenokritična drama (absurdna moderna groteska)</li></ul><ul id="03f1db42-4d4c-475e-9c9c-f7fcfa90d94b" class="bulleted-list"><li style="list-style-type:disc"><strong>Motivi</strong>: motiv upornega intelektualca, nesporazum, prisilna hospitalizacija, ni izhoda za nikogar (vsi so V.)</li></ul><ul id="f70ec712-0ef2-49c0-8131-104490d8e245" class="bulleted-list"><li style="list-style-type:disc"><strong>Osebe</strong>: Simon Veber (zgodovinar), Doktor, bolničar Volodja, Klara (žena Simona), mlajši in starejši izvedenec za metafore, Ljubica, Emerik, Rajko…</li></ul><ul id="f8e0420c-9b65-483b-a635-c25a15d0a1eb" class="bulleted-list"><li style="list-style-type:disc"><strong>Sporočilo</strong>:<ul id="3445e52f-0d8a-414c-b988-63416c83c275" class="bulleted-list"><li style="list-style-type:circle">Prikaz strahovitne moči totalitarnih sistemov nad življenjem ljudi.</li></ul><ul id="56511d7f-d365-4160-a8c5-45726c63df19" class="bulleted-list"><li style="list-style-type:circle">Izguba identitete, nemoč posameznika.</li></ul><ul id="68064fb9-0881-473f-b380-4f0a86b843c1" class="bulleted-list"><li style="list-style-type:circle">Na koncu drame lahko razberemo še eno sporočilo; gledalec drame domov odhaja ne le z vtisi o nesmiselni krutosti drame, ampak tudi s spominom na čudovito melodijo, ki se igra ob koncu drame. Glasba nam sporoča, da sta umetnost in lepota edino, kar življenju daje smisel in svobodo.</li></ul></li></ul></details></li></ul><ul id="78e28d4c-7c63-4c14-8f12-ca5eb88834f4" class="toggle"><li><details ><summary><strong>Obdobja</strong></summary><ul id="fcfd97d0-a7db-422e-b1aa-dfbf5334f415" class="bulleted-list"><li style="list-style-type:disc">Obdobje med romantiko in realizmom (1848-1899)</li></ul><ul id="83908193-2d81-42be-88d8-9c272bcd0442" class="bulleted-list"><li style="list-style-type:disc">Evropska moderna (1. polovica 20. stol.) (Saloma)</li></ul><ul id="1037b95b-1468-465d-a125-cb1e5b117a59" class="bulleted-list"><li style="list-style-type:disc">Moderna (1899-1918)</li></ul><ul id="c8b2a4fb-f608-4df5-bcb4-d618c931d579" class="bulleted-list"><li style="list-style-type:disc">Evropska književnost v prvi polovici 20. stol. (Preobrazba) (1901-1950)</li></ul><ul id="fa3e88a8-7f8c-4c1d-815c-e2b98d30f096" class="bulleted-list"><li style="list-style-type:disc">Slovenska književnost v prvi polovici 20. stol. (ekspresinizem in socialni realizem)</li></ul><ul id="2e854940-10da-4a89-bbc0-3f39a4e54b3a" class="bulleted-list"><li style="list-style-type:disc">Obdobje med drugo sv. vojno.</li></ul><ul id="9474815f-cdb4-424f-a37b-2d606466d19a" class="bulleted-list"><li style="list-style-type:disc">Sodobna literatura (Tantadruj, VBV)</li></ul></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
