@@ -321,6 +321,9 @@ strong {
   width: 100%;
   border-radius: 6px;
   backface-visibility: hidden;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  border: 1.5px solid rgba(225, 225, 225, 0.7);
+  background-color: #29384a;
 
   /* Just styling the text nicely */
   line-height: 150px;
@@ -329,13 +332,12 @@ strong {
 }
 
 .card_front {
-  background-color: #3388ff;
   z-index: 1;
   transform: rotateY(0deg);
 }
 
 .card_back {
-  background-color: #3388ff;
+  
   transform: rotateY(180deg);
 }
 
