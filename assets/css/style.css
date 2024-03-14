@@ -44,11 +44,12 @@
   }
 
   header {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
   }
 
   .header-items-right {
@@ -58,11 +59,11 @@
   .box {
     margin-top: -5px;
     border-radius: 12px;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.2rem;
     --tw-bg-opacity: 1;
     /*background-color: rgb(248 250 252 / var(--tw-bg-opacity));*/
-    /*border-color: rgb(243 244 246 / var(--tw-border-opacity));*/
-    /*border: 1px solid rgba(225, 225, 225, 0.7);*/
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    border: 1.5px solid rgba(225, 225, 225, 0.7);
     padding: 10px 20px 10px 20px;
   }
 
@@ -88,6 +89,14 @@
 
   .plugins-list {
     margin-bottom: 0.8rem;
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background: #d8dee4;
+    /*Make it a bit longer */
+    width: 106%;
+    margin-left: -1.15em;
   }
 }
 
@@ -125,11 +134,12 @@
     left: 1.25rem;
   }
   header {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
   }
 
   .header-items-right {
@@ -143,8 +153,8 @@
     margin-bottom: 1rem;
     --tw-bg-opacity: 1;
     /* background-color: rgb(248 249 250 / var(--tw-bg-opacity)); */
-    /* border-color: rgb(243 244 246 / var(--tw-border-opacity)); */
-    /*border: 1px solid rgba(225, 225, 225, 0.7);*/
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    border: 1.5px solid rgba(225, 225, 225, 0.7);
     padding: 10px 15px 10px 15px;
     /* Make the width smaller a bit */
     width: 82%;
@@ -182,6 +192,15 @@
     /* put it a bit up */
     position: relative;
     top: -0.2rem;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: #d8dee4;
+    /*Make it a bit longer */
+    width: 110%;
+    margin-left: -0.95em;
   }
 }
 
@@ -283,14 +302,7 @@ strong {
   top: -1.8rem;
 }
 
-hr {
-  border: 0;
-  height: 1px;
-  background: #d8dee4;
-  /*Make it a bit longer */
-  /*width: 106%;*/
-  /*margin-left: -1.15em;*/
-}
+
 
 
 /* CSS for the card flip */
@@ -317,13 +329,13 @@ hr {
 }
 
 .card_front {
-  background-color: #64a1f7;
+  background-color: #3388ff;
   z-index: 1;
   transform: rotateY(0deg);
 }
 
 .card_back {
-  background-color: #64a1f7;
+  background-color: #3388ff;
   transform: rotateY(180deg);
 }
 
