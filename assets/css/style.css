@@ -150,7 +150,7 @@
   .box {
     margin-top: -5px;
     border-radius: 5.6px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     --tw-bg-opacity: 1;
     /* background-color: rgb(248 249 250 / var(--tw-bg-opacity)); */
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
@@ -341,14 +341,15 @@ strong {
   transform: rotateY(180deg);
 }
 
-.card:active {
-  transform: perspective(400px) rotateY(180deg);
-}
 
 .card-cont {
   display: inline-block;
 }
 
 .card-cont:hover .card {
+  transform: perspective(400px) rotateY(180deg);
+}
+
+.is-flipped{
   transform: perspective(400px) rotateY(180deg);
 }
