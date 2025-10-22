@@ -2,7 +2,18 @@
 @import url("https://fonts.cdnfonts.com/css/ibm-plex-mono-3");
 
 
+.dark-mode {
+  background: radial-gradient(circle at top left, #1e2027, #14161c);
+}
 
+.dark-mode .box {
+  background: linear-gradient(135deg,
+      rgba(40, 40, 50, 0.7),
+      rgba(25, 25, 35, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
 
 /* CSS for the laptop view */
 @media (min-width: 640px) {
@@ -62,15 +73,28 @@
     padding-top: 1rem;
   }
 
+
+
   .box {
     margin-top: -5px;
     border-radius: 12px;
     margin-bottom: 2.2rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-    border-color: rgb(243 244 246 / var(--tw-border-opacity));
-    border: 1.5px solid rgba(225, 225, 225, 0.7);
-    padding: 10px 20px 10px 20px;
+
+    /* prosojna, rahlo obarvana podlaga */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    /* subtilen barvni gradient za tekoč efekt */
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(200, 220, 255, 0.1));
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* mehka senca za depth */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+    padding: 10px 20px;
   }
 
   h2 {
@@ -83,7 +107,7 @@
   ul {
     list-style: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   li::before {
@@ -101,7 +125,7 @@
   hr {
     border: 0;
     height: 1px;
-    background: #d8dee4;
+    background: #cacaca;
     /*Make it a bit longer */
     width: 106%;
     margin-left: -1.15em;
@@ -160,12 +184,21 @@
 
   .box {
     margin-top: -5px;
-    border-radius: 5.6px;
+    border-radius: 12px;
     margin-bottom: 2rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(248 249 250 / var(--tw-bg-opacity));
-    border-color: rgb(243 244 246 / var(--tw-border-opacity));
-    border: 1.5px solid rgba(225, 225, 225, 0.7);
+    /* prosojna, rahlo obarvana podlaga */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    /* subtilen barvni gradient za tekoč efekt */
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(200, 220, 255, 0.1));
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* mehka senca za depth */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     padding: 10px 15px 10px 15px;
     /* Make the width smaller a bit */
     width: 82%;
@@ -173,6 +206,7 @@
     margin-right: auto;
     align-items: center;
   }
+
 
   h2 {
     font-size: 1.5rem;
@@ -184,7 +218,7 @@
   ul {
     list-style: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   li::before {
@@ -239,7 +273,7 @@ body {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.5rem;
   color: var(--tw-text-opacity);
