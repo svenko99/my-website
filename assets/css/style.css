@@ -1,6 +1,9 @@
 @import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @import url("https://fonts.cdnfonts.com/css/ibm-plex-mono-3");
 
+
+
+
 /* CSS for the laptop view */
 @media (min-width: 640px) {
   body {
@@ -14,15 +17,18 @@
     border-radius: 0.75rem;
     min-height: calc(100vh - 1.25rem);
     width: 100%;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
   }
+
   .max-w-screen-sm {
     max-width: 690px;
   }
+
   .mx-auto {
     margin-left: auto;
     margin-right: auto;
   }
+
   .logo-text {
     font-size: 2rem;
     font-weight: 700;
@@ -61,7 +67,7 @@
     border-radius: 12px;
     margin-bottom: 2.2rem;
     --tw-bg-opacity: 1;
-    /*background-color: rgb(248 250 252 / var(--tw-bg-opacity));*/
+    background-color: rgb(248 250 252 / var(--tw-bg-opacity));
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
     border: 1.5px solid rgba(225, 225, 225, 0.7);
     padding: 10px 20px 10px 20px;
@@ -82,7 +88,7 @@
 
   li::before {
     content: "•";
-    color: rgb(208 209 210 / var(--tw-bg-opacity));
+    color: rgb(108 108 108 / var(--tw-bg-opacity));
     display: inline-block;
     width: 1em;
     margin-left: -1em;
@@ -91,6 +97,7 @@
   .plugins-list {
     margin-bottom: 0.8rem;
   }
+
   hr {
     border: 0;
     height: 1px;
@@ -101,7 +108,9 @@
   }
 }
 
-/* CSS for the mobile view */
+/* ------------------- CSS for the mobile view  ------------------- */
+
+
 @media not all and (min-width: 640px) {
   body {
     border-top-width: 5px;
@@ -114,7 +123,7 @@
     min-height: calc(100vh - 1.25rem);
     width: 100%;
     /* Make the background white  but add var() so it will act accoridly in dark mode*/
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;*/
     /*border: 1px solid rgba(255, 255, 255, 0.3);*/
   }
 
@@ -134,6 +143,7 @@
     top: -0.8rem;
     left: 1.25rem;
   }
+
   header {
     /* display: flex; */
     justify-content: space-between;
@@ -153,7 +163,7 @@
     border-radius: 5.6px;
     margin-bottom: 2rem;
     --tw-bg-opacity: 1;
-    /* background-color: rgb(248 249 250 / var(--tw-bg-opacity)); */
+    background-color: rgb(248 249 250 / var(--tw-bg-opacity));
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
     border: 1.5px solid rgba(225, 225, 225, 0.7);
     padding: 10px 15px 10px 15px;
@@ -195,7 +205,7 @@
     position: relative;
     top: -0.2rem;
   }
-  
+
   hr {
     border: 0;
     height: 1px;
@@ -225,7 +235,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #111827;
   /*background-color: #207fff;*/
-  background-color: #f5f5f5;
+  /*background-color: #f5f5f5;*/
 }
 
 p {
@@ -339,7 +349,7 @@ strong {
 }
 
 .card_back {
-  
+
   transform: rotateY(180deg);
 }
 
@@ -352,6 +362,6 @@ strong {
   transform: perspective(400px) rotateY(180deg);
 }
 
-.is-flipped{
+.is-flipped {
   transform: perspective(400px) rotateY(180deg);
 }

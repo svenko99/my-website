@@ -40,9 +40,8 @@ function updateTimer() {
   if (timerParts.length === 0) {
     timerString = `${diffDays} day${diffDays !== 1 ? "s" : ""}`;
   } else {
-    timerString += ` and ${diffMinutes % 60} minute${
-      diffMinutes % 60 !== 1 ? "s" : ""
-    } or ${diffDays} day${diffDays !== 1 ? "s" : ""}`;
+    //timerString += ` and ${diffMinutes % 60} minute${diffMinutes % 60 !== 1 ? "s" : ""} or ${diffDays} days.`;
+    timerString += ` or ${diffDays} days.`;
   }
 
   document.getElementById("count").textContent = timerString;
