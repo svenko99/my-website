@@ -44,7 +44,6 @@
     font-size: 2rem;
     font-weight: 700;
     display: inline;
-    margin-left: -48px;
   }
 
   .logo-text:hover {
@@ -155,7 +154,6 @@
     font-size: 1.8rem;
     font-weight: 800;
     display: inline;
-    margin-left: -10px;
   }
 
   .logo-icon {
