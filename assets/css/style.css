@@ -1,11 +1,15 @@
 @import url("mobile.css");
 
-.dark-mode {
+body {
     background: radial-gradient(circle at top left, #1e2027, #14161c);
     color: #fff;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.dark-mode .box {
+.box {
+    background: rgba(255, 255, 255, 0.15);
     background: linear-gradient(135deg,
     rgba(40, 40, 50, 0.7),
     rgba(25, 25, 35, 0.8));
@@ -13,6 +17,7 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(6px);
 }
+
 
 /* CSS for the laptop view */
 @media (min-width: 640px) {
@@ -27,6 +32,13 @@
         border-radius: 0.75rem;
         min-height: calc(100vh - 1.25rem);
         width: 100%;
+    }
+
+    .box {
+        margin-top: -5px;
+        border-radius: 12px;
+        margin-bottom: 2.2rem;
+        padding: 10px 20px;
     }
 
     .max-w-screen-sm {
@@ -49,25 +61,12 @@
         text-align: center;
     }
 
-    .box {
-        margin-top: -5px;
-        border-radius: 12px;
-        margin-bottom: 2.2rem;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(12px);
-        background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.15),
-        rgba(200, 220, 255, 0.1));
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        padding: 10px 20px;
-    }
-
     h2 {
         font-size: 1.6rem;
         font-weight: 600;
         margin-bottom: 0.9rem;
         margin-top: 0.5rem;
+
     }
 
     ul {
@@ -90,23 +89,9 @@
 
 
 /* Other CSS */
-
-.smoothed {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 a {
     text-decoration: none;
     color: inherit;
-}
-
-body {
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #111827;
 }
 
 p {
