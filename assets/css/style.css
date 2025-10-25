@@ -1,343 +1,204 @@
+@import url("mobile.css");
+
 .dark-mode {
-  background: radial-gradient(circle at top left, #1e2027, #14161c);
+    background: radial-gradient(circle at top left, #1e2027, #14161c);
 }
 
 .dark-mode .box {
-  background: linear-gradient(135deg,
-      rgba(40, 40, 50, 0.7),
-      rgba(25, 25, 35, 0.8));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
+    background: linear-gradient(135deg,
+    rgba(40, 40, 50, 0.7),
+    rgba(25, 25, 35, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
 }
 
 /* CSS for the laptop view */
 @media (min-width: 640px) {
-  body {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-right: 0.2rem;
-  }
+    body {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        padding-right: 0.2rem;
+    }
 
-  .main {
-    padding-top: 1.7rem;
-    border-radius: 0.75rem;
-    min-height: calc(100vh - 1.25rem);
-    width: 100%;
-    /* background-color: #f5f5f5; */
-  }
+    .main {
+        padding-top: 1.7rem;
+        border-radius: 0.75rem;
+        min-height: calc(100vh - 1.25rem);
+        width: 100%;
+        /* background-color: #f5f5f5; */
+    }
 
-  .max-w-screen-sm {
-    max-width: 690px;
-  }
+    .max-w-screen-sm {
+        max-width: 690px;
+    }
 
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .logo-text {
-    font-size: 2rem;
-    font-weight: 700;
-    display: inline;
-  }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 0;
+    }
 
-  .logo-text:hover {
-    color: #3388ff;
-  }
+    .logo-text:hover {
+        color: #3388ff;
+    }
 
-  .logo-icon {
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 0.5rem;
-    position: relative;
-    top: -0.8rem;
-    left: 1.4rem;
-  }
+    header {
+        padding-bottom: 1.5rem;
+        text-align: center;
+    }
 
-  header {
-    /* display: flex; */
-    justify-content: space-between;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  .header-items-right {
-    padding-top: 1rem;
-  }
-
-
-
-  .box {
-    margin-top: -5px;
-    border-radius: 12px;
-    margin-bottom: 2.2rem;
-
-    /* prosojna, rahlo obarvana podlaga */
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-
-    /* subtilen barvni gradient za tekoč efekt */
-    background: linear-gradient(135deg,
+    .box {
+        margin-top: -5px;
+        border-radius: 12px;
+        margin-bottom: 2.2rem;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        background: linear-gradient(135deg,
         rgba(255, 255, 255, 0.15),
         rgba(200, 220, 255, 0.1));
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+    }
 
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 0.9rem;
+        margin-top: 0.5rem;
+    }
 
-    /* mehka senca za depth */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    ul {
+        list-style: none;
+        font-weight: 500;
+        font-size: 1.05rem;
+    }
 
-    padding: 10px 20px;
-  }
+    li::before {
+        content: "•";
+        color: rgb(108 108 108 / var(--tw-bg-opacity));
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
 
-  h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 0.9rem;
-    margin-top: 0.5rem;
-  }
+    .plugins-list {
+        margin-bottom: 0.8rem;
+    }
 
-  ul {
-    list-style: none;
-    font-weight: 500;
-    font-size: 1.05rem;
-  }
-
-  li::before {
-    content: "•";
-    color: rgb(108 108 108 / var(--tw-bg-opacity));
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-
-  .plugins-list {
-    margin-bottom: 0.8rem;
-  }
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: #cacaca;
-    /*Make it a bit longer */
-    width: 106%;
-    margin-left: -1.15em;
-  }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #cacaca;
+        /*Make it a bit longer */
+        width: 106%;
+        margin-left: -1.15em;
+    }
 }
 
-/* ------------------- CSS for the mobile view  ------------------- */
-
-
-@media not all and (min-width: 640px) {
-  body {
-    border-top-width: 5px;
-    padding-bottom: 0.5rem;
-  }
-
-  .main {
-    padding-top: 1.7rem;
-    border-radius: 0.75rem;
-    min-height: calc(100vh - 1.25rem);
-    width: 100%;
-    /* Make the background white  but add var() so it will act accoridly in dark mode*/
-    /*background-color: #f5f5f5;*/
-    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
-  }
-
-  .logo-text {
-    font-size: 1.8rem;
-    font-weight: 800;
-    display: inline;
-  }
-
-  .logo-icon {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    /* make it on the top of the logo-text */
-    position: relative;
-    top: -0.8rem;
-    left: 1.25rem;
-  }
-
-  header {
-    /* display: flex; */
-    justify-content: space-between;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  .header-items-right {
-    padding-top: 1.2rem;
-    padding-right: 0.9rem;
-  }
-
-  .box {
-    margin-top: -5px;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    /* prosojna, rahlo obarvana podlaga */
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-
-    /* subtilen barvni gradient za tekoč efekt */
-    background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.15),
-        rgba(200, 220, 255, 0.1));
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    /* mehka senca za depth */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    padding: 10px 15px 10px 15px;
-    /* Make the width smaller a bit */
-    width: 82%;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-  }
-
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.9rem;
-    margin-top: 0.5rem;
-  }
-
-  ul {
-    list-style: none;
-    font-weight: 500;
-    font-size: 1.05rem;
-  }
-
-  li::before {
-    content: "•";
-    color: rgb(208 209 210 / var(--tw-bg-opacity));
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-
-  .plugins-list {
-    margin-bottom: 0.7rem;
-    margin-left: -0.5rem;
-  }
-
-  #toggle {
-    /* put it a bit up */
-    position: relative;
-    top: -0.2rem;
-  }
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: #d8dee4;
-    /*Make it a bit longer */
-    width: 110%;
-    margin-left: -0.95em;
-  }
-}
 
 /* Other CSS */
 
 .smoothed {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  text-decoration: none;
-  color: var(--tw-text-opacity);
+    text-decoration: none;
+    color: var(--tw-text-opacity);
 }
 
 body {
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #111827;
-  /*background-color: #207fff;*/
-  /*background-color: #f5f5f5;*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #111827;
+    /*background-color: #207fff;*/
+    /*background-color: #f5f5f5;*/
 }
 
 p {
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-  color: var(--tw-text-opacity);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: var(--tw-text-opacity);
 }
 
 strong {
-  font-weight: 550;
+    font-weight: 550;
 }
 
 .colored {
-  color: #3388ff;
-  font-weight: 550;
+    color: #3388ff;
+    font-weight: 550;
 }
 
 .colored:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .dark-mode {
-  background-color: #1f2937;
-  color: #fff;
+    background-color: #1f2937;
+    color: #fff;
 }
 
 .dark-mode-toggle {
-  /* Make the button edges and other stuff disapear */
-  border: none;
-  background: none;
+    /* Make the button edges and other stuff disapear */
+    border: none;
+    background: none;
 }
 
 /* Make scaling animation for the dark mode when hoverd using tronsform */
 .dark-mode-toggle:hover {
-  transform: scale(1.1);
-  transition: 0.2s ease-in-out;
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
 }
 
 #toggle:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .confetti {
-  position: fixed;
-  display: block;
-  margin: 0 auto;
-  pointer-events: none;
-  z-index: 9999;
+    position: fixed;
+    display: block;
+    margin: 0 auto;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 .cuber-icon {
-  /* Center it to the middle */
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+    /* Center it to the middle */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .cuber-title {
-  /* Center text to the middle */
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  /* Make it a bit up */
-  position: relative;
-  top: -1rem;
+    /* Center text to the middle */
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    /* Make it a bit up */
+    position: relative;
+    top: -1rem;
 }
 
 .cuber-subtitle {
-  /* Center text to the middle */
-  font-size: 1.3rem;
-  font-weight: 500;
-  text-align: center;
-  /* Make it a bit up */
-  position: relative;
-  top: -1.8rem;
+    /* Center text to the middle */
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    /* Make it a bit up */
+    position: relative;
+    top: -1.8rem;
 }
+
+

@@ -1,0 +1,56 @@
+/*  CSS for the mobile view  */
+@media not all and (min-width: 640px) {
+    .main {
+        padding-top: 1.7rem;
+        width: 100%;
+        font-weight: 500;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-top: 0;
+    }
+
+    header {
+        padding-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .box {
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(200, 220, 255, 0.1));
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        padding: 10px 15px 10px 15px;
+        width: 82%;
+        margin: -5px auto 2rem;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li::before {
+        content: "•";
+        display: inline-block;
+        width: 1em;
+    }
+
+    .plugins-list {
+        margin-bottom: 0.7rem;
+        margin-left: -1.5rem;
+    }
+}
