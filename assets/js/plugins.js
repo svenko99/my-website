@@ -20,7 +20,7 @@ const plugins = [
     new AlfredPlugin("alfred-genius", "https://github.com/svenko99/alfred-genius", "search Genius lyrics"),
     new AlfredPlugin("alfred-spell-checker", "https://github.com/svenko99/alfred-spell-checker", "spell checker for Alfred"),
     new AlfredPlugin("alfred-WLED", "https://github.com/svenko99/alfred-WLED", "control your WLED devices"),
-    new AlfredPlugin("alfred-shazem", "https://alfred.app/workflows/svenko99/shazam/", "Identify music from Alfred"),
+    new AlfredPlugin("alfred-shazam", "https://alfred.app/workflows/svenko99/shazam/", "Identify music from Alfred"),
 ]
 
 // Dodaj znotraj HTML
