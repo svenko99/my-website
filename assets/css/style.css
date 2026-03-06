@@ -1,145 +1,146 @@
 @import url("mobile.css");
 
 body {
-    background: radial-gradient(circle at top left, #1e2027, #14161c);
-    color: #fff;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at top left, #1e2027, #14161c);
+  color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .box {
-    background: rgba(255, 255, 255, 0.15);
-    background: linear-gradient(135deg,
-    rgba(40, 40, 50, 0.7),
-    rgba(25, 25, 35, 0.8));
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(40, 40, 50, 0.7), rgba(25, 25, 35, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
 }
-
 
 /* CSS for the laptop view */
 @media (min-width: 640px) {
-    body {
-        padding-top: 0.2rem;
-        padding-bottom: 0.2rem;
-        padding-right: 0.2rem;
-    }
+  body {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.2rem;
+  }
 
-    .main {
-        padding-top: 1.7rem;
-        border-radius: 0.75rem;
-        min-height: calc(100vh - 1.25rem);
-        width: 100%;
-    }
+  .main {
+    padding-top: 1.7rem;
+    border-radius: 0.75rem;
+    min-height: calc(100vh - 1.25rem);
+    width: 100%;
+  }
 
-    .box {
-        margin-top: -5px;
-        border-radius: 12px;
-        margin-bottom: 2.2rem;
-        padding: 10px 20px;
-    }
+  .box {
+    margin-top: -5px;
+    border-radius: 12px;
+    margin-bottom: 2.2rem;
+    padding: 10px 20px;
+  }
 
-    .max-w-screen-sm {
-        max-width: 690px;
-    }
+  .max-w-screen-sm {
+    max-width: 690px;
+  }
 
-    .mx-auto {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-top: 0;
-    }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+  }
 
-    header {
-        padding-bottom: 1.5rem;
-        text-align: center;
-    }
+  header {
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
 
-    h2 {
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin-bottom: 0.9rem;
-        margin-top: 0.5rem;
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+    margin-top: 0.5rem;
+  }
 
-    }
+  ul {
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
 
-    ul {
-        list-style: none;
-        font-weight: 500;
-        font-size: 1.05rem;
-    }
+  li::before {
+    content: "•";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
 
-    li::before {
-        content: "•";
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-    }
-
-    .plugins-list {
-        margin-bottom: 0.8rem;
-    }
+  .plugins-list {
+    margin-bottom: 0.8rem;
+  }
 }
-
 
 /* Other CSS */
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 p {
-    font-size: 1.05rem;
-    font-weight: 500;
-    line-height: 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5rem;
 }
 
 .colored {
-    color: #3388ff;
-    font-weight: 550;
+  color: #3388ff;
+  font-weight: 550;
 }
 
 .colored:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #3388ff;
+  outline-offset: 2px;
 }
 
 .confetti {
-    position: fixed;
-    display: block;
-    margin: 0 auto;
-    pointer-events: none;
-    z-index: 9999;
+  position: fixed;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 .cuber-icon {
-    /* Center it to the middle */
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  /* Center it to the middle */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .cuber-title {
-    /* Center text to the middle */
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    /* Make it a bit up */
-    position: relative;
-    top: -1rem;
+  /* Center text to the middle */
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  /* Make it a bit up */
+  position: relative;
+  top: -1rem;
 }
 
 .cuber-subtitle {
-    /* Center text to the middle */
-    font-size: 1.3rem;
-    font-weight: 500;
-    text-align: center;
-    /* Make it a bit up */
-    position: relative;
-    top: -1.8rem;
+  /* Center text to the middle */
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  /* Make it a bit up */
+  position: relative;
+  top: -1.8rem;
 }

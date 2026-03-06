@@ -1,10 +1,14 @@
 const startDate = new Date("2021-06-12");
 
 function updateTimer() {
+  const countElement = document.getElementById("count");
+  if (!countElement) {
+    return;
+  }
+
   const currentTime = new Date();
   const diffTime = currentTime - startDate;
-  const diffMinutes = Math.floor(diffTime / (1000 * 60));
-  const diffHours = Math.floor(diffMinutes / 60);
+  const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
   const diffDays = Math.floor(diffHours / 24);
 
   let years = currentTime.getFullYear() - startDate.getFullYear();
@@ -30,7 +34,7 @@ function updateTimer() {
     { value: years, unit: "year" },
     { value: months, unit: "month" },
     { value: days, unit: "day" },
-    { value: (diffHours % 24) + 1, unit: "hour" },
+    { value: diffHours % 24, unit: "hour" },
   ]
     .filter((part) => part.value !== 0)
     .map((part) => `${part.value} ${part.unit}${part.value !== 1 ? "s" : ""}`);
@@ -44,7 +48,7 @@ function updateTimer() {
     timerString += ` or ${diffDays} days.`;
   }
 
-  document.getElementById("count").textContent = timerString;
+  countElement.textContent = timerString;
 }
 
 updateTimer();

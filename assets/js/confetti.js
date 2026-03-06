@@ -1,120 +1,94 @@
-//-----------Var Inits--------------
-let canvas = document.getElementById("canvas");
-let ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-cx = ctx.canvas.width / 2;
-cy = ctx.canvas.height / 2;
+const canvas = document.getElementById("canvas");
+const context = canvas?.getContext("2d");
 
-let day_to_execute = 12;
-let confetti = [];
-const confettiCount = 200;
-const gravity = 0.5;
-const terminalVelocity = 6;
-const drag = 0.075;
-const colors = [
-  { front: "red", back: "darkred" },
-  { front: "green", back: "darkgreen" },
-  { front: "blue", back: "darkblue" },
-  { front: "yellow", back: "darkyellow" },
-  { front: "orange", back: "darkorange" },
-  { front: "pink", back: "darkpink" },
-  { front: "purple", back: "darkpurple" },
-  { front: "turquoise", back: "darkturquoise" },
-];
+if (canvas && context) {
+  const EXECUTION_DAY = 12;
+  const CONFETTI_COUNT = 200;
+  const GRAVITY = 0.5;
+  const TERMINAL_VELOCITY = 6;
+  const DRAG = 0.075;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const colors = [
+    { front: "red", back: "darkred" },
+    { front: "green", back: "darkgreen" },
+    { front: "blue", back: "darkblue" },
+    { front: "yellow", back: "darkyellow" },
+    { front: "orange", back: "darkorange" },
+    { front: "pink", back: "darkpink" },
+    { front: "purple", back: "darkpurple" },
+    { front: "turquoise", back: "darkturquoise" },
+  ];
 
-//-----------Functions--------------
-resizeCanvas = () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  cx = ctx.canvas.width / 2;
-  cy = ctx.canvas.height / 2;
-};
+  let confetti = [];
 
-randomRange = (min, max) => Math.random() * (max - min) + min;
+  const resizeCanvas = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
 
-initConfetti = () => {
-  for (let i = 0; i < confettiCount; i++) {
-    confetti.push({
-      color: colors[Math.floor(randomRange(0, colors.length))],
-      dimensions: {
-        x: randomRange(10, 20),
-        y: randomRange(10, 30),
-      },
+  const randomRange = (min, max) => Math.random() * (max - min) + min;
 
-      position: {
-        x: randomRange(0, canvas.width),
-        y: canvas.height - 1,
-      },
+  const initConfetti = () => {
+    confetti = [];
+    for (let i = 0; i < CONFETTI_COUNT; i += 1) {
+      confetti.push({
+        color: colors[Math.floor(randomRange(0, colors.length))],
+        dimensions: {
+          x: randomRange(10, 20),
+          y: randomRange(10, 30),
+        },
+        position: {
+          x: randomRange(0, canvas.width),
+          y: canvas.height - 1,
+        },
+        rotation: randomRange(0, 2 * Math.PI),
+        scale: { x: 1, y: 1 },
+        velocity: {
+          x: randomRange(-25, 25),
+          y: randomRange(0, -50),
+        },
+      });
+    }
+  };
 
-      rotation: randomRange(0, 2 * Math.PI),
-      scale: {
-        x: 1,
-        y: 1,
-      },
+  const render = () => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-      velocity: {
-        x: randomRange(-25, 25),
-        y: randomRange(0, -50),
-      },
+    confetti = confetti.filter((confetto) => confetto.position.y < canvas.height);
+    confetti.forEach((confetto) => {
+      const width = confetto.dimensions.x * confetto.scale.x;
+      const height = confetto.dimensions.y * confetto.scale.y;
+
+      context.translate(confetto.position.x, confetto.position.y);
+      context.rotate(confetto.rotation);
+
+      confetto.velocity.x -= confetto.velocity.x * DRAG;
+      confetto.velocity.y = Math.min(confetto.velocity.y + GRAVITY, TERMINAL_VELOCITY);
+      confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
+
+      confetto.position.x += confetto.velocity.x;
+      confetto.position.y += confetto.velocity.y;
+
+      if (confetto.position.x > canvas.width) confetto.position.x = 0;
+      if (confetto.position.x < 0) confetto.position.x = canvas.width;
+
+      confetto.scale.y = Math.cos(confetto.position.y * 0.1);
+      context.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
+      context.fillRect(-width / 2, -height / 2, width, height);
+      context.setTransform(1, 0, 0, 1, 0, 0);
     });
-  }
-};
 
-//---------Render-----------
-render = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (confetti.length > 0) {
+      window.requestAnimationFrame(render);
+    }
+  };
 
-  confetti.forEach((confetto, index) => {
-    let width = confetto.dimensions.x * confetto.scale.x;
-    let height = confetto.dimensions.y * confetto.scale.y;
-
-    // Move canvas to position and rotate
-    ctx.translate(confetto.position.x, confetto.position.y);
-    ctx.rotate(confetto.rotation);
-
-    // Apply forces to velocity
-    confetto.velocity.x -= confetto.velocity.x * drag;
-    confetto.velocity.y = Math.min(
-      confetto.velocity.y + gravity,
-      terminalVelocity
-    );
-    confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
-
-    // Set position
-    confetto.position.x += confetto.velocity.x;
-    confetto.position.y += confetto.velocity.y;
-
-    // Delete confetti when out of frame
-    if (confetto.position.y >= canvas.height) confetti.splice(index, 1);
-
-    // Loop confetti x position
-    if (confetto.position.x > canvas.width) confetto.position.x = 0;
-    if (confetto.position.x < 0) confetto.position.x = canvas.width;
-
-    // Spin confetti by scaling y
-    confetto.scale.y = Math.cos(confetto.position.y * 0.1);
-    ctx.fillStyle =
-      confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
-
-    // Draw confetti
-    ctx.fillRect(-width / 2, -height / 2, width, height);
-
-    // Reset transform matrix
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-  });
-
-  window.requestAnimationFrame(render);
-};
-
-//---------Execution--------
-const currentDate = new Date();
-if (currentDate.getDate() === day_to_execute) {
-  initConfetti();
-  render();
-}
-
-//----------Resize----------
-window.addEventListener("resize", function () {
   resizeCanvas();
-});
+  const currentDate = new Date();
+  if (!prefersReducedMotion && currentDate.getDate() === EXECUTION_DAY) {
+    initConfetti();
+    render();
+  }
+
+  window.addEventListener("resize", resizeCanvas, { passive: true });
+}

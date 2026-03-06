@@ -1,93 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuber</title>
-    <link rel="icon" href="../assets/images/light_cap.png"/>
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <link rel="stylesheet" href="../assets/css/slideshow.css"/>
-    <!-- <script src="../assets/js/darkmode.js" async=""></script> -->
-    <script src="../assets/js/slideshow.js" async=""></script>
-</head>
-<body>
-<div class="main">
-    <div class="max-w-screen-sm mx-auto">
+    <link rel="icon" href="../assets/images/light_cap.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/slideshow.css" />
+    <!-- <script src="../assets/js/darkmode.js" defer></script> -->
+    <script src="../assets/js/slideshow.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="max-w-screen-sm mx-auto">
         <!-- Header -->
         <header>
-            <h1>
-                <a href="/">Svenko</a>
-            </h1>
+          <h1>
+            <a href="/">Svenko</a>
+          </h1>
         </header>
         <!-- Main -->
         <main>
-            <div>
-                <!-- App Icon and Name -->
-                <div class="box">
-                    <img class="cuber-icon" src="../assets/images/cuber-icon.png" alt="Cuber App Icon" width="256"
-                         height="256"/>
-                    <h1 class="cuber-title">Cuber</h1>
-                    <p class="cuber-subtitle">Mini browser for the menu bar</p>
-                </div>
-                <!-- Slideshow -->
-                <section class="container">
-                    <div class="slider-wrapper">
-                        <button class="arrow left-arrow">&larr;</button>
-                        <div class="slider">
-                            <img id="slide-1" class="slideshow-image" src="../assets/images/cuber-image-1.png" alt=""/>
-                            <img id="slide-2" class="slideshow-image" src="../assets/images/cuber-image-2.png" alt=""/>
-                            <img id="slide-3" class="slideshow-image" src="../assets/images/cuber-image-3.png" alt=""/>
-                            <img id="slide-4" class="slideshow-image" src="../assets/images/cuber-image-4.png" alt=""/>
-                            <img id="slide-5" class="slideshow-image" src="../assets/images/cuber-image-5.png" alt=""/>
-                        </div>
-                        <button class="arrow right-arrow">&rarr;</button>
-                        <div class="slider-nav">
-                            <a href="#slide-1" class="active" data-slide="1"></a>
-                            <a href="#slide-2"></a>
-                            <a href="#slide-3"></a>
-                            <a href="#slide-4"></a>
-                            <a href="#slide-5"></a>
-                        </div>
-                    </div>
-                </section>
-
-
-                <!-- Features -->
-                <div class="box">
-                    <h2>Key Features</h2>
-                    <ul>
-                        <li class="plugins-list">
-                            Instant access to websites from the menu bar
-                        </li>
-                        <li class="plugins-list">
-                            Global shortcut (⇧⌘C) to open and close Cuber
-                        </li>
-                        <li class="plugins-list">
-                            Adjustable window size and position
-                        </li>
-                        <li class="plugins-list">
-                            Minimalistic design and easy to use
-                        </li>
-                        <li class="plugins-list">Cuber is a native macOS app</li>
-                    </ul>
-                </div>
-
-                <!-- Download -->
-                <div class="box">
-                    <h2>Download Cuber</h2>
-
-                    <p>
-                        Get started with Cuber today and enhance your menu bar
-                        experience! The app is free to download.
-                    </p>
-                    <p>
-                        <a class="colored" href="../assets/files/Cuber.zip">↓ Download (1.0.0)</a>
-                        (macOS 13 and newer versions)
-                    </p>
-                </div>
+          <div>
+            <!-- App Icon and Name -->
+            <div class="box">
+              <img
+                class="cuber-icon"
+                src="../assets/images/cuber-icon.png"
+                alt="Cuber App Icon"
+                width="256"
+                height="256"
+              />
+              <h1 class="cuber-title">Cuber</h1>
+              <p class="cuber-subtitle">Mini browser for the menu bar</p>
             </div>
+            <!-- Slideshow -->
+            <section class="container">
+              <div class="slider-wrapper">
+                <button class="arrow left-arrow" aria-label="Previous slide">&larr;</button>
+                <div class="slider">
+                  <img
+                    id="slide-1"
+                    class="slideshow-image"
+                    src="../assets/images/cuber-image-1.png"
+                    alt="Cuber screenshot 1"
+                    decoding="async"
+                  />
+                  <img
+                    id="slide-2"
+                    class="slideshow-image"
+                    src="../assets/images/cuber-image-2.png"
+                    alt="Cuber screenshot 2"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    id="slide-3"
+                    class="slideshow-image"
+                    src="../assets/images/cuber-image-3.png"
+                    alt="Cuber screenshot 3"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    id="slide-4"
+                    class="slideshow-image"
+                    src="../assets/images/cuber-image-4.png"
+                    alt="Cuber screenshot 4"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    id="slide-5"
+                    class="slideshow-image"
+                    src="../assets/images/cuber-image-5.png"
+                    alt="Cuber screenshot 5"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <button class="arrow right-arrow" aria-label="Next slide">&rarr;</button>
+                <div class="slider-nav">
+                  <a href="#slide-1" class="active" data-slide="1" aria-label="Go to slide 1"></a>
+                  <a href="#slide-2" aria-label="Go to slide 2"></a>
+                  <a href="#slide-3" aria-label="Go to slide 3"></a>
+                  <a href="#slide-4" aria-label="Go to slide 4"></a>
+                  <a href="#slide-5" aria-label="Go to slide 5"></a>
+                </div>
+              </div>
+            </section>
+
+            <!-- Features -->
+            <div class="box">
+              <h2>Key Features</h2>
+              <ul>
+                <li class="plugins-list">Instant access to websites from the menu bar</li>
+                <li class="plugins-list">Global shortcut (⇧⌘C) to open and close Cuber</li>
+                <li class="plugins-list">Adjustable window size and position</li>
+                <li class="plugins-list">Minimalistic design and easy to use</li>
+                <li class="plugins-list">Cuber is a native macOS app</li>
+              </ul>
+            </div>
+
+            <!-- Download -->
+            <div class="box">
+              <h2>Download Cuber</h2>
+
+              <p>
+                Get started with Cuber today and enhance your menu bar experience! The app is free
+                to download.
+              </p>
+              <p>
+                <a class="colored" href="../assets/files/Cuber.zip">↓ Download (1.0.0)</a>
+                (macOS 13 and newer versions)
+              </p>
+            </div>
+          </div>
         </main>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
