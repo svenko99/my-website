@@ -20,7 +20,7 @@ function updateTimer() {
     const daysInPrevMonth = new Date(
       currentTime.getFullYear(),
       currentTime.getMonth(),
-      0
+      0,
     ).getDate();
     days = daysInPrevMonth + days;
   }

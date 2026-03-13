@@ -7,7 +7,9 @@ if (canvas && context) {
   const GRAVITY = 0.5;
   const TERMINAL_VELOCITY = 6;
   const DRAG = 0.075;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
   const colors = [
     { front: "red", back: "darkred" },
     { front: "green", back: "darkgreen" },
@@ -54,7 +56,9 @@ if (canvas && context) {
   const render = () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    confetti = confetti.filter((confetto) => confetto.position.y < canvas.height);
+    confetti = confetti.filter(
+      (confetto) => confetto.position.y < canvas.height,
+    );
     confetti.forEach((confetto) => {
       const width = confetto.dimensions.x * confetto.scale.x;
       const height = confetto.dimensions.y * confetto.scale.y;
@@ -63,8 +67,12 @@ if (canvas && context) {
       context.rotate(confetto.rotation);
 
       confetto.velocity.x -= confetto.velocity.x * DRAG;
-      confetto.velocity.y = Math.min(confetto.velocity.y + GRAVITY, TERMINAL_VELOCITY);
-      confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
+      confetto.velocity.y = Math.min(
+        confetto.velocity.y + GRAVITY,
+        TERMINAL_VELOCITY,
+      );
+      confetto.velocity.x +=
+        Math.random() > 0.5 ? Math.random() : -Math.random();
 
       confetto.position.x += confetto.velocity.x;
       confetto.position.y += confetto.velocity.y;
@@ -73,7 +81,8 @@ if (canvas && context) {
       if (confetto.position.x < 0) confetto.position.x = canvas.width;
 
       confetto.scale.y = Math.cos(confetto.position.y * 0.1);
-      context.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
+      context.fillStyle =
+        confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
       context.fillRect(-width / 2, -height / 2, width, height);
       context.setTransform(1, 0, 0, 1, 0, 0);
     });

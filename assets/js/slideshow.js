@@ -13,7 +13,7 @@ if (slider && slides.length > 0 && dots.length > 0 && leftArrow && rightArrow) {
 
       updateActiveDot(currentIndex);
     },
-    { passive: true }
+    { passive: true },
   );
 
   dots.forEach((dot, index) => {
