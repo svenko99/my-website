@@ -1,0 +1,656 @@
+/* ---------------------------------------------------------------
+   Type: San Francisco, loaded natively.
+
+   SF Pro cannot be self-hosted as a webfont — Apple's licence does not
+   allow it — but -apple-system hands us the real thing on macOS, iOS and
+   iPadOS at zero bytes. Everywhere else the stack falls through to the
+   platform's own UI face, which is the point of a system stack.
+   --------------------------------------------------------------- */
+:root {
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Apple's neutral ramp: white ground, near-black ink, one blue. */
+  --paper: #ffffff;
+  --surface: #f5f5f7;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  /* Apple ship #86868b here, but at the 12-13px this is used on that is
+     3.6:1 against white. #757579 clears WCAG AA and still reads a step back. */
+  --faint: #757579;
+  --rule: #d2d2d7;
+  --accent: #0066cc;
+  --accent-soft: #0066cc26;
+
+  --measure: 34rem;
+  --gutter: 7.5rem;
+  --gap: 2.75rem;
+  --radius: 14px;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #000000;
+    --surface: #1d1d1f;
+    --ink: #f5f5f7;
+    --muted: #a1a1a6;
+    --faint: #86868b;
+    --rule: #2a2a2c;
+    --accent: #2997ff;
+    --accent-soft: #2997ff2e;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  /* 17px is Apple's body size; their text sits tighter than a web default. */
+  font-size: 1.0625rem;
+  line-height: 1.53;
+  letter-spacing: -0.012em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 0.85em;
+  text-wrap: pretty;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* Inline links keep an underline — colour alone is not enough to mark
+   a link inside a sentence. Standalone links use the chevron style below. */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-soft);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 120ms ease;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  .together__num {
+    transition: none;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ---------------------------------------------------------------
+   Page frame
+   --------------------------------------------------------------- */
+.page {
+  max-width: calc(var(--gutter) + var(--gap) + var(--measure));
+  margin-inline: auto;
+  padding: clamp(3rem, 9vw, 6.5rem) 1.5rem clamp(4rem, 10vw, 7rem);
+}
+
+.row {
+  display: grid;
+  gap: 0.55rem;
+  padding-block: clamp(1.75rem, 4vw, 2.75rem);
+  border-top: 1px solid var(--rule);
+}
+
+.row__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--faint);
+  line-height: 1.5;
+  padding-top: 0.5em;
+}
+
+.row__body {
+  min-width: 0;
+}
+
+@media (min-width: 56rem) {
+  .row {
+    grid-template-columns: var(--gutter) minmax(0, var(--measure));
+    gap: var(--gap);
+  }
+
+  .row__label {
+    text-align: right;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Masthead
+   --------------------------------------------------------------- */
+.masthead {
+  margin-bottom: clamp(2rem, 5vw, 3.25rem);
+}
+
+@media (min-width: 56rem) {
+  .masthead {
+    display: grid;
+    grid-template-columns: var(--gutter) minmax(0, var(--measure));
+    /* Column gap only — name and place stack in column 2, so a row gap here
+       would push them apart on top of their own margins. */
+    column-gap: var(--gap);
+    row-gap: 0;
+  }
+}
+
+/* Name on the left, portrait on the right, sharing the text column. */
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+/* Generic zoom trigger, shared by the portrait and the Cuber screenshots. */
+.photo-zoom {
+  display: block;
+  border-radius: 18px;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.masthead__inner .photo-zoom {
+  flex: none;
+  /* Shrinks with the viewport so it never pushes the name onto two lines. */
+  width: clamp(104px, 26vw, 176px);
+}
+
+.masthead__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  /* Apple's own shape is a continuous corner; CSS border-radius draws a
+     circular arc. At this radius the two are near indistinguishable. */
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+@media (min-width: 56rem) {
+  .masthead__inner {
+    grid-column: 2;
+  }
+}
+
+.masthead__name {
+  grid-column: 2;
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.032em;
+  font-weight: 600;
+}
+
+.masthead__name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.masthead__place {
+  grid-column: 2;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  letter-spacing: -0.006em;
+  margin-top: 0.65rem;
+}
+
+.backlink {
+  grid-column: 2;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  display: inline-block;
+  justify-self: start;
+  margin-bottom: 1.5rem;
+}
+
+.backlink:hover {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* ---------------------------------------------------------------
+   Entries
+   --------------------------------------------------------------- */
+.entry + .entry {
+  margin-top: 2.25rem;
+}
+
+.entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.entry__name {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.028em;
+}
+
+.entry__meta {
+  font-size: 0.8125rem;
+  color: var(--faint);
+  letter-spacing: -0.003em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry__lede {
+  color: var(--muted);
+  margin-bottom: 0.75em;
+}
+
+/* Standalone links, Apple-style: blue, no rule, a chevron that nudges. */
+.entry__links {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.5rem;
+}
+
+.entry__links a {
+  text-decoration: none;
+  font-size: 1.0625rem;
+}
+
+.entry__links a::after {
+  content: "\00a0\203A";
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.entry__links a:hover::after {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry__links a::after {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Together counter
+   --------------------------------------------------------------- */
+.together {
+  font-size: clamp(1.5rem, 4.2vw, 1.9rem);
+  line-height: 1.24;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.together__days {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  letter-spacing: -0.006em;
+  margin-top: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.together__trigger {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.together__num {
+  transition: color 140ms ease;
+}
+
+.together__trigger:hover .together__num {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------- */
+.colophon {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+}
+
+.colophon a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.colophon a:hover {
+  color: var(--accent);
+}
+
+@media (min-width: 56rem) {
+  .colophon {
+    margin-left: calc(var(--gutter) + var(--gap));
+  }
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+kbd {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  padding: 0.08em 0.34em;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   Cuber
+   --------------------------------------------------------------- */
+.app-head {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.app-head img {
+  width: 76px;
+  height: 76px;
+  border-radius: 17px;
+  flex: none;
+}
+
+.app-head h1 {
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.032em;
+}
+
+.gallery {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+  padding-bottom: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.gallery figure {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.gallery figcaption {
+  font-size: 0.8125rem;
+  color: var(--faint);
+  margin-top: 0.65rem;
+}
+
+.gallery:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.plainlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plainlist li {
+  position: relative;
+  padding-left: 1.35em;
+  margin-bottom: 0.4em;
+}
+
+.plainlist li::before {
+  content: "";
+  position: absolute;
+  left: 0.15em;
+  top: 0.62em;
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 50%;
+  background: var(--rule);
+}
+
+/* ---------------------------------------------------------------
+   Lestvica
+   --------------------------------------------------------------- */
+.tally {
+  font-size: clamp(1.5rem, 4.2vw, 1.9rem);
+  line-height: 1.24;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.filter {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 1.0625rem;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.55rem 0.8rem;
+  margin-bottom: 1.1rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter::placeholder {
+  color: var(--faint);
+}
+
+.filter:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.peaks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.peaks li {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr) auto;
+  gap: 0 0.85rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.peaks li[hidden] {
+  display: none;
+}
+
+.peaks__rank,
+.peaks__alt {
+  font-size: 0.8125rem;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.peaks__rank {
+  text-align: right;
+}
+
+.peaks__alt {
+  white-space: nowrap;
+}
+
+.peaks--done .peaks__rank,
+.peaks li.is-done .peaks__rank {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.peaks__name a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.peaks__name a:hover {
+  color: var(--accent);
+}
+
+.empty {
+  color: var(--muted);
+  padding-top: 0.8rem;
+}
+
+/* ---------------------------------------------------------------
+   Photo lightbox
+   --------------------------------------------------------------- */
+.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 180ms ease, overlay 180ms allow-discrete,
+    display 180ms allow-discrete;
+}
+
+.lightbox[open] {
+  opacity: 1;
+}
+
+/* Fades in on browsers that support it; simply appears on those that do not. */
+@starting-style {
+  .lightbox[open] {
+    opacity: 0;
+  }
+}
+
+/* showModal() focuses the dialog itself, which the global focus ring would
+   draw a box around. The modal is the only thing on screen, so it needs no
+   ring of its own; Esc still closes it. */
+.lightbox:focus,
+.lightbox:focus-visible {
+  outline: none;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.72);
+}
+
+/* Both bounds sit on the image, not the dialog: its height follows its width,
+   so capping only the dialog let a tall photo spill out in a short window. */
+.lightbox img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(92vw, 560px);
+  max-height: 90vh;
+  border-radius: 18px;
+  cursor: zoom-out;
+}
+
+.lightbox--wide img {
+  max-width: min(94vw, 1000px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    transition: none;
+  }
+}

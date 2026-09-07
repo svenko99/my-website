@@ -1,0 +1,140 @@
+---
+import { Image, getImage } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import icon from "../images/cuber-icon.png";
+import shot1 from "../images/cuber-1.png";
+import shot2 from "../images/cuber-2.png";
+import shot3 from "../images/cuber-3.png";
+import shot4 from "../images/cuber-4.png";
+import shot5 from "../images/cuber-5.png";
+
+const shots = [
+  { src: shot1, alt: "Cuber open in the menu bar showing a web page", caption: "In the menu bar" },
+  { src: shot2, alt: "Cuber’s website list", caption: "Your sites" },
+  { src: shot3, alt: "Cuber settings for window size", caption: "Window size" },
+  { src: shot4, alt: "Cuber preferences window", caption: "Preferences" },
+  { src: shot5, alt: "Cuber showing a second site", caption: "Switching sites" },
+];
+
+// Full-size versions for the lightbox. Rendered as hrefs so the links still
+// work with JavaScript switched off; the dialog borrows the same URL.
+const fulls = await Promise.all(
+  shots.map((shot) => getImage({ src: shot.src, width: 1200, format: "webp", quality: 78 })),
+);
+---
+
+<Base
+  title="Cuber, a mini browser for the Mac menu bar"
+  description="Cuber is a free native Mac app that puts a mini browser in the menu bar, one shortcut away."
+>
+  <header class="masthead">
+    <a class="backlink" href="/">&lsaquo;&nbsp;Sven Ulčar</a>
+    <div style="grid-column: 2;">
+      <div class="app-head">
+        <Image src={icon} alt="" width={152} height={152} densities={[1, 2]} />
+        <h1>Cuber</h1>
+      </div>
+      <p class="masthead__place" style="margin-top:0.9rem">
+        Mini browser for the menu bar
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="row">
+      <h2 class="row__label">What it is</h2>
+      <div class="row__body">
+        <p>
+          Cuber puts a small browser window in the Mac menu bar. You pick the sites you
+          want, open one with <kbd>⇧⌘C</kbd>, and close it the same way. It is a native
+          Mac app.
+        </p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Screens</h2>
+      <div class="row__body">
+        <div class="gallery" tabindex="0" role="region" aria-label="Cuber screenshots">
+          {
+            shots.map((shot, i) => (
+              <figure>
+                <a
+                  class="photo-zoom"
+                  href={fulls[i].src}
+                  data-zoom
+                  data-alt={shot.alt}
+                  aria-label={`Open a larger screenshot: ${shot.caption}`}
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={544}
+                    densities={[1, 2]}
+                    loading={i === 0 ? "eager" : "lazy"}
+                  />
+                </a>
+                <figcaption>
+                  {shot.caption} ({i + 1} / {shots.length})
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Details</h2>
+      <div class="row__body">
+        <ul class="plainlist">
+          <li>Any site you like, reachable from the menu bar</li>
+          <li>A global shortcut (<kbd>⇧⌘C</kbd>) to open and close it</li>
+          <li>Window size and position are yours to set</li>
+          <li>Native Mac app, no wrapper and no tray of dependencies</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Download</h2>
+      <div class="row__body">
+        <p>Free. Version 1.0.0, for macOS 13 Ventura and newer.</p>
+        <p class="entry__links">
+          <a href="/files/Cuber.zip" download>Download Cuber 1.0.0 (1.6 MB)</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox lightbox--wide" data-lightbox aria-label="Cuber screenshot">
+    <img alt="" width="1200" height="960" />
+  </dialog>
+
+  <footer class="colophon">
+    <a href="/">Home</a>
+    <a href="https://github.com/svenko99" rel="noopener">GitHub</a>
+    <a href="mailto:svenko99@icloud.com">svenko99@icloud.com</a>
+  </footer>
+
+  <script>
+    const lightbox = /** @type {HTMLDialogElement | null} */ (
+      document.querySelector("[data-lightbox]")
+    );
+    const preview = lightbox?.querySelector("img");
+
+    if (lightbox && preview) {
+      for (const link of document.querySelectorAll("[data-zoom]")) {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          // One dialog serves all five shots; the source comes from the link.
+          preview.src = link.getAttribute("href") ?? "";
+          preview.alt = link.dataset.alt ?? "";
+          lightbox.showModal();
+        });
+      }
+      // A click on the image or on the backdrop both land here.
+      lightbox.addEventListener("click", () => lightbox.close());
+    }
+  </script>
+</Base>

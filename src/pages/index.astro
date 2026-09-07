@@ -1,0 +1,197 @@
+---
+import { Image, getImage } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import portrait from "../images/sven.jpg";
+import { phraseHtml, daysLine } from "../lib/together.js";
+
+// Rendered ahead of time so the link works even with JavaScript switched off.
+const full = await getImage({ src: portrait, width: 900, format: "webp", quality: 78 });
+
+const description =
+  "Computer science student in Ljubljana. I make Headsheet for iPhone, iPad and Mac, Cuber for the Mac menu bar, and plugins for Alfred.";
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sven Ulčar",
+  alternateName: "svenko99",
+  url: "https://svenko.me",
+  email: "svenko99@icloud.com",
+  jobTitle: "Computer science student",
+  affiliation: { "@type": "CollegeOrUniversity", name: "University of Ljubljana" },
+  sameAs: [
+    "https://github.com/svenko99",
+    "https://www.linkedin.com/in/sven-ulcar/",
+    "https://headsheet.app",
+  ],
+};
+---
+
+<Base title="Sven Ulčar" description={description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(person)} />
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div>
+        <h1 class="masthead__name"><a href="/">Sven Ulčar</a></h1>
+        <p class="masthead__place">Ljubljana, Slovenia</p>
+      </div>
+      <a class="photo-zoom" href={full.src} aria-label="Open a larger photo" data-zoom>
+        <Image
+          class="masthead__photo"
+          src={portrait}
+          alt="Sven Ulčar"
+          width={176}
+          height={220}
+          densities={[1, 2, 3]}
+          quality={90}
+        />
+      </a>
+    </div>
+  </header>
+
+  <dialog class="lightbox" data-lightbox aria-label="Photo of Sven Ulčar">
+    <img alt="Sven Ulčar" width="900" height="1125" />
+  </dialog>
+
+  <main>
+    <section class="row">
+      <h2 class="row__label">Now</h2>
+      <div class="row__body">
+        <p>
+          I study computer science at the <a
+            href="https://www.fri.uni-lj.si/en"
+            rel="noopener">University of Ljubljana</a
+          >. I also work as a DevOps student engineer at <a
+            href="https://digitalna.uni-lj.si/"
+            rel="noopener">Digitalna UL</a
+          >.
+        </p>
+        <p>The rest of the time I write small software for Apple platforms.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Projects</h2>
+      <div class="row__body">
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__name">Headsheet</h3>
+            <span class="entry__meta">Free for iPhone, iPad and Mac</span>
+          </div>
+          <p class="entry__lede">
+            Haircut diagrams for hairstylists and the people teaching them.
+          </p>
+          <p>
+            Before university I went to hairdressing school, where we drew a haircut
+            diagram on paper for every cut: where to divide the hair, at what angle, in
+            what order.
+          </p>
+          <p>
+            Headsheet is that drawing without the paper. Every diagram holds five views of
+            the head, so a cut is recorded from every side.
+          </p>
+          <p class="entry__links">
+            <a href="https://headsheet.app" rel="noopener">headsheet.app</a>
+            <a href="https://apps.apple.com/app/id6790860554" rel="noopener"
+              >App Store</a
+            >
+          </p>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__name">Cuber</h3>
+            <span class="entry__meta">Free for Mac</span>
+          </div>
+          <p class="entry__lede">A mini browser that lives in the menu bar.</p>
+          <p class="entry__links">
+            <a href="/cuber/">Screenshots and download</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Plugins</h2>
+      <div class="row__body">
+        <p>
+          I write plugins for <a href="https://www.alfredapp.com/" rel="noopener">Alfred</a>,
+          the Mac keyboard launcher. Ten so far, mostly search: books, my Notion pages,
+          the Slovenian dictionary, the machines on my Tailscale network, the lights in
+          my room.
+        </p>
+        <p class="entry__links">
+          <a href="https://github.com/svenko99?tab=repositories&q=alfred" rel="noopener"
+            >All ten on GitHub</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Together</h2>
+      <div class="row__body">
+        <p class="together">
+          <button class="together__trigger" type="button" data-confetti>
+            My girlfriend and I have been together <span set:html={phraseHtml()} />.
+            <span class="visually-hidden">(throw confetti)</span>
+          </button>
+        </p>
+        <span class="together__days" data-together-days>{daysLine()}</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <a href="https://github.com/svenko99" rel="me noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/sven-ulcar/" rel="me noopener">LinkedIn</a>
+    <a href="mailto:svenko99@icloud.com">svenko99@icloud.com</a>
+  </footer>
+
+  <canvas class="confetti-canvas" aria-hidden="true" data-confetti-canvas></canvas>
+
+  <script>
+    import { phraseHtml, daysLine } from "../lib/together.js";
+    import { confetti } from "../lib/confetti.js";
+
+    // The portrait opens in a native <dialog>: Esc, the backdrop and focus
+    // return are all handled by the browser. Without JS the link still opens
+    // the full image on its own.
+    const zoom = document.querySelector("[data-zoom]");
+    const lightbox = /** @type {HTMLDialogElement | null} */ (
+      document.querySelector("[data-lightbox]")
+    );
+    if (zoom && lightbox) {
+      zoom.addEventListener("click", (event) => {
+        event.preventDefault();
+        // loading="lazy" does not defer inside a closed dialog — the browser
+        // fetches it anyway — so the source is attached on first open, taken
+        // from the link that already points at the full image.
+        const img = lightbox.querySelector("img");
+        if (img && !img.getAttribute("src")) img.src = zoom.getAttribute("href") ?? "";
+        lightbox.showModal();
+      });
+      // A click on the image or on the backdrop both land here.
+      lightbox.addEventListener("click", () => lightbox.close());
+    }
+
+    const trigger = document.querySelector("[data-confetti]");
+    const daysEl = document.querySelector("[data-together-days]");
+    const phraseEl = trigger?.querySelector("span:not(.visually-hidden)");
+
+    // The page was rendered at build time; keep it honest in a tab left open.
+    const tick = () => {
+      if (phraseEl) phraseEl.innerHTML = phraseHtml();
+      if (daysEl) daysEl.textContent = daysLine();
+    };
+    tick();
+    setInterval(tick, 60_000);
+
+    const burst = confetti(document.querySelector("[data-confetti-canvas]"));
+    trigger?.addEventListener("click", burst);
+
+    // The anniversary is the 12th — it still goes off on its own.
+    if (new Date().getDate() === 12) burst();
+  </script>
+</Base>

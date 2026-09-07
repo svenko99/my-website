@@ -1,0 +1,109 @@
+---
+import Base from "../layouts/Base.astro";
+import mountains from "../data/mountains.json";
+
+const done = mountains.filter((m) => m.climbed);
+const total = mountains.length;
+const nf = new Intl.NumberFormat("en-GB");
+---
+
+<Base
+  title="Lestvica gora"
+  description={`Every peak, hut and waypoint on hribi.net, ranked by popularity. ${done.length} of ${nf.format(total)} ticked off.`}
+>
+  <header class="masthead">
+    <a class="backlink" href="/">&lsaquo;&nbsp;Sven Ulčar</a>
+    <h1 class="masthead__name">Lestvica gora</h1>
+    <p class="masthead__place">Ranked by hribi.net</p>
+  </header>
+
+  <main>
+    <section class="row">
+      <h2 class="row__label">Tally</h2>
+      <div class="row__body">
+        <p class="tally">
+          {done.length} of {nf.format(total)}, which leaves {nf.format(total - done.length)} to go.
+        </p>
+        <p style="margin-top:1rem">
+          The ranking is <a href="https://www.hribi.net/" rel="noopener">hribi.net</a>’s,
+          ordered by how many people have logged each place. It isn’t a list of the
+          highest peaks. A hut an hour from Ljubljana outranks most of the Julian Alps,
+          because that’s where people actually go.
+        </p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">Done</h2>
+      <div class="row__body">
+        <ul class="peaks peaks--done">
+          {
+            done.map((m) => (
+              <li>
+                <span class="peaks__rank">{m.rank}</span>
+                <span class="peaks__name">
+                  <a href={m.url} rel="noopener">{m.name}</a>
+                </span>
+                <span class="peaks__alt">{m.elevation ? `${nf.format(m.elevation)} m` : ""}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="row__label">All {nf.format(total)}</h2>
+      <div class="row__body">
+        <div data-filter-slot></div>
+        <ul class="peaks" data-peaks>
+          {
+            mountains.map((m) => (
+              <li data-name={m.name.toLowerCase()} class={m.climbed ? "is-done" : undefined}>
+                <span class="peaks__rank">{m.climbed ? "✓" : m.rank}</span>
+                <span class="peaks__name">
+                  <a href={m.url} rel="noopener">{m.name}</a>
+                </span>
+                <span class="peaks__alt">{m.elevation ? `${nf.format(m.elevation)} m` : ""}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="empty" hidden data-empty>Nothing by that name.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <a href="/">Home</a>
+    <a href="https://www.hribi.net/" rel="noopener">hribi.net</a>
+  </footer>
+
+  <script>
+    // Added from JavaScript so a browser without it never sees a dead control.
+    const slot = document.querySelector("[data-filter-slot]");
+    const list = document.querySelector("[data-peaks]");
+    const empty = document.querySelector("[data-empty]");
+    if (!slot || !list || !empty) throw new Error("lestvica: missing nodes");
+
+    const input = document.createElement("input");
+    input.type = "search";
+    input.className = "filter";
+    input.placeholder = "Filter by name…";
+    input.setAttribute("aria-label", "Filter the list by name");
+    slot.append(input);
+
+    const rows = /** @type {HTMLLIElement[]} */ ([...list.querySelectorAll("li")]);
+
+    input.addEventListener("input", () => {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      for (const row of rows) {
+        const hit = q === "" || (row.dataset.name ?? "").includes(q);
+        row.hidden = !hit;
+        if (hit) shown += 1;
+      }
+      empty.hidden = shown > 0;
+    });
+  </script>
+</Base>
