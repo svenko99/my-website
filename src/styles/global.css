@@ -219,6 +219,16 @@ a:hover {
   .masthead__inner {
     grid-column: 2;
   }
+
+  .masthead__text {
+    /* Matches the photo's inward nudge on the other side. */
+    margin-left: -1rem;
+  }
+
+  .masthead__inner .photo-zoom {
+    /* Nudged in from the column's edge so it doesn't sit flush against it. */
+    margin-right: 1rem;
+  }
 }
 
 .masthead__name {
