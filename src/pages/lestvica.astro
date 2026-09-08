@@ -14,7 +14,6 @@ const nf = new Intl.NumberFormat("en-GB");
   <header class="masthead">
     <a class="backlink" href="/">&lsaquo;&nbsp;Sven Ulčar</a>
     <h1 class="masthead__name">Lestvica gora</h1>
-    <p class="masthead__place">Ranked by hribi.net</p>
   </header>
 
   <main>
@@ -22,13 +21,9 @@ const nf = new Intl.NumberFormat("en-GB");
       <h2 class="row__label">Tally</h2>
       <div class="row__body">
         <p class="tally">
-          {done.length} of {nf.format(total)}, which leaves {nf.format(total - done.length)} to go.
-        </p>
-        <p style="margin-top:1rem">
-          The ranking is <a href="https://www.hribi.net/" rel="noopener">hribi.net</a>’s,
-          ordered by how many people have logged each place. It isn’t a list of the
-          highest peaks. A hut an hour from Ljubljana outranks most of the Julian Alps,
-          because that’s where people actually go.
+          {done.length} of {nf.format(total)}, which leaves {
+            nf.format(total - done.length)
+          } to go.
         </p>
       </div>
     </section>
@@ -42,9 +37,13 @@ const nf = new Intl.NumberFormat("en-GB");
               <li>
                 <span class="peaks__rank">{m.rank}</span>
                 <span class="peaks__name">
-                  <a href={m.url} rel="noopener">{m.name}</a>
+                  <a href={m.url} rel="noopener">
+                    {m.name}
+                  </a>
                 </span>
-                <span class="peaks__alt">{m.elevation ? `${nf.format(m.elevation)} m` : ""}</span>
+                <span class="peaks__alt">
+                  {m.elevation ? `${nf.format(m.elevation)} m` : ""}
+                </span>
               </li>
             ))
           }
@@ -59,12 +58,19 @@ const nf = new Intl.NumberFormat("en-GB");
         <ul class="peaks" data-peaks>
           {
             mountains.map((m) => (
-              <li data-name={m.name.toLowerCase()} class={m.climbed ? "is-done" : undefined}>
+              <li
+                data-name={m.name.toLowerCase()}
+                class={m.climbed ? "is-done" : undefined}
+              >
                 <span class="peaks__rank">{m.climbed ? "✓" : m.rank}</span>
                 <span class="peaks__name">
-                  <a href={m.url} rel="noopener">{m.name}</a>
+                  <a href={m.url} rel="noopener">
+                    {m.name}
+                  </a>
                 </span>
-                <span class="peaks__alt">{m.elevation ? `${nf.format(m.elevation)} m` : ""}</span>
+                <span class="peaks__alt">
+                  {m.elevation ? `${nf.format(m.elevation)} m` : ""}
+                </span>
               </li>
             ))
           }
@@ -93,7 +99,9 @@ const nf = new Intl.NumberFormat("en-GB");
     input.setAttribute("aria-label", "Filter the list by name");
     slot.append(input);
 
-    const rows = /** @type {HTMLLIElement[]} */ ([...list.querySelectorAll("li")]);
+    const rows = /** @type {HTMLLIElement[]} */ ([
+      ...list.querySelectorAll("li"),
+    ]);
 
     input.addEventListener("input", () => {
       const q = input.value.trim().toLowerCase();
