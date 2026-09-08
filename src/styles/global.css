@@ -201,8 +201,10 @@ a:hover {
 
 .masthead__inner .photo-zoom {
   flex: none;
-  /* Shrinks with the viewport so it never pushes the name onto two lines. */
-  width: clamp(104px, 26vw, 176px);
+  /* Shrinks with the viewport so it never pushes the name onto two lines.
+     The floor only bites on narrow phones, where 26vw alone ran a bit
+     small next to the now-taller (name, place, links) text column. */
+  width: clamp(114px, 26vw, 176px);
 }
 
 .masthead__photo {
@@ -279,6 +281,26 @@ a:hover {
 .masthead__links a:hover {
   text-decoration: underline;
   text-decoration-color: var(--accent-soft);
+}
+
+/* Below this the text column is too narrow for all three links on one
+   line. GitHub and LinkedIn still fit together; the email is forced onto
+   its own line rather than left to wrap wherever it runs out of room,
+   which would otherwise strand a divider at the start of that line. The
+   dividers themselves drop too — plain spacing reads better at this size
+   than a bar next to a lone wrapped line. */
+@media (max-width: 30rem) {
+  .masthead__links a {
+    padding-left: 0;
+  }
+
+  .masthead__links a + a {
+    border-left: none;
+  }
+
+  .masthead__links a:last-child {
+    flex-basis: 100%;
+  }
 }
 
 .backlink {
