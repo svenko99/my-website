@@ -630,7 +630,8 @@ kbd {
 }
 
 .lightbox::backdrop {
-  background: rgb(0 0 0 / 0.72);
+  /* Dark enough that page text behind it stops competing with the caption. */
+  background: rgb(0 0 0 / 0.86);
 }
 
 /* Both bounds sit on the image, not the dialog: its height follows its width,
@@ -647,6 +648,22 @@ kbd {
 
 .lightbox--wide img {
   max-width: min(94vw, 1000px);
+}
+
+/* max-content keeps the figure the width of the image, so the caption sits
+   under the photo rather than under the whole dialog. */
+.lightbox figure {
+  margin: 0;
+  width: max-content;
+  max-width: 100%;
+}
+
+.lightbox figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.8125rem;
+  letter-spacing: -0.003em;
+  color: rgb(255 255 255 / 0.75);
+  cursor: default;
 }
 
 @media (prefers-reduced-motion: reduce) {
