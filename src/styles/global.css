@@ -152,22 +152,6 @@ a:hover {
   min-width: 0;
 }
 
-/* Below the two-column breakpoint the label has no side column to live in,
-   so it loses the desktop layout's one big advantage: staying in view next
-   to whatever entry you're reading. Pinning it to the top of the viewport
-   while its section scrolls by (iOS grouped-list style) gets that back —
-   and stops the label reading as an eyebrow glued to just the first entry. */
-@media (max-width: 55.9375rem) {
-  .row__label {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background: var(--paper);
-    padding-block: 0.6rem 0.5rem;
-    font-size: 0.8125rem;
-  }
-}
-
 @media (min-width: 56rem) {
   .row {
     grid-template-columns: var(--gutter) minmax(0, var(--measure));
