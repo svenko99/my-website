@@ -181,7 +181,9 @@ a:hover {
   }
 }
 
-/* Name on the left, portrait on the right, sharing the text column. */
+/* Name on the left, portrait on the right, sharing the text column. Centered
+   so the (now taller, with the elsewhere links) text block sits level with
+   the middle of the photo rather than flush against its top. */
 .masthead__inner {
   display: flex;
   align-items: center;
@@ -250,6 +252,33 @@ a:hover {
   color: var(--muted);
   letter-spacing: -0.006em;
   margin-top: 0.65rem;
+}
+
+.masthead__links {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
+  font-size: 0.875rem;
+}
+
+.masthead__links a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0 0.6rem;
+}
+
+.masthead__links a:first-child {
+  padding-left: 0;
+}
+
+.masthead__links a + a {
+  border-left: 1px solid var(--rule);
+}
+
+.masthead__links a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-soft);
 }
 
 .backlink {
