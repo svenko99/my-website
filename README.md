@@ -7,6 +7,6 @@ Personal site.
 ```sh
 npm install
 npm run dev      # http://localhost:4321
-npm run build    # → dist/
+npm run build    # -> dist/
 npm run preview
 ```
