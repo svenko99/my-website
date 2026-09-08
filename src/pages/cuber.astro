@@ -9,11 +9,11 @@ import shot4 from "../images/cuber-4.png";
 import shot5 from "../images/cuber-5.png";
 
 const shots = [
-  { src: shot1, alt: "Cuber open in the menu bar showing a web page", caption: "In the menu bar" },
-  { src: shot2, alt: "Cuber’s website list", caption: "Your sites" },
-  { src: shot3, alt: "Cuber settings for window size", caption: "Window size" },
-  { src: shot4, alt: "Cuber preferences window", caption: "Preferences" },
-  { src: shot5, alt: "Cuber showing a second site", caption: "Switching sites" },
+  { src: shot1, alt: "Cuber open in the menu bar showing a web page" },
+  { src: shot2, alt: "Cuber’s website list" },
+  { src: shot3, alt: "Cuber settings for window size" },
+  { src: shot4, alt: "Cuber preferences window" },
+  { src: shot5, alt: "Cuber showing a second site" },
 ];
 
 // Full-size versions for the lightbox. Rendered as hrefs so the links still
@@ -64,7 +64,7 @@ const fulls = await Promise.all(
                   href={fulls[i].src}
                   data-zoom
                   data-alt={shot.alt}
-                  aria-label={`Open a larger screenshot: ${shot.caption}`}
+                  aria-label={`Open a larger screenshot: ${shot.alt}`}
                 >
                   <Image
                     src={shot.src}
@@ -74,9 +74,6 @@ const fulls = await Promise.all(
                     loading={i === 0 ? "eager" : "lazy"}
                   />
                 </a>
-                <figcaption>
-                  {shot.caption} ({i + 1} / {shots.length})
-                </figcaption>
               </figure>
             ))
           }

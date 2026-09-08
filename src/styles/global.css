@@ -469,12 +469,6 @@ kbd {
   background: var(--surface);
 }
 
-.gallery figcaption {
-  font-size: 0.8125rem;
-  color: var(--faint);
-  margin-top: 0.65rem;
-}
-
 .gallery:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 6px;
