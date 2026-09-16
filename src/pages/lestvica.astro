@@ -18,9 +18,9 @@ const nf = new Intl.NumberFormat("en-GB");
 
   <main>
     <section class="row">
-      <h2 class="row__label">Tally</h2>
+      <h2 class="row__label">So far</h2>
       <div class="row__body">
-        <p class="tally">
+        <p class="sofar">
           {done.length} of {nf.format(total)}, which leaves {
             nf.format(total - done.length)
           } to go.
@@ -31,10 +31,11 @@ const nf = new Intl.NumberFormat("en-GB");
     <section class="row">
       <h2 class="row__label">Done</h2>
       <div class="row__body">
-        <ul class="peaks peaks--done">
+        <div data-tools-slot="done"></div>
+        <ul class="peaks peaks--done" data-peaks="done">
           {
             done.map((m) => (
-              <li>
+              <li data-elevation={m.elevation}>
                 <span class="peaks__rank">{m.rank}</span>
                 <span class="peaks__name">
                   <a href={m.url} rel="noopener">
@@ -54,19 +55,25 @@ const nf = new Intl.NumberFormat("en-GB");
     <section class="row">
       <h2 class="row__label">All {nf.format(total)}</h2>
       <div class="row__body">
-        <div data-filter-slot></div>
-        <ul class="peaks" data-peaks>
+        <div data-tools-slot="all"></div>
+        <ul class="peaks" data-peaks="all">
           {
             mountains.map((m) => (
               <li
                 data-name={m.name.toLowerCase()}
+                data-elevation={m.elevation}
                 class={m.climbed ? "is-done" : undefined}
               >
-                <span class="peaks__rank">{m.climbed ? "✓" : m.rank}</span>
+                <span class="peaks__rank">{m.rank}</span>
                 <span class="peaks__name">
                   <a href={m.url} rel="noopener">
                     {m.name}
                   </a>
+                  {m.climbed && (
+                    <span class="peaks__done">
+                      <span aria-hidden="true">✓&nbsp;</span>Done
+                    </span>
+                  )}
                 </span>
                 <span class="peaks__alt">
                   {m.elevation ? `${nf.format(m.elevation)} m` : ""}
@@ -86,32 +93,106 @@ const nf = new Intl.NumberFormat("en-GB");
   </footer>
 
   <script>
-    // Added from JavaScript so a browser without it never sees a dead control.
-    const slot = document.querySelector("[data-filter-slot]");
-    const list = document.querySelector("[data-peaks]");
+    // The controls are added from JavaScript so a browser without it never
+    // sees a dead one.
     const empty = document.querySelector("[data-empty]");
-    if (!slot || !list || !empty) throw new Error("lestvica: missing nodes");
+    if (!empty) throw new Error("lestvica: missing nodes");
 
+    const isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+
+    /**
+     * A Rank / Height switch for one list. Both lists ship in rank order, and
+     * sort is stable, so places of equal height keep it. Places without a
+     * height go to the bottom — none have one today, but the data has had
+     * gaps before.
+     */
+    function sortControl(list, label) {
+      const rows = /** @type {HTMLLIElement[]} */ ([...list.querySelectorAll("li")]);
+      const height = (/** @type {HTMLLIElement} */ row) =>
+        Number(row.dataset.elevation ?? -1);
+      const orders = {
+        Rank: rows,
+        Height: rows.slice().sort((a, b) => height(b) - height(a)),
+      };
+
+      const group = document.createElement("div");
+      group.className = "segmented";
+      group.setAttribute("role", "group");
+      group.setAttribute("aria-label", label);
+
+      const buttons = Object.entries(orders).map(([name, order]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = name;
+        button.setAttribute("aria-pressed", String(order === rows));
+        button.addEventListener("click", () => {
+          for (const b of buttons) b.setAttribute("aria-pressed", String(b === button));
+          list.append(...order);
+        });
+        return button;
+      });
+      group.append(...buttons);
+
+      const tools = document.createElement("div");
+      tools.className = "tools";
+      tools.append(group);
+      return { tools, group, rows };
+    }
+
+    const lists = /** @type {Record<string, HTMLUListElement>} */ (
+      Object.fromEntries(
+        [...document.querySelectorAll("[data-peaks]")].map((l) => [
+          /** @type {HTMLElement} */ (l).dataset.peaks,
+          l,
+        ]),
+      )
+    );
+    const slots = /** @type {Record<string, HTMLElement>} */ (
+      Object.fromEntries(
+        [...document.querySelectorAll("[data-tools-slot]")].map((s) => [
+          /** @type {HTMLElement} */ (s).dataset.toolsSlot,
+          s,
+        ]),
+      )
+    );
+
+    const doneSort = sortControl(lists.done, "Sort the places I have done");
+    slots.done.append(doneSort.tools);
+
+    const allSort = sortControl(lists.all, "Sort every place");
     const input = document.createElement("input");
     input.type = "search";
     input.className = "filter";
-    input.placeholder = "Filter by name…";
+    // Only advertise the shortcut where there is likely a keyboard to press it.
+    input.placeholder = matchMedia("(pointer: fine)").matches
+      ? `Filter by name (${isMac ? "⌘F" : "Ctrl+F"})`
+      : "Filter by name…";
     input.setAttribute("aria-label", "Filter the list by name");
-    slot.append(input);
-
-    const rows = /** @type {HTMLLIElement[]} */ ([
-      ...list.querySelectorAll("li"),
-    ]);
+    allSort.tools.prepend(input);
+    slots.all.append(allSort.tools);
 
     input.addEventListener("input", () => {
       const q = input.value.trim().toLowerCase();
       let shown = 0;
-      for (const row of rows) {
+      for (const row of allSort.rows) {
         const hit = q === "" || (row.dataset.name ?? "").includes(q);
         row.hidden = !hit;
         if (hit) shown += 1;
       }
       empty.hidden = shown > 0;
+    });
+
+    // ⌘F / Ctrl+F jumps to the filter, which knows what is done; the browser's
+    // own find would land in the Done list first. Pressing it again with the
+    // box already focused falls through to the browser, so that is never lost.
+    document.addEventListener("keydown", (event) => {
+      const mod = isMac ? event.metaKey : event.ctrlKey;
+      if (!mod || event.altKey || event.shiftKey || event.key.toLowerCase() !== "f") return;
+      if (document.activeElement === input) return;
+      event.preventDefault();
+      input.scrollIntoView({ block: "start" });
+      input.focus({ preventScroll: true });
+      input.select();
     });
   </script>
 </Base>

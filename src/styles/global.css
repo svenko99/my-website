@@ -22,10 +22,12 @@
   --rule: #d2d2d7;
   --accent: #0066cc;
   --accent-soft: #0066cc26;
+  --raised: #ffffff;
 
-  --measure: 34rem;
+  /* Same frame as headsheet.app, so the two sites sit at one width. */
+  --measure: 46rem;
   --gutter: 7.5rem;
-  --gap: 2.75rem;
+  --gap: 3rem;
   --radius: 14px;
 
   color-scheme: light dark;
@@ -41,6 +43,7 @@
     --rule: #2a2a2c;
     --accent: #2997ff;
     --accent-soft: #2997ff2e;
+    --raised: #3a3a3c;
   }
 }
 
@@ -152,7 +155,7 @@ a:hover {
   min-width: 0;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 60rem) {
   .row {
     grid-template-columns: var(--gutter) minmax(0, var(--measure));
     gap: var(--gap);
@@ -170,7 +173,7 @@ a:hover {
   margin-bottom: clamp(2rem, 5vw, 3.25rem);
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 60rem) {
   .masthead {
     display: grid;
     grid-template-columns: var(--gutter) minmax(0, var(--measure));
@@ -219,7 +222,7 @@ a:hover {
   background: var(--surface);
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 60rem) {
   .masthead__inner {
     grid-column: 2;
   }
@@ -444,7 +447,7 @@ a:hover {
   color: var(--accent);
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 60rem) {
   .colophon {
     margin-left: calc(var(--gutter) + var(--gap));
   }
@@ -561,7 +564,7 @@ kbd {
 /* ---------------------------------------------------------------
    Lestvica
    --------------------------------------------------------------- */
-.tally {
+.sofar {
   font-size: clamp(1.5rem, 4.2vw, 1.9rem);
   line-height: 1.24;
   letter-spacing: -0.028em;
@@ -569,8 +572,18 @@ kbd {
   font-variant-numeric: tabular-nums;
 }
 
+/* Filter and sort share a line; on a phone the sort drops below, full width. */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
 .filter {
   display: block;
+  flex: 1 1 14rem;
+  min-width: 0;
   width: 100%;
   font: inherit;
   font-size: 1.0625rem;
@@ -579,13 +592,53 @@ kbd {
   border: 1px solid transparent;
   border-radius: 10px;
   padding: 0.55rem 0.8rem;
-  margin-bottom: 1.1rem;
   -webkit-appearance: none;
   appearance: none;
 }
 
 .filter::placeholder {
   color: var(--faint);
+}
+
+.segmented {
+  display: flex;
+  flex: 1 0 auto;
+  max-width: 100%;
+  padding: 2px;
+  background: var(--surface);
+  border-radius: 10px;
+}
+
+.segmented button {
+  flex: 1;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.006em;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.35rem 0.95rem;
+  cursor: pointer;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.segmented button[aria-pressed="true"] {
+  background: var(--raised);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.12), 0 0 0 0.5px rgb(0 0 0 / 0.04);
+}
+
+@media (min-width: 30rem) {
+  .segmented {
+    flex-grow: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segmented button {
+    transition: none;
+  }
 }
 
 .filter:focus {
@@ -643,6 +696,15 @@ kbd {
 
 .peaks__name a:hover {
   color: var(--accent);
+}
+
+.peaks__done {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 .empty {
